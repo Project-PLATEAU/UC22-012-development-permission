@@ -1,0 +1,41 @@
+body{
+    line-height: 1.5;
+}
+
+img{
+    margin: 8px 0px;
+    border: solid 1px black;
+}
+
+ol{
+    padding: 0;
+    padding-inline-start: 0 !important;
+}
+
+
+li{
+    list-style-type: none;
+    text-align: left !important;
+}
+
+/* 文字色 */
+.text_color_red{
+    color: #CC0000;
+}
+
+/* 背景黒 */
+.bg_black {
+    background-color: black;
+    color: white;
+}
+
+/*　枠線 */
+.box {
+    padding: 0.5em 1em;
+    border: solid 3px black;
+}
+
+.no_border{
+    border: none !important;
+}
+

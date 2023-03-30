@@ -1,0 +1,143 @@
+.custom_frame {
+    position: fixed;
+    transition: right 0.25s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.custom_nuv {
+    padding: 0;
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: left;
+    background-color: #00bebe;
+    color: white;
+    padding-left: 1em;
+}
+
+.custom_content {
+    direction: ltr;
+    width: 580px;
+    padding-bottom: 25px!important;
+    padding-top: 0 !important;
+    display: block;
+    margin: 0 auto;
+}
+
+.title {
+    background: #e0ffff;
+    padding-left: 1em;
+    padding-right: 1em;
+    line-height: 2em;
+    font-size: 1.2em;
+}
+
+.explanation {
+    font-size: .8em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.selection_table {
+    width: 180px;
+}
+
+.selection_table tr {
+    background: #f5f5f5;
+    width: 200px;
+}
+
+.selection_table tr .checkbox {
+    width: 30px;
+}
+
+.selection_table tr .content {
+    width: 170px;
+    height: 1.5em;
+    overflow: auto;
+}
+
+.selection_table tr:nth-child(2n) {
+    background: #d3d3d3 !important;
+}
+
+.circle_button {
+    display: block;
+    color: #fff;
+    background: #00bebe;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+
+.caption {
+    width: 30%;
+}
+
+.input_text {
+    width: 70%;
+    position: relative;
+}
+
+.select_box {
+    min-height: 300px;
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.back_button,
+.next_button {
+    font-size: 0.8125rem;
+    padding: 5px;
+    min-height: 32px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, .25);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    background: #d3d3d3 !important;
+    width: 100%;
+    line-height: 2em;
+}
+
+.back_button:hover,
+.next_button:hover {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.next_button {
+    background: #00bebe !important;
+    color: #fff!important;
+}
+
+.sub_title {
+    padding-left: .9em;
+    margin-top: 0;
+    margin-bottom: 0;
+    background: #00bebe;
+    font-size: .9em;
+    color: #fff;
+}
+
+.error {
+    color: red;
+    margin: 0;
+    padding: 0;
+    font-size: .7em;
+    position: absolute;
+    top: -15px;
+}

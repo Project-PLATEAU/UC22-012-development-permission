@@ -1,0 +1,4997 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>本書について | development permission </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="本書について | development permission ">
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <link rel="stylesheet" href="style.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="本書について">1 本書について</h1>
+
+<p>本書では、開発許可申請管理システム（以下本システム）の稼働環境を構築する手順について記載します。</p>
+<h1 id="システム構成">2 システム構成</h1>
+<p>本システム稼働環境の構成は以下になります。</p>
+<img src="../resources/environment/image1.png" style="width:5.34352in;height:2.54797in">
+<p>Web/APサーバとSMTPサーバ/DBサーバ/ファイルサーバは同一のサーバでも稼働可能です。</p>
+<p>以下では、上記稼働環境の前提で稼働環境構築手順を記載します。</p>
+<p>なおSMTPサーバの構築については、本書の記載範囲外とします。</p>
+<p>以下、本システムで利用するOS,SW,MWの一覧です。</p>
+<table>
+<colgroup>
+<col style="width: 7%">
+<col style="width: 12%">
+<col style="width: 17%">
+<col style="width: 21%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>サーバ</th>
+<th>大機能</th>
+<th>ライセンス</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td rowspan="11">Web/APサーバ</td>
+<td>CentOS 8</td>
+<td>GNU General Public License</td>
+<td>Web/APサーバを稼働させるOS</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Java1.8</td>
+<td>Oracle JDK License</td>
+<td>GeoServer、カスタムアプリを稼働させるためのプラットフォーム</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>apache</td>
+<td>Apache License 2.0</td>
+<td>Webアプリで配信を行うためのWebサーバ</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>PLATEAU VIEW</td>
+<td>Apache License 2.0</td>
+<td>3D都市モデルビューワ</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Terria</td>
+<td>Apache License 2.0</td>
+<td><p>UI（ユーザーインターフェイス）の提供及びUIを介してCesium</p>
+<p>の描画機能を制御するためのライブラリ</p></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Cesium</td>
+<td>Apache License 2.0</td>
+<td>3D都市モデルビューワ上にデータを描画するためのライブラリ</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Node.js</td>
+<td>MIT License</td>
+<td>3D都市モデルビューワの実行環境</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>GeoServer</td>
+<td>GNU GENERAL PUBLIC LICENSE Version 2</td>
+<td>各種データをWMS及びWFSなどで配信するためのGISサーバ</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Apache POI</td>
+<td>Apache License 2.0</td>
+<td>帳票出力にて、Excel出力を行うライブラリ</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Tomcat</td>
+<td>Apache License 2.0</td>
+<td>GeoServer、カスタムアプリを起動するJ2EEのSDK</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>Spring boot</td>
+<td>Apache License 2.0</td>
+<td>Javaで利用可能なWebアプリのフレームワーク</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td rowspan="2">DBサーバ</td>
+<td>PostgresSQL</td>
+<td>PostgreSQL License</td>
+<td>各種配信するデータを格納するデータベース</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>PostGIS</td>
+<td>GNU General Public License</td>
+<td>PostgreSQLで位置情報を扱うことを可能とするextention</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>ファイルサーバ</td>
+<td colspan="2">3DTile等配信データ</td>
+<td>データベース以外で配信する3Dデータ等</td>
+</tr>
+</tbody>
+</table>
+<p>稼働環境は以下になります。</p>
+<p>【クライアント環境】</p>
+<ul>
+<li><p>動作環境：Windows10または11、Core i3以上、メモリ 4GB以上</p>
+</li>
+<li><p>必要なソフトウェア：Edge（最新版、IEモードは検証しない）</p>
+</li>
+<li><p>ネットワーク環境：必須（10Mbps以上、高速な回線を推奨）</p>
+</li>
+</ul>
+<p>【WEB/APサーバ環境】</p>
+<ul>
+<li><p>動作環境：CentOS Version 8.5.2111</p>
+</li>
+<li><p>必要なソフトウェア：</p>
+<ul>
+<li><p>Apache Version 2.4.37</p>
+</li>
+<li><p>Java Version 1.8.0_312 (OpenJDK 64-Bit Server VM)</p>
+</li>
+<li><p>Apache Tomcat Version 9.0.65</p>
+</li>
+<li><p>GeoServer Version 2.18.0</p>
+</li>
+<li><p>Node.js Version 16.17.0</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>【DBサーバ環境】</p>
+<ul>
+<li><p>PostgreSQL Version 14.3</p>
+</li>
+<li><p>PostGIS Version 3.1</p>
+</li>
+</ul>
+<h1 id="準備物一覧">3 準備物一覧</h1>
+<p>以下、本システムを構築する際に必要となる準備物一覧になります。</p>
+<p>アプリケーションとデータはGitHubリポジトリより取得してください。</p>
+<p>GitHubリポジトリのフォルダ構成は下図の通りです。</p>
+<img src="../resources/environment/image2.png" style="width:5.90556in;height:3.26597in">
+<p>【稼働環境】</p>
+<p>Cent OS 8 Stream</p>
+<p>【セットアップ環境】</p>
+<p>・稼働環境と80,8080,5432ポートでTCP通信可能であること</p>
+<p>・Windows10</p>
+<p>【アプリケーション】</p>
+<p>・申請画面（3DViewer）ソースコード（<strong>/development-permission/SRC/3dview</strong>）</p>
+<p>・申請API（Springboot）ソースコード（<strong>/development-permission/SRC/api</strong>）</p>
+<p>【環境構築ファイル】</p>
+<p>（<strong>/development-permission/Settings/environment_settings 以下一式</strong>）</p>
+<p>・テーブル作成（<strong>/create_table.sql</strong>）</p>
+<p>・テーブルシーケンス作成（<strong>/sequence.sql</strong>）</p>
+<p>・マスタデータ作成（<strong>/create_master_data_sheet.xlsx</strong>）</p>
+<p>・ランドマーク表示作成ツール（<strong>/generate_landmark_billboard.py</strong>）</p>
+<p>・レイヤスタイルファイル（<strong>/layer_style_xxxxxx.sld</strong>）</p>
+<p>・レイヤSQLビュー定義ファイル（<strong>/layer_sql_xxxxxx.txt</strong>）</p>
+<p>【サンプルデータ】</p>
+<p>（<strong>/development-permission/SampleData 以下一式</strong>）</p>
+<p>・大字（<strong>/f_district 以下一式</strong>）</p>
+<p>・地番（<strong>/f_lot_number 以下一式</strong>）</p>
+<p>・判定レイヤ（<strong>/judgement_layers 以下一式</strong>）</p>
+<p>・ランドマーク（<strong>/landmark 以下一式</strong>）</p>
+<p>・マスタデータ作成（<strong>/create_master_data_sheet.xlsx</strong>）</p>
+<p>【セットアップ用SW】</p>
+<p>・GISソフト（本書ではQGISを利用）</p>
+<p><a href="https://qgis.org/ja/site/forusers/download.html">https://qgis.org/ja/site/forusers/download.html</a></p>
+<p>・SQLクライアントソフト（本書ではA5:SQL Mk-2を利用）</p>
+<p><a href="https://a5m2.mmatsubara.com/">https://a5m2.mmatsubara.com/</a></p>
+<p>※そのほか構築の際に必須となるSWのインストールは手順の中に含めています。</p>
+<h1 id="稼働環境構築事前準備">4 稼働環境構築（事前準備）</h1>
+<p>構築対象：Web/APサーバ</p>
+<p>検証済みサーバ環境：CentOS 8 Stream</p>
+<p>※基本管理者アカウントで操作を行います。</p>
+<p>管理者アカウントに切り替えます。</p>
+<p class="bg_black">su -</p>
+<p>SELinuxを一時的に無効にします。</p>
+<p>（環境構築時の妨げになる為、ここでは一時的に無効化します）</p>
+<p class="bg_black">setenforce 0</p>
+<h2 id="1nodejs-v100-以降npm-v60-以降をインストール">【1】Node.js v10.0 以降、npm v6.0 以降をインストール</h2>
+<p>現在、有効になっている Node.js のバージョンを確認します。</p>
+<p class="bg_black">dnf module list nodejs</p>
+<p>バージョンを指定してインストールを行います。</p>
+<p class="bg_black">dnf module -y install nodejs:16</p>
+<p>有効になっているnodejsのバージョンを確認します。</p>
+<p class="bg_black">node -v</p>
+<h2 id="2yarn-v1190-以降をインストール">【2】yarn v1.19.0 以降をインストール</h2>
+<p>yarnのインストールを行います。</p>
+<p class="bg_black">curl -sL https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo</p>
+<p>yum install yarn</p>
+<p>バージョンを確認します。</p>
+<p class="bg_black">yarn -v</p>
+<h1 id="稼働環境構築mwsw">5 稼働環境構築（MW,SW）</h1>
+<p>検証済みサーバ環境：CentOS 8 Stream</p>
+<p>構築対象；Web/APサーバ（DBサーバ）</p>
+<p>※基本管理者アカウントで操作を行います。</p>
+<p>管理者アカウントに切り替えます。</p>
+<p class="bg_black">su -</p>
+<p>SELinuxを一時的に無効にします。</p>
+<p>（環境構築時の妨げになる為、ここでは一時的に無効化します）</p>
+<p class="bg_black">setenforce 0</p>
+<h2 id="1apache24のインストール">【1】Apache2.4のインストール</h2>
+<ol>
+<li>① Apache httpd 2.4 をインストールします。</li>
+</ol>
+<p class="bg_black">yum -y install httpd</p>
+<ol>
+<li>② インストール後バージョンを確認します。</li>
+</ol>
+<p class="bg_black">httpd -version</p>
+<ol>
+<li>③ 自動起動の設定を行います。</li>
+</ol>
+<p class="bg_black">systemctl enable httpd.service</p>
+<p>※起動</p>
+<p>「http://&lt;サーバマシンのIPアドレス&gt;/」でアクセスできることを確認してください。</p>
+<p class="bg_black">systemctl start httpd.service</p>
+<p>※再起動</p>
+<p class="bg_black">systemctl restart httpd.service</p>
+<p>※停止</p>
+<p class="bg_black">systemctl stop httpd.service</p>
+<p>※必要な場合、ファイアーウォールの設定を行います。</p>
+<p class="bg_black">firewall-cmd --zone=public --add-service=http –permanent</p>
+<p class="bg_black">firewall-cmd --reload</p>
+<h2 id="2openjdk-8-のインストール">【2】OpenJDK 8 のインストール</h2>
+<ol>
+<li>① java-1.8.0-openjdkをインストールします。</li>
+</ol>
+<p class="bg_black">yum install java-1.8.0-openjdk-devel</p>
+<ol>
+<li>② インストール後バージョンを確認します。</li>
+</ol>
+<p class="bg_black">Java -version</p>
+<ol>
+<li>③ Java Pathの確認</li>
+</ol>
+<p class="bg_black">dirname $(readlink $(readlink $(which java)))</p>
+<ol>
+<li>④ 環境変数を設定します。</li>
+</ol>
+<p class="bg_black">vi /etc/profile</p>
+<p>最終行に以下の内容を追記し保存します。（/usr/lib/jvm以降は適宜バージョンを確認）</p>
+<div class="box">
+<p>export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-2.el8_5.x86_64</p>
+<p>export PATH=$PATH:$JAVA_HOME/bin</p>
+<p>export CLASSPATH=.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar</p>
+</div>
+<ol>
+<li>⑤ 環境変数の設定を反映します。</li>
+</ol>
+<p class="bg_black">source /etc/profile</p>
+<ol>
+<li>⑥ 環境変数の値を出力します。</li>
+</ol>
+<p class="bg_black">echo $JAVA_HOME</p>
+<ol>
+<li>⑦ デフォルトのJDK設定を確認します。</li>
+</ol>
+<p class="bg_black">alternatives --config java</p>
+<h2 id="3tomcat-9のインストール">【3】Tomcat 9のインストール</h2>
+<ol>
+<li>① ユーザーを作成します。</li>
+</ol>
+<p class="bg_black">useradd -s /sbin/nologin tomcat</p>
+<ol>
+<li>②homeなどに移動し、tomcatのダウンロードを行います。(適宜tomcatのversionを確認) </li>
+</ol>
+<div  class="bg_black">
+  cd /home/<br>
+  curl -O<br>
+  http://ftp.yz.yamagata-u.ac.jp/pub/network/apache/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70.tar.gz<br>
+</div>
+<ol>
+<li>③ 展開及びファイル移動を行います。</li>
+</ol>
+<div class="bg_black">
+  tar xvzf apache-tomcat-9.0.70.tar.gz -C /opt
+  ln -s /opt/apache-tomcat-9.0.70 /opt/apache-tomcat
+  chown -R tomcat. /opt/apache-tomcat-9.0.70  
+</div>
+<ol>
+<li>④ パスを通します。</li>
+</ol>
+<div class="bg_black">
+  echo &quot;export CATALINA_HOME=/opt/apache-tomcat&quot; &gt; /etc/profile.d/tomcat.sh
+  source /etc/profile
+</div>
+<ol>
+<li>⑤ サービス定義ファイルを作成します。</li>
+</ol>
+<p class="bg_black">vi /etc/systemd/system/tomcat.service</p>
+<p>以下全て入力して保存します。</p>
+<div class="box">
+  <p>[Unit]</p>
+  <p>Description=Apache Tomcat 9</p>
+  <p>After=syslog.target network.target</p>
+  <p>[Service]</p>
+  <p>User=tomcat</p>
+  <p>Group=tomcat</p>
+  <p>Type=oneshot</p>
+  <p>PIDFile=/opt/apache-tomcat/tomcat.pid</p>
+  <p>RemainAfterExit=yes</p>
+  <p>ExecStart=/opt/apache-tomcat/bin/startup.sh</p>
+  <p>ExecStop=/opt/apache-tomcat/bin/shutdown.sh</p>
+  <p>[Install]</p>
+  <p>WantedBy=multi-user.target</p>
+</div>
+<ol>
+<li>⑥ 権限を付与します。</li>
+</ol>
+<p class="bg_black">chmod 755 /etc/systemd/system/tomcat.service</p>
+<ol>
+<li>⑦ 自動起動の設定を行います。</li>
+</ol>
+<p class="bg_black">systemctl enable tomcat</p>
+<ol>
+<li>⑧ タイムゾーンの設定とHttpHeaderサイズの設定を行います。</li>
+</ol>
+<p>環境設定ファイルを新規で作成してください。</p>
+<p class="bg_black">vi /opt/apache-tomcat/bin/setenv.sh</p>
+<p>下記を入力後、保存してください。</p>
+<p class="box">CATALINA_OPTS=&quot;-Duser.timezone=Asia/Tokyo&quot;</p>
+<p>次にserver.xmlを編集します。</p>
+<p class="bg_black">vi /opt/apache-tomcat/conf/server.xml</p>
+<p>下記をConnectorタグに追加後、保存してください。</p>
+<p class="box">maxHttpHeaderSize=&quot;2097152&quot;</p>
+<p>修正箇所</p>
+<div class="box">
+  <p>&lt;Connector port=&quot;&quot;8080&quot;&quot; maxHttpHeaderSize=&quot;&quot;2097152&quot;&quot; protocol=&quot;&quot;HTTP/1.1&quot;&quot;</p>
+  <p>connectionTimeout=&quot;&quot;20000&quot;&quot;</p>
+  <p>redirectPort=&quot;&quot;8443&quot;&quot; /&gt;</p>
+</div>
+<p>設定を反映させるため、再起動します。</p>
+<p class="bg_black">systemctl restart tomcat</p>
+<p>※起動</p>
+<p>「http://&lt;サーバマシンのIPアドレス&gt;:8080/」でアクセスできることを確認してください。</p>
+<p class="bg_black">systemctl start tomcat</p>
+<p>※再起動</p>
+<p class="bg_black">systemctl restart tomcat</p>
+<p>※停止</p>
+<p class="bg_black">systemctl stop tomcat</p>
+<p>※必要な場合、ファイアーウォールの設定を行います。</p>
+<p class="bg_black">firewall-cmd --add-port=8080/tcp --zone=public --permanent</p>
+<p>systemctl restart firewalld</p>
+<h2 id="4geoserver223xのインストール">【4】GeoServer2.23.xのインストール</h2>
+<ol>
+<li>① SOURCE FORGEで配信されているため、</li>
+</ol>
+<p>ブラウザから「https://geoserver.org/release/stable/」にアクセス後、Web Archiveからwarのダウンロード及び解凍を行います。</p>
+<img src="../resources/environment/image3.png" style="width:5.90556in;height:2.72847in">
+<ol>
+<li>② 解凍したwarをtomcatに配備します。</li>
+</ol>
+<div class="bg_black">
+  cd &quot;warが置いてある場所&quot;<br>
+  mv geoserver.war /opt/apache-tomcat/webapps/
+</div>
+<ol>
+<li>③ 展開後、「http://&lt;サーバマシンのIPアドレス&gt;:8080/geoserver/」でアクセスできることを確認してください。</li>
+</ol>
+<h2 id="5postgresql14のインストール">【5】PostgreSQL14のインストール</h2>
+<p class="text_color_red">※本書では、Web/APサーバとDBサーバを同一のサーバ上に構築する手順で記載しております。両サーバを別環境で構築する場合、本章の以下手順はDBサーバ上で実施してください。</p>
+<ol>
+<li>① PostgreSQLのリポジトリRPMのインストールを行います。</li>
+</ol>
+<div class="bg_black">
+  dnf install -y<br>
+  https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86\_64/pgdg-redhat-repo-latest.noarch.rpm
+</div>
+<ol>
+<li>② 組み込みPostgreSQLモジュールを無効化します。</li>
+</ol>
+<p class="bg_black">dnf -qy module disable postgresql</p>
+<ol>
+<li>③ PostgreSQL 14をインストールします。</li>
+</ol>
+<p class="bg_black">dnf install -y postgresql14-server</p>
+<ol>
+<li>④ manコマンドでマニュアル参照を行えるように設定します。</li>
+</ol>
+<p class="bg_black">vi /etc/man_db.conf</p>
+<p>以下を追加して保存してください。</p>
+<p class="bg_black">MANDATORY_MANPATH /usr/pgsql-14/share/man/</p>
+<ol>
+<li>⑤ データベースの初期化（データベースクラスタの作成）を行います。</li>
+</ol>
+<p class="bg_black">PGSETUP_INITDB_OPTIONS='--encoding=UTF-8 --no-locale' /usr/pgsql-14/bin/postgresql-14-setup initdb</p>
+<ol>
+<li>⑥ 自動起動の設定を行います。</li>
+</ol>
+<p class="bg_black">systemctl enable postgresql-14</p>
+<p>※起動</p>
+<p class="bg_black">systemctl start postgresql-14</p>
+<p>※停止</p>
+<p class="bg_black">systemctl stop postgresql-14</p>
+<p>※postgresユーザーへ切り替え</p>
+<p class="bg_black">su - postgres</p>
+<p>※終了</p>
+<p class="bg_black">exit</p>
+<p>※PostgreSQL の接続</p>
+<p class="bg_black">psql</p>
+<p>※終了</p>
+<p class="bg_black">exit</p>
+<p>※必要な場合、ファイアーウォールの設定を行います。</p>
+<div class="bg_black">
+  firewall-cmd --permanent --add-port=5432/tcp<br>
+  firewall-cmd --reload
+</div>
+<p>※外部からPostgreSQL14への接続を許可する際は下記の設定を変更してください</p>
+<p>postgresql.confの修正</p>
+<div class="bg_black">
+  cd /var/lib/pgsql/14/data<br>
+  vi postgresql.conf
+</div>
+<p>listen_addressesとportのコメントアウトを外す(セキュリティに留意して見直してください)</p>
+<div class="box">
+  listen_addresses = '*'<br>
+  port = 5432
+</div>
+<p>pg_hba.confの修正</p>
+<div class="bg_black">
+  cd /var/lib/pgsql/14/data<br>
+  vi pg_hba.conf
+</div>
+<p>IPv4の「METHOD」を「password」にし、「ADDRESS」を「all」に変更(セキュリティに留意して見直してください)</p>
+<h2 id="6postgis3のインストール同環境にpostgresを入れる場合のみ">【6】PostGIS3のインストール(※同環境にpostgresを入れる場合のみ)</h2>
+<ol>
+  <li>① EPEL および PowerTools リポジトリを有効にします。</li>
+</ol>
+<div class="bg_black">
+  yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86\_64/pgdg-redhat-repo-latest.noarch.rpm<br>
+  dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm<br>
+  dnf install dnf-plugins-core<br>
+  dnf config-manager --set-enabled powertools
+</div>
+<ol>
+<li>② デフォルトの PostgreSQL AppStream リポジトリを無効にします。</li>
+</ol>
+<p class="bg_black">dnf -qy module disable postgresql</p>
+<ol>
+<li>③ PostGISをインストールします。</li>
+</ol>
+<p class="bg_black">yum install postgis32_14</p>
+<h2 id="7dbの作成">【7】DBの作成</h2>
+<ol>
+<li>① ロールの作成は必要に応じて行ってください。</li>
+</ol>
+<p>postgresユーザへ切り替え後、PostgreSQL に接続します。</p>
+<div class="bg_black">
+  su - postgres<br>
+  psql
+</div>
+<p>ロールを作成します。</p>
+<div class="box">
+  CREATE ROLE devps WITH<br>
+  SUPERUSER<br>
+  CREATEDB<br>
+  CREATEROLE<br>
+  INHERIT<br>
+  LOGIN<br>
+  REPLICATION<br>
+  BYPASSRLS<br>
+  ENCRYPTED PASSWORD 'password';
+</div>
+<p>その他オプション</p>
+<div class="box">
+  CREATE ROLE name [ [ WITH ] option [ ... ] ]<br>
+  option:<br>
+  SUPERUSER | NOSUPERUSER<br>
+  | CREATEDB | NOCREATEDB<br>
+  | CREATEROLE | NOCREATEROLE<br>
+  | INHERIT | NOINHERIT<br>
+  | LOGIN | NOLOGIN<br>
+  | REPLICATION | NOREPLICATION<br>
+  | BYPASSRLS | NOBYPASSRLS<br>
+  | CONNECTION LIMIT connlimit<br>
+  | [ ENCRYPTED ] PASSWORD 'password'<br>
+  | VALID UNTIL 'timestamp'<br>
+  | IN ROLE role_name [, ...]<br>
+  | IN GROUP role_name [, ...]<br>
+  | ROLE role_name [, ...]<br>
+  | ADMIN role_name [, ...]<br>
+  | USER role_name [, ...]<br>
+  | SYSID uid
+</div>
+<p>PostgreSQLを切断</p>
+<p class="bg_black">\q</p>
+<p>postgresユーザをログアウト</p>
+<p class="bg_black">exit</p>
+<p>② postgresユーザーへ切り替え後、DB作成前にテーブルスペース用のディレクトリを作成します。</p>
+<p>postgresユーザへ切り替えます。</p>
+<p class="bg_black">su - postgres</p>
+<p>テーブルスペース用のディレクトリを作成します。</p>
+<p class="bg_black">mkdir /var/lib/pgsql/14/data/devps_tbs</p>
+<p>作成したディレクトリが一覧に表示されていることを確認してください。</p>
+<p class="bg_black">ls -l /var/lib/pgsql/14/data/</p>
+<ol>
+<li>③テーブルスペースとデータベースの作成</li>
+</ol>
+<p>PostgreSQL に接続します。</p>
+<p class="bg_black">psql</p>
+<p>テーブルスペースを作成します。(queryは必要に応じて変更してください)</p>
+<div class="box">
+  CREATE TABLESPACE devps_tbs<br>
+  OWNER devps<br>
+  LOCATION '/var/lib/pgsql/14/data/devps_tbs';<br>
+  COMMENT ON TABLESPACE devps_tbs IS '稼働環境用テーブルスペース';<br>
+  GRANT CREATE ON TABLESPACE devps_tbs TO devps;
+</div>
+<p>作成したテーブルスペースが一覧に表示されていることを確認してください。</p>
+<p class="bg_black">\db</p>
+<p>データベースを作成します。(queryは必要に応じて変更してください)</p>
+<div class="box">
+  CREATE DATABASE devps_db<br>
+  WITH<br>
+  OWNER = devps<br>
+  ENCODING = 'UTF8'<br>
+  LC_COLLATE = 'C'<br>
+  LC_CTYPE = 'C'<br>
+  TABLESPACE = devps_tbs<br>
+  ALLOW_CONNECTIONS = true<br>
+  CONNECTION LIMIT = -1;<br>
+  COMMENT ON DATABASE devps_db IS '稼働環境用データベース';
+</div>
+<p>作成したデータベースが一覧に表示されていることを確認してください。</p>
+<p class="bg_black">\l</p>
+<p>PostgreSQLを切断</p>
+<p class="bg_black">\q</p>
+<p>postgresユーザをログアウト</p>
+<p class="bg_black">exit</p>
+<h2 id="8postgisの有効化">【8】PostGISの有効化</h2>
+<ol>
+  <li>① postgresユーザへ切り替え後、DB に接続します。</li>
+</ol>
+<div class="bg_black">
+  su - postgres<br>
+  psql -h localhost -p 5432 -U devps -d devps_db
+</div>
+<ol>
+<li>② PostGISの有効化を行います。</li>
+</ol>
+<p class="bg_black">CREATE EXTENSION postgis;</p>
+<ol>
+<li>③ 正常に有効化されているかバージョン確認を行います。</li>
+</ol>
+<p class="bg_black">SELECT PostGIS_version();</p>
+<h1 id="テーブル作成postgresql">6 テーブル作成（PostgreSQL）</h1>
+<p>前章「5 稼働環境構築（MW,SW）」で作成したデータベース上に、テーブルを作成します。</p>
+<p>本章はセットアップ環境からデータベースに接続できる前提になります。</p>
+<p>セットアップ環境でDBクライアントツールを立ち上げ、データベースに接続します。</p>
+<p>※本書ではA5:SQL Mk-2を使用した手順を記載します。</p>
+<p>① A5:SQL Mk-2を開き、サイドメニューの「データベース」を右クリックし、表示されるメニューから「データベースの追加と削除」をクリックします。</p>
+<img src="../resources/environment/image4.png" style="width:5.90556in;height:3.20833in">
+<img src="../resources/environment/image5.png" style="width:3.01084in;height:1.35436in">
+<ol>
+<li>②「追加」をクリックします。</li>
+</ol>
+<img src="../resources/environment/image6.png" style="width:5.90556in;height:3.25278in">
+<ol>
+<li>③「PostgreSQL（直接接続）」をクリックします。</li>
+</ol>
+<img src="../resources/environment/image7.png" style="width:3.21629in;height:4.35343in">
+<ol>
+<li>④ 前章「5 稼働環境構築（MW,SW）」で設定したデータベースの接続情報を入力し、「OK」をクリックします。</li>
+</ol>
+<img src="../resources/environment/image8.png" style="width:4.03078in;height:2.78656in">
+<ol>
+<li>⑤ サイドメニューの「データベース」の下に、登録したデータベースが表示されます。</li>
+</ol>
+<img src="../resources/environment/image9.png" style="width:2.62537in;height:0.93763in">
+<ol>
+<li>⑥ データベースの折り畳みボタンをクリックすると、以下のダイアログが表示されます。認証情報を入力し、「接続」を押下します。</li>
+</ol>
+<img src="../resources/environment/image10.png" style="width:4.1672in;height:1.86897in">
+<ol>
+<li>⑦ トップメニューバーから、「ファイル」「新規」をクリックします。</li>
+</ol>
+<img src="../resources/environment/image11.png" style="width:2.32324in;height:1.77108in">
+<ol>
+<li>⑧「SQL」を選択します。</li>
+</ol>
+<img src="../resources/environment/image12.png" style="width:2.77122in;height:2.09404in">
+<ol>
+<li>⑨ タブが新しく開きます。</li>
+</ol>
+<p>※データベースに接続した状態の場合、タブ上部のデータベース名の欄がハイライトされます。</p>
+<img src="../resources/environment/image13.png" style="width:5.90556in;height:4.40278in">
+<ol>
+<li>⑩ <strong>development-permission/Settings/environment_settings/create_table.sql</strong>を取得します。テキストエディタで開き、⑨で開いたタブにコピーします。</li>
+</ol>
+<img src="../resources/environment/image14.png" style="width:6.03933in;height:4.02101in">
+<ol>
+<li>⑪「実行」ボタンを押下します。</li>
+</ol>
+<img src="../resources/environment/image14.png" style="width:6.12972in;height:4.08119in">
+<ol>
+<li>⑫ サイドメニューのデータベースからメニューを開き、「public」スキーマの中にテーブルが追加されていることを確認します。</li>
+</ol>
+<img src="../resources/environment/image15.png" style="width:2.35358in;height:4.51265in">
+<ol>
+<li>⑬ <strong>development-permission/Settings/environment_settings/sequence.sql</strong>を取得し、ファイルを開き、同様に実行します。</li>
+</ol>
+<img src="../resources/environment/image16.png" style="width:2.27166in;height:3.49194in">
+<h1 id="マスタデータ取込">7 マスタデータ取込</h1>
+<p>本システムで用いるマスタデータを取り込みます。</p>
+<p>取込対象となるマスタデータは以下になります。</p>
+<p>サンプルデータを使用される場合は、</p>
+<p><strong>development-permission/SampleData/create_master_data_sheet.xlsx</strong></p>
+<p>を使用してください。</p>
+<p>独自にマスタデータを作成する場合は、</p>
+<p>**development-permission/Settings/**<strong>create_master_data_sheet.xlsx</strong></p>
+<p>を使用してください。</p>
+<table>
+<colgroup>
+<col style="width: 37%">
+<col style="width: 29%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>テーブル名（論理名/物理名）</th>
+<th>説明</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>M_申請区分選択画面</p>
+<p>m_application_category_</p>
+<p>selection_view</p></td>
+<td><p>申請区分の種類</p>
+<p>最大10種類まで設定可能</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>M_申請区分</p>
+<p>m_application_category</p></td>
+<td>各申請区分の選択肢</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>M_レイヤ</p>
+<p>m_layer</p></td>
+<td>判定で使用するレイヤ</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>M_部署</p>
+<p>m_department</p></td>
+<td>部署一覧</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>M_区分判定</p>
+<p>m_category_judgemnt</p></td>
+<td>判定項目</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>M_申請ファイル</p>
+<p>m_application_file</p></td>
+<td>申請ファイル一覧</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>M_ラベル</p>
+<p>m_label</p></td>
+<td>各画面表示内容の定義</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>M_地番検索定義</p>
+<p>m_lot_number_search_result_</p>
+<p>definition</p></td>
+<td>地番検索結果テーブルの表示項目</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>M_申請情報検索結果</p>
+<p>m_application_sarch_result</p></td>
+<td>申請者情報検索結果テーブルの表示項目</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>M_申請者情報項目</p>
+<p>m_applicant_information_item</p></td>
+<td>申請登録時に入力する申請者情報項目</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>M_行政ユーザ</p>
+<p>m_government_user</p></td>
+<td>行政ユーザ一覧</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>本システムのER図を以下に記載します。</p>
+<p>本章におけるセットアップ対象のマスタデータは青色のテーブルになります。</p>
+<img src="../resources/environment/image17.png" style="width:5.90556in;height:6.51667in">
+<p>各テーブル共通の手順は以下になります。</p>
+<p>① 「create_master_data_sheet.xlsx」を編集します。各テーブルに対応するシートの項目を埋め、マスタデータを作成します。シートの各列の設定内容は次節以降の各テーブルの記載を参照してください。</p>
+<p>※サンプルデータ（<strong>development-permission/SampleData/create_master_data_sheet.xlsx</strong>）をそのまま使用される場合は編集不要です。</p>
+<p>※独自にマスタデータを作成する場合は、</p>
+<p><strong>development-permission/Settings/</strong> <strong>create_master_data_sheet.xlsx</strong>の各シートに参考のサンプルデータを記載しておりますので、変更してください。</p>
+<img src="../resources/environment/image18.png" style="width:3.89511in;height:2.72163in">
+<img src="../resources/environment/image19.png" style="width:5.90556in;height:1.67847in">
+<p>② マスタデータの各シートをCSVにエクスポートします。</p>
+<img src="../resources/environment/image20.png" style="width:5.90556in;height:2.80347in">
+<p>③ Excelを閉じ、エクスポートされたCSVファイルをメモ帳やテキストエディタ等で開きます。空白行がエクスポートされている場合削除します。</p>
+<img src="../resources/environment/image21.png" style="width:5.90556in;height:5.31667in">
+<img src="../resources/environment/image22.png" style="width:5.90556in;height:0.73681in">
+<p>※削除しなかった場合取込時に以下のようなエラーメッセージが表示されます。</p>
+<img src="../resources/environment/image23.png" style="width:3.64372in;height:1.30259in">
+<p>④ SQLクライアントツールからエクスポートしたCSVファイルを取り込みます。</p>
+<p>以下ではA5M2での取込手順を記載します。</p>
+<p>⑤ 取り込みを行うテーブルをダブルクリックして開きます。</p>
+<img src="../resources/environment/image24.png" style="width:3.20508in;height:3.57213in">
+<p>⑥ CSV取込ボタンを押下します。</p>
+<img src="../resources/environment/image25.png" style="width:5.53202in;height:1.21892in">
+<p>⑦ CSVのカラム名とデータセットのカラム名が対応していることと文字コードを確認し、「インポート」を押下します。</p>
+<img src="../resources/environment/image26.png" style="width:3.16003in;height:3.07754in">
+<p>⑧ インポートに成功すると以下のダイアログが表示されます。</p>
+<img src="../resources/environment/image27.png" style="width:2.66704in;height:1.37519in">
+<ol>
+<li>⑨ データが正しく取り込めているか確認してください。</li>
+</ol>
+<img src="../resources/environment/image28.png" style="width:4.84609in;height:2.12626in">
+<p class="text_color_red">※エクスポートしたCSVファイルをExcelで閉じていない場合取込ができません。</p>
+<p class="text_color_red">※カンマを文字列内に含んでいる場合CSVを取り込めないことがあります。CSVファイルをテキストエディタやメモ帳等で開き、文字列がダブルクオーテーションで囲まれているか確認してください。</p>
+<p class="text_color_red">※0埋めした数字をIDで設定していた場合、Excelで正しくエクスポートされない場合があるのでご注意ください。</p>
+<p class="text_color_red">※ID等をカンマ区切りでExcelに入力した場合、桁区切りと認識されます。冒頭に「’」を入力して文字列として認識させてください。</p>
+<p class="text_color_red">例）「’1001,1002,1003」</p>
+<p class="text_color_red">テーブル間でIDを外部キーとして共有しているため、以下手順に示す順番でマスタデータのシートを作成してください。データベースに取り込む順番は任意で構いません。</p>
+<h2 id="1m_申請区分選択画面m_application_category_selection_view">【1】M_申請区分選択画面（m_application_category_selection_view）</h2>
+<p>create_master_data_sheet.xlsxで作成するカラムは以下の通りです。</p>
+<p class="text_color_red">※view_idは「1001」～「1010」まで固定で必ず設定してください。</p>
+<p class="text_color_red">※表示に使用しない画面（申請区分）はview_flagを0に設定してください。</p>
+<p>独自にデータをカスタマイズする場合、シート上のサンプルデータは削除してください。</p>
+<table>
+<colgroup>
+<col style="width: 9%">
+<col style="width: 23%">
+<col style="width: 21%">
+<col style="width: 9%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>列番号</th>
+<th>カラム名</th>
+<th>エイリアス</th>
+<th>必須</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>view_id</td>
+<td>画面ID</td>
+<td>○</td>
+<td>「1001」～「1010」まで固定で設定すること</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>view_flag</td>
+<td>表示有無</td>
+<td>○</td>
+<td>1=表示,0=非表示 のいずれかで設定</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>multiple_flag</td>
+<td>複数選択有無</td>
+<td>○</td>
+<td>1=単体選択,0=複数選択 のいずれかで設定</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>require_flag</td>
+<td>必須有無</td>
+<td>○</td>
+<td>1=選択必須, 0=選択任意 のいずれかで設定</td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>title</td>
+<td>タイトル</td>
+<td>○</td>
+<td><p>申請区分選択画面で表示するタイトル。</p>
+<p>帳票や申請情報検索・詳細等の各画面で表示する申請区分項目名としても使用</p></td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>description</td>
+<td>説明文</td>
+<td>○</td>
+<td><p>申請区分選択画面に表示する説明文</p>
+<p>HTMLで記載可能</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="2m_申請区分m_application_category">【2】M_申請区分（m_application_category）</h2>
+<p>create_master_data_sheet.xlsxで作成するカラムは以下の通りです。</p>
+<p>必要な申請区分数の行を作成してください。</p>
+<p>独自にデータをカスタマイズする場合、シート上のサンプルデータは削除してください。</p>
+<table>
+<colgroup>
+<col style="width: 9%">
+<col style="width: 23%">
+<col style="width: 21%">
+<col style="width: 9%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>列番号</th>
+<th>カラム名</th>
+<th>エイリアス</th>
+<th>必須</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>category_id</td>
+<td>申請区分ID</td>
+<td>○</td>
+<td><p>10桁以内でレコードごとに一意のIDを設定すること</p>
+<p>例：2001,2002,2003,・・・</p></td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>view_id</td>
+<td>画面ID</td>
+<td>○</td>
+<td><p>申請区分がどの画面に対応しているかを設定</p>
+<p>M_申請区分選択画面で設定したview_idの値と対応させること</p></td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>order</td>
+<td>昇順</td>
+<td>○</td>
+<td><p>申請区分選択画面での選択肢表示順を設定</p>
+<p>正の整数で設定すること</p></td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>label_name</td>
+<td>選択肢名</td>
+<td>○</td>
+<td><p>申請区分選択画面の選択肢として表示する選択肢名を設定</p>
+<p>帳票や申請情報検索・詳細等の各画面で表示する申請区分名としても使用</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="3m_レイヤm_layer">【3】M_レイヤ（m_layer）</h2>
+<p>create_master_data_sheet.xlsxで作成するカラムは以下の通りです。</p>
+<p>必要なレイヤ数の行を作成してください。</p>
+<p>独自にデータをカスタマイズする場合、シート上のサンプルデータは削除してください。</p>
+<p class="text_color_red">※table_nameは「9.判定レイヤ取込」、layer_codeとlayer_queryは「13. GeoServerレイヤ作成」実施後に設定してください。</p>
+<p class="text_color_red">※【5】M_区分判定を設定する際にレイヤIDが必要となります。</p>
+<table>
+<colgroup>
+<col style="width: 9%">
+<col style="width: 27%">
+<col style="width: 20%">
+<col style="width: 8%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>列番号</th>
+<th>カラム名</th>
+<th>エイリアス</th>
+<th>必須</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>layer_id</td>
+<td>レイヤID</td>
+<td>○</td>
+<td><p>10桁以内でレコードごとに一意のIDを設定すること</p>
+<p>例：2001,2002,2003,・・・</p></td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>layer_type</td>
+<td>レイヤ種別</td>
+<td>○</td>
+<td><p>1=判定対象レイヤ,0=関連レイヤ のいずれかで設定</p>
+<p>※判定対象レイヤ・・・概況診断のGIS判定で使用するレイヤ</p>
+<p>※関連レイヤ・・・概況診断のGIS判定では使用せず、概況診断結果表示時に判定対象レイヤと合わせて表示するレイヤ（使用例：バッファ判定のバッファ径を表示）</p></td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>layer_name</td>
+<td>レイヤ名</td>
+<td>○</td>
+<td>概況診断結果表示時に表示するレイヤ名</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>table_name</td>
+<td>テーブル名</td>
+<td>○</td>
+<td>概況診断で使用する判定対象テーブルのテーブル名</td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>layer_code</td>
+<td>レイヤコード</td>
+<td>○</td>
+<td><p>GeoServerで設定したレイヤ名</p>
+<p>「ワークスペース名:レイヤ名」のフォーマット</p></td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>layer_query</td>
+<td>レイヤクエリ</td>
+<td></td>
+<td><p>GeoServerのSQLビューでSQLビューパラメータを設定しているレイヤに問い合わせる際に使用するクエリ「パラメータ1:値;パラメータ2:値;パラメータ3:値」のフォーマット</p>
+<p>使用していない場合空欄で可</p></td>
+</tr>
+<tr class="odd">
+<td>G</td>
+<td>query_require_flag</td>
+<td>クエリ必須フラグ</td>
+<td>○</td>
+<td><p>layer_queryを使用するかどうか</p>
+<p>1=必要,0=不要のいずれかで設定</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="4m_部署m_department">【4】M_部署（m_department）</h2>
+<p>create_master_data_sheet.xlsxで作成するカラムは以下の通りです。</p>
+<p>必要な部署数の行を作成してください。</p>
+<p>独自にデータをカスタマイズする場合、シート上のサンプルデータは削除してください。</p>
+<p class="text_color_red">※【5】M_区分判定を設定する際に部署IDが必要となります。</p>
+<table>
+<colgroup>
+<col style="width: 9%">
+<col style="width: 28%">
+<col style="width: 20%">
+<col style="width: 8%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>列番号</th>
+<th>カラム名</th>
+<th>エイリアス</th>
+<th>必須</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>department_id</td>
+<td>部署ID</td>
+<td>○</td>
+<td><p>10桁以内でレコードごとに一意のIDを設定すること</p>
+<p>例：2001,2002,2003,・・・</p></td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>department_name</td>
+<td>部署名</td>
+<td>○</td>
+<td>部署の名称</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>mail_address</td>
+<td>メールアドレス</td>
+<td>○</td>
+<td><p>部署宛にメール通知を行うメールアドレス</p>
+<p>カンマ区切りで複数指定可</p>
+<p class="text_color_red">※設定したメールアドレスに通知が飛ばされるため、テスト時はテスト用のメールアドレスで設定し、本番運用時に実運用のメールアドレスに変更することを推奨</p></td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>answer_authority_flag</td>
+<td>回答権限フラグ</td>
+<td>○</td>
+<td><p>回答通知を行う権限の有無</p>
+<p>1=権限あり,0=権限なし のいずれかで設定</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="5m_区分判定m_category_judgement">【5】M_区分判定（m_category_judgement）</h2>
+<p>create_master_data_sheet.xlsxで作成するカラムは以下の通りです。</p>
+<p>必要な区分判定分の行を作成してください。</p>
+<p>独自にデータをカスタマイズする場合、シート上のサンプルデータは削除してください。</p>
+<p class="text_color_red">※【6】M_申請ファイルを設定する際に判定項目IDが必要となります。</p>
+<table>
+<colgroup>
+<col style="width: 7%">
+<col style="width: 43%">
+<col style="width: 12%">
+<col style="width: 6%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>列番号</th>
+<th>カラム名</th>
+<th>エイリアス</th>
+<th>必須</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>judgement_item_id</td>
+<td>判定項目ID</td>
+<td>○</td>
+<td><p>10桁以内でレコードごとに一意のIDを設定すること</p>
+<p>例：3001,3002,3003,・・・</p></td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>department_id</td>
+<td>担当部署ID</td>
+<td>○</td>
+<td><p>判定項目に回答を実施する担当部署の部署ID</p>
+<p>【4】M_部署で設定したIDを使用すること</p></td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>category_1</td>
+<td>区分1</td>
+<td>○</td>
+<td><p>画面ID=1001と紐づく申請区分IDのうち、区分判定で該当と判定したい申請区分IDをカンマ区切りで設定する</p>
+<p>判定に用いない場合0を格納すること</p></td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>category_2</td>
+<td>区分2</td>
+<td>○</td>
+<td><p>画面ID=1002と紐づく申請区分IDのうち、区分判定で該当と判定したい申請区分IDをカンマ区切りで設定する</p>
+<p>判定に用いない場合0を格納すること</p></td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>category_3</td>
+<td>区分3</td>
+<td>○</td>
+<td><p>画面ID=1003と紐づく申請区分IDのうち、区分判定で該当と判定したい申請区分IDをカンマ区切りで設定する</p>
+<p>判定に用いない場合0を格納すること</p></td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>category_4</td>
+<td>区分4</td>
+<td>○</td>
+<td><p>画面ID=1004と紐づく申請区分IDのうち、区分判定で該当と判定したい申請区分IDをカンマ区切りで設定する</p>
+<p>判定に用いない場合0を格納すること</p></td>
+</tr>
+<tr class="odd">
+<td>G</td>
+<td>category_5</td>
+<td>区分5</td>
+<td>○</td>
+<td><p>画面ID=1005と紐づく申請区分IDのうち、区分判定で該当と判定したい申請区分IDをカンマ区切りで設定する</p>
+<p>判定に用いない場合0を格納すること</p></td>
+</tr>
+<tr class="even">
+<td>H</td>
+<td>category_6</td>
+<td>区分6</td>
+<td>○</td>
+<td><p>画面ID=1006と紐づく申請区分IDのうち、区分判定で該当と判定したい申請区分IDをカンマ区切りで設定する</p>
+<p>判定に用いない場合0を格納すること</p></td>
+</tr>
+<tr class="odd">
+<td>I</td>
+<td>category_7</td>
+<td>区分7</td>
+<td>○</td>
+<td><p>画面ID=1007と紐づく申請区分IDのうち、区分判定で該当と判定したい申請区分IDをカンマ区切りで設定する</p>
+<p>判定に用いない場合0を格納すること</p></td>
+</tr>
+<tr class="even">
+<td>J</td>
+<td>category_8</td>
+<td>区分8</td>
+<td>○</td>
+<td><p>画面ID=1008と紐づく申請区分IDのうち、区分判定で該当と判定したい申請区分IDをカンマ区切りで設定する</p>
+<p>判定に用いない場合0を格納すること</p></td>
+</tr>
+<tr class="odd">
+<td>K</td>
+<td>category_9</td>
+<td>区分9</td>
+<td>○</td>
+<td><p>画面ID=1009と紐づく申請区分IDのうち、区分判定で該当と判定したい申請区分IDをカンマ区切りで設定する</p>
+<p>判定に用いない場合0を格納すること</p></td>
+</tr>
+<tr class="even">
+<td>L</td>
+<td>category_10</td>
+<td>区分10</td>
+<td>○</td>
+<td><p>画面ID=1010と紐づく申請区分IDのうち、区分判定で該当と判定したい申請区分IDをカンマ区切りで設定する</p>
+<p>判定に用いない場合0を格納すること</p></td>
+</tr>
+<tr class="odd">
+<td>M</td>
+<td>gis_judgement</td>
+<td>GIS判定</td>
+<td>○</td>
+<td><p>GIS判定を行うか否かと、GIS判定方式を設定</p>
+<p>0=GIS判定なし,</p>
+<p>1=重なり判定,</p>
+<p>2=非重なり判定,</p>
+<p>3=バッファ重なり判定,</p>
+<p>4=バッファ非重なり判定</p>
+<p>のいずれかで設定</p></td>
+</tr>
+<tr class="even">
+<td>N</td>
+<td>buffer</td>
+<td>バッファ</td>
+<td>○</td>
+<td><p>バッファ判定時のバッファ半径(m,小数可)</p>
+<p>バッファ判定を使用しない場合0とすること</p></td>
+</tr>
+<tr class="odd">
+<td>O</td>
+<td>display_attribute_flag</td>
+<td>重なり属性表示フラグ</td>
+<td>○</td>
+<td><p>GIS重なり属性表示を行うか否かと、属性表示方法を設定</p>
+<p>0=属性表示しない</p>
+<p>1=区切り文字で区切って属性表示</p>
+<p>2=改行して属性表示</p>
+<p class="text_color_red">※属性表示する場合、table_nameとfield_nameを設定すること</p>
+<p class="text_color_red">※区切り文字はapplication.propertiesで設定。</p></td>
+</tr>
+<tr class="even">
+<td>P</td>
+<td>judgement_layer</td>
+<td>判定対象レイヤ</td>
+<td></td>
+<td><p>GIS判定で使用するレイヤのレイヤID。</p>
+<p>カンマ区切りで複数指定可</p>
+<p class="text_color_red">※M_レイヤで設定したIDを使用すること</p>
+<p class="text_color_red">※GIS判定では必須、GIS判定以外では不要</p>
+<p class="text_color_red">※図形重なり属性表示を行う場合複数指定不可</p></td>
+</tr>
+<tr class="odd">
+<td>Q</td>
+<td>title</td>
+<td>タイトル</td>
+<td>○</td>
+<td><p>概況診断結果一覧と回答一覧の「対象」列に表示する内容</p>
+<p>改行可</p></td>
+</tr>
+<tr class="even">
+<td>R</td>
+<td>applicable_summary</td>
+<td>該当表示概要</td>
+<td>○</td>
+<td><p>該当時に帳票の概要に出力する文字列</p>
+<p>改行可</p></td>
+</tr>
+<tr class="odd">
+<td>S</td>
+<td>applicable_description</td>
+<td>該当表示文言</td>
+<td>○</td>
+<td><p>該当時に概況診断結果一覧のツールチップと帳票の詳細に表示・出力する文字列</p>
+<p>改行可</p>
+<p>&lt;a&gt;&lt;/a&gt;で囲んだ範囲の文字列をリンクとして表示</p>
+<p>属性表示したい場合、表示したい箇所に「@1」のように「@」+「フィールド名の順番」を記載</p>
+<p>地番と判定対象レイヤの最短距離を表示したい場合、表示したい箇所に「{distance}」と記載</p></td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>non_applicable_display_flag</td>
+<td>非該当表示有無</td>
+<td>○</td>
+<td><p>非該当時に概況診断結果一覧に表示するか否かを設定</p>
+<p>1=表示, 0=非表示 のいずれかで設定</p></td>
+</tr>
+<tr class="odd">
+<td>U</td>
+<td>non_applicable_summary</td>
+<td>非該当表示概要</td>
+<td></td>
+<td><p>非該当時に帳票の概要に出力する文字列</p>
+<p>改行可</p></td>
+</tr>
+<tr class="even">
+<td>V</td>
+<td>non_applicable_description</td>
+<td>非該当表示文言</td>
+<td></td>
+<td><p>非該当時に概況診断結果一覧のツールチップと帳票の詳細に表示・出力する文字列</p>
+<p>改行可</p>
+<p>&lt;a&gt;&lt;/a&gt;で囲んだ範囲の文字列をリンクとして表示</p></td>
+</tr>
+<tr class="odd">
+<td>W</td>
+<td>table_name</td>
+<td>テーブル名</td>
+<td></td>
+<td><p>属性表示するテーブル名</p>
+<p>※judgement_layerで指定した判定レイヤのテーブル名を指定すること</p></td>
+</tr>
+<tr class="even">
+<td>X</td>
+<td>field_name</td>
+<td>フィールド名</td>
+<td></td>
+<td><p>属性表示するフィールド名</p>
+<p>カンマ区切りで複数設定可能</p>
+<p>※【W】で指定したテーブルのフィールド名(カラム名)を指定すること</p></td>
+</tr>
+<tr class="odd">
+<td>Y</td>
+<td>non_applicable_layer_display_flag</td>
+<td>判定レイヤ非該当時表示有無</td>
+<td>○</td>
+<td><p>非該当時も判定レイヤを画面表示するか否か</p>
+<p>※該当時はレイヤを設定している場合必ず表示</p>
+<p>1=表示,0=非表示 のいずれかで設定</p></td>
+</tr>
+<tr class="even">
+<td>Z</td>
+<td>simultaneous_display_layer</td>
+<td>同時表示レイヤ</td>
+<td></td>
+<td>概況診断結果一覧画面で判定対象レイヤと同時に表示する関連レイヤのID（カンマ区切り）</td>
+</tr>
+<tr class="odd">
+<td>AA</td>
+<td>simultaneous_display_layer_flag</td>
+<td>同時表示レイヤ表示有無</td>
+<td>○</td>
+<td><p>概況診断結果一覧画面で判定対象レイヤと同時に関連レイヤを表示するか否か</p>
+<p>1=表示, 0=非表示 のいずれかで設定</p></td>
+</tr>
+<tr class="even">
+<td>AB</td>
+<td>disp_order</td>
+<td>表示順</td>
+<td>○</td>
+<td><p>概況診断結果一覧画面および帳票における表示順</p>
+<p>小数で設定する</p></td>
+</tr>
+<tr class="odd">
+<td>AC</td>
+<td>answer_require_flag</td>
+<td>回答必須フラグ</td>
+<td>○</td>
+<td><p>区分判定に行政による回答が必須か否か</p>
+<p>任意の場合、申請受付時にデフォルト回答を回答として登録・通知する。</p>
+<p>1=必須, 0=任意 のいずれかで設定</p></td>
+</tr>
+<tr class="even">
+<td>AD</td>
+<td>default_answer</td>
+<td>デフォルト回答</td>
+<td></td>
+<td>申請受付時に自動で設定する回答文言</td>
+</tr>
+<tr class="odd">
+<td>AE</td>
+<td>answer_editable_flag</td>
+<td>編集可能フラグ</td>
+<td>○</td>
+<td><p>回答の編集を可能とするか否か</p>
+<p>1=編集可能, 0=編集不可</p>
+<p class="text_color_red">※answer_require_flagが1かつanswer_editable_flagが0のケースは指定できません</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="6m_申請ファイルm_application_file">【6】M_申請ファイル（m_application_file）</h2>
+<p>create_master_data_sheet.xlsxで作成するカラムは以下の通りです。</p>
+<p>必要な申請ファイル分の行を作成してください。</p>
+<p>独自にデータをカスタマイズする場合、シート上のサンプルデータは削除してください。</p>
+<p class="text_color_red">※概況診断結果レポートは区分判定IDごとに設定が必要になります。サンプルデータの内容をコピーして区分判定IDのみ変更して設定してください。概況診断結果レポートは申請ファイルIDを「9999」に設定する必要があります。</p>
+<table>
+<colgroup>
+<col style="width: 9%">
+<col style="width: 28%">
+<col style="width: 20%">
+<col style="width: 8%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>列番号</th>
+<th>カラム名</th>
+<th>エイリアス</th>
+<th>必須</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>application_file_id</td>
+<td>申請ファイルID</td>
+<td>○</td>
+<td><p>申請ファイルを識別する10桁以内のID</p>
+<p>同じ申請ファイルを複数の判定項目に紐づけたい場合、同じ申請ファイルIDで異なる判定項目IDのレコードを作成すること</p></td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>judgement_item_id</td>
+<td>判定項目ID</td>
+<td>○</td>
+<td><p>申請ファイルと紐づける判定項目ID</p>
+<p>【5】M_区分判定で設定した判定項目IDを設定すること</p></td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>require_flag</td>
+<td>必須有無</td>
+<td>○</td>
+<td><p>申請登録時にファイルのアップロードが必須か否か</p>
+<p>必須=1, 任意=0 のいずれかで設定</p></td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>upload_file_name</td>
+<td>アップロードファイル名</td>
+<td>○</td>
+<td>申請登録画面や申請情報詳細画面等で表示する申請ファイル名称</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7m_ラベルm_label">【7】M_ラベル（m_label）</h2>
+<p>create_master_data_sheet.xlsxで作成するカラムは以下の通りです。</p>
+<p>本テーブルは画面表示内容の設定で使用するため、必要に応じてカスタマイズしてください。</p>
+<table>
+<colgroup>
+<col style="width: 9%">
+<col style="width: 28%">
+<col style="width: 20%">
+<col style="width: 8%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>列番号</th>
+<th>カラム名</th>
+<th>エイリアス</th>
+<th>必須</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>view_code</td>
+<td>画面コード</td>
+<td>○</td>
+<p class="text_color_red">プログラム上で使用するためマスタデータ作成シートの内容を変更しないこと</p></td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>label_id</td>
+<td>ラベルID</td>
+<td>○</td>
+<td>
+<p class="text_color_red">プログラム上で使用するためマスタデータ作成シートの内容を変更しないこと</p></td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>label_ley</td>
+<td>ラベルキー</td>
+<td>○</td>
+<td>
+<p class="text_color_red">プログラム上で使用するためマスタデータ作成シートの内容を変更しないこと</p></td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>label_type</td>
+<td>種別</td>
+<td>○</td>
+<td><p>0=事業者行政とも使用</p>
+<p>1=事業者のみ使用</p>
+<p>2=行政のみ使用</p>
+<p>プログラム上で使用するためマスタデータ作成シートの内容を変更しないこと</p></td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>label_text</td>
+<td>テキスト</td>
+<td>○</td>
+<td><p>画面表示で使用するラベルの文言</p>
+<p>HTML埋め込み可能</p>
+<p>必要に応じてマスタデータ作成シートの内容から変更</p></td>
+</tr>
+</tbody>
+</table>
+<p>画面コード、ラベルIDと使用箇所の対応は下記の通りです。</p>
+<table>
+<colgroup>
+<col style="width: 13%">
+<col style="width: 14%">
+<col style="width: 40%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>view_code</th>
+<th>label_id</th>
+<th>使用箇所</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1000</td>
+<td>1</td>
+<td>利用者規約画面タイトル</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1000</td>
+<td>2</td>
+<td>利用者規約画面説明文</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>1000</td>
+<td>3</td>
+<td>利用者規約画面同意ボタン</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1001</td>
+<td>1</td>
+<td>申請完了画面タイトル</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>1001</td>
+<td>2</td>
+<td>申請完了画面説明文</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1002</td>
+<td>1</td>
+<td>回答完了画面タイトル</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>1002</td>
+<td>2</td>
+<td>回答完了画面説明文</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1003</td>
+<td>1</td>
+<td>回答通知完了画面タイトル</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>1003</td>
+<td>2</td>
+<td>回答通知完了画面説明文</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1004</td>
+<td>1</td>
+<td>行政ログイン画面ヘッダ</td>
+<td>○○市の部分を使用される自治体名に変更すること</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8m_地番検索結果定義m_lot_number_search_result_definition">【8】M_地番検索結果定義（m_lot_number_search_result_definition）</h2>
+<p>create_master_data_sheet.xlsxで作成するカラムは以下の通りです。</p>
+<p>本テーブルは画面表示内容の設定で使用するため、必要に応じてカスタマイズしてください。</p>
+<table>
+<colgroup>
+<col style="width: 8%">
+<col style="width: 40%">
+<col style="width: 14%">
+<col style="width: 7%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>列番号</th>
+<th>カラム名</th>
+<th>エイリアス</th>
+<th>必須</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>lot_number_search_definition_id</td>
+<td>地番検索結果定義ID</td>
+<td>○</td>
+<td>10桁以内の一意のID</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>display_order</td>
+<td>表示順</td>
+<td>○</td>
+<td><p>地番検索結果テーブル上の列表示順（左始まり）</p>
+<p>正の整数で設定</p></td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>table_type</td>
+<td>テーブル種別</td>
+<td>○</td>
+<td><p>表示するデータを取得するテーブル</p>
+<p>1=F_地番テーブル, 0=F_大字テーブルの いずれかで設定</p></td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>display_column_name</td>
+<td>表示カラム名</td>
+<td>○</td>
+<td>テーブルヘッダとして表示する名称</td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>table_column_name</td>
+<td>テーブルカラム名</td>
+<td>○</td>
+<td><p>データを取得するときに参照するDB上のカラム名</p>
+<p class="text_color_red">result_column_1～result_column_5のいずれかを設定すること</p></td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>table_width</td>
+<td>テーブル幅</td>
+<td>○</td>
+<td><p>テーブル幅を%指定で表示</p>
+<p class="text_color_red">全レコードの値の合計が60になること。</p></td>
+</tr>
+<tr class="odd">
+<td>G</td>
+<td>response_key</td>
+<td>レスポンスキー</td>
+<td>○</td>
+<td><p>プログラム上で使用するキー</p>
+<p>任意の英小文字</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="9m_申請情報検索結果m_application_search_result">【9】M_申請情報検索結果（m_application_search_result）</h2>
+<p>create_master_data_sheet.xlsxで作成するカラムは以下の通りです。</p>
+<p>本テーブルは画面表示内容の設定で使用するため、必要に応じてカスタマイズしてください。</p>
+<table>
+<colgroup>
+<col style="width: 8%">
+<col style="width: 37%">
+<col style="width: 15%">
+<col style="width: 7%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>列番号</th>
+<th>カラム名</th>
+<th>エイリアス</th>
+<th>必須</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>application_search_result_id</td>
+<td>申請情報検索結果ID</td>
+<td>○</td>
+<td>10桁以内の一意のID</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>reference_type</td>
+<td>参照タイプ</td>
+<td>○</td>
+<td><p>0=申請区分</p>
+<p>1=申請者情報</p>
+<p>2=その他</p>
+<p>のいずれかで設定</p></td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>display_column_name</td>
+<td>表示カラム名</td>
+<td>○</td>
+<td>テーブルヘッダとして表示する名称</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>display_order</td>
+<td>表示順</td>
+<td>○</td>
+<td><p>申請情報検索結果テーブル上の列表示順（左始まり）</p>
+<p>正の整数で設定</p></td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>table_name</td>
+<td>テーブル名</td>
+<td>○</td>
+<td><p>データを取得するときに参照するDB上のテーブル名</p>
+<p>以下から設定可能</p>
+<p>m_department</p>
+<p>o_applicant_information</p>
+<p>m_application_category</p>
+<p>o_application</p>
+<p>o_answer</p>
+<p>m_category_judgement</p></td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>table_column_name</td>
+<td>テーブルカラム名</td>
+<td>○</td>
+<td><p>データを取得するときに参照するDB上のカラム名。</p>
+<p>table_nameで</p>
+<p>m_application_category（M_申請区分）を指定していた場合、画面IDを設定する</p></td>
+</tr>
+<tr class="odd">
+<td>G</td>
+<td>response_key</td>
+<td>レスポンスキー</td>
+<td>○</td>
+<td><p>プログラム上で使用するキー</p>
+<p>任意の英小文字</p></td>
+</tr>
+<tr class="even">
+<td>H</td>
+<td>table_width</td>
+<td>テーブル幅</td>
+<td>○</td>
+<td><p>テーブル幅を%指定で表示</p>
+<p class="text_color_red">全レコードの値の合計が100になること。</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="10m_申請者情報項目m_applicant_information_item">【10】M_申請者情報項目（m_applicant_information_item）</h2>
+<p>create_master_data_sheet.xlsxで作成するカラムは以下の通りです。</p>
+<p>本テーブルは画面表示内容の設定で使用するため、必要に応じてカスタマイズしてください。</p>
+<p>※最大10レコードまで作成できます。</p>
+<table>
+<colgroup>
+<col style="width: 8%">
+<col style="width: 38%">
+<col style="width: 17%">
+<col style="width: 8%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>列番号</th>
+<th>カラム名</th>
+<th>エイリアス</th>
+<th>必須</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>applicant_information_item_id</td>
+<td>申請者情報項目ID</td>
+<td>○</td>
+<td><p>一意のID</p>
+<p class="text_color_red">「1001」から「1010」の範囲で設定すること</p></td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>display_order</td>
+<td>昇順</td>
+<td>○</td>
+<td><p>申請情報入力画面の上からの表示順</p>
+<p>正の整数で設定</p></td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>display_flag</td>
+<td>表示有無</td>
+<td>○</td>
+<td><p>表示を行うか否か</p>
+<p>1=表示, 0=非表示 のいずれかで設定</p></td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>require_flag</td>
+<td>必須有無</td>
+<td>○</td>
+<td><p>入力の必須有無</p>
+<p>1=必須, 0=任意 のいずれかで設定</p></td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>item_name</td>
+<td>項目名</td>
+<td>○</td>
+<td>画面表示に使用する項目名</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>regex</td>
+<td>正規表現</td>
+<td></td>
+<td><p>正規表現チェックで使用する正規表現</p>
+<p>空の場合正規表現チェックは行わない</p></td>
+</tr>
+<tr class="odd">
+<td>G</td>
+<td>mail_address</td>
+<td>メールアドレス</td>
+<td>○</td>
+<td><p>通知に使用するメールアドレスか否か</p>
+<p>1=メールアドレス,</p>
+<p>0=非メールアドレス</p>
+<p>のいずれかで設定すること</p>
+<p class="text_color_red">必ず1つだけ値が「1」のレコードを作成すること。</p></td>
+</tr>
+<tr class="even">
+<td>H</td>
+<td>search_condition_flag</td>
+<td>検索条件表示有無</td>
+<td>○</td>
+<td><p>申請情報検索画面の検索条件として表示するか否か</p>
+<p>1=表示, 0=非表示 のいずれかで設定</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="11m_行政ユーザm_government_user">【11】M_行政ユーザ（m_government_user）</h2>
+<p>create_master_data_sheet.xlsxで作成するカラムは以下の通りです。</p>
+<p>必要な行政ユーザ分のデータを作成してください。</p>
+<p>独自にデータをカスタマイズする場合、シート上のサンプルデータは削除してください。</p>
+<p>サンプルデータのパスワードは「superStrongP@ssword」で設定しています。セキュリティの観点から後述の手順でパスワードのハッシュを生成し、修正してください。</p>
+<table>
+<colgroup>
+<col style="width: 9%">
+<col style="width: 28%">
+<col style="width: 20%">
+<col style="width: 8%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>列番号</th>
+<th>カラム名</th>
+<th>エイリアス</th>
+<th>必須</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>user_id</td>
+<td>ユーザID</td>
+<td>○</td>
+<td>10桁以内の一意のID</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>login_id</td>
+<td>ログインID</td>
+<td>○</td>
+<td>ログイン時に入力するID</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>password</td>
+<td>パスワード</td>
+<td>○</td>
+<td><p>ログイン時に入力するパスワード</p>
+<p class="text_color_red">※元のパスワード文字列をハッシュ化して登録すること。ハッシュ作成手順は後述</p></td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>role_code</td>
+<td>ロールコード</td>
+<td>○</td>
+<td><p>1=事業者, 2=行政 のいずれかで設定</p>
+<p>※事業者のユーザは作成不要です</p></td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>department_id</td>
+<td>部署ID</td>
+<td>○</td>
+<td><p>ユーザの所属部署ID</p>
+<p>【4】M_部署で設定したIDを設定すること</p></td>
+</tr>
+</tbody>
+</table>
+<p>パスワード用のハッシュは以下の手順で作成してください。</p>
+<p class="text_color_red">※ハッシュの生成は15.アプリケーションデプロイ（Spring Boot） が完了してから可能です。</p>
+<p>① Spring Tool Suite 4を開き、プロジェクトを開きます。</p>
+<img src="../resources/environment/image29.png" style="width:4.91349in;height:2.6711in">
+<ol>
+<li>② developmentpermission.util.AuthUtil.javaを開きます。</li>
+</ol>
+<img src="../resources/environment/image30.png" style="width:5.90556in;height:3.35417in">
+<p>③ AuthUtil.javaの末尾、public class AuthUtil { }を閉じている中括弧の直前に以下のコードを追記します。</p>
+<div class="box">
+<p>/**</p>
+<p>* ハッシュ生成確認用</p>
+<p>*</p>
+<p>* @param args 引数(使用しない)</p>
+<p>*/</p>
+<p>public static void main(String[] args) {</p>
+<p>System.out.println(AuthUtil.createHash(&quot;superStrongP@ssword&quot;));</p>
+<p>}</p>
+</div>
+<p>④ 「superStrongP@ssword」の部分をパスワードにしたい文字列に置換します。</p>
+<p>⑤ 「developpermissionapi」を右クリックし、「実行」&gt;「Spring Bot アプリケーション」を押下します。</p>
+<img src="../resources/environment/image31.png" style="width:5.90556in;height:5.15972in">
+<p>⑥ 「Javaアプリケーションを選択」で「AuthUtil」を選択し、「OK」を押下します。</p>
+<img src="../resources/environment/image32.png" style="width:3.90663in;height:3.28554in">
+<ol>
+<li>⑦ 「コンソール」に実行結果のハッシュ文字列が出力されるので、コピーして「create_master_data_sheet.xlsx」の「M_行政ユーザ」シートの「password」列のパスワードを設定したいユーザの行に貼り付けます。</li>
+</ol>
+<img src="../resources/environment/image33.png" style="width:5.90556in;height:0.60556in">
+<img src="../resources/environment/image34.png" style="width:5.90556in;height:2.26667in">
+<p>⑧ ④でパスワード文字列を入力した部分を変更して、作成する行政ユーザ分のパスワードを作成します。</p>
+<p>⑨ すべてのパスワードを作成し終えたら、③で追記したコードを削除します。</p>
+<h1 id="地番データ取込">8 地番データ取込</h1>
+<p>本システムで用いる地番・大字のデータについては、GISソフトでフォーマットしたうえで取り込む必要があります。</p>
+<p>属性編集機能とデータベースとの接続機能があれば、GISソフトの種類は不問ですが、本書ではQGISを利用したセットアップ手順を記載します。</p>
+<p class="text_color_red">※大字データを地番データに紐づける必要があるため、大字→地番データの順でセットアップを行ってください。</p>
+<h2 id="大字データの取込">大字データの取込</h2>
+<p>サンプルデータを使用される際は、以下より取得してください。</p>
+<ul>
+<li>サンプルデータを使用される場合は、以下手順の④～⑭は実施不要です。</li>
+</ul>
+<p><strong>サンプルデータ： development-permission/SampleData/f_district 一式</strong></p>
+<ol>
+<li>① QGISを立ち上げ、「新規プロジェクト」を開きます。</li>
+</ol>
+<img src="../resources/environment/image35.png" style="width:5.90556in;height:3.20208in">
+<p>② 大字のシェープファイルをドラッグアンドドロップで取り込みます。</p>
+<p class="text_color_red">※取り込むファイル形式はGISソフトが対応しているベクタデータであれば構いません。</p>
+<p class="text_color_red">※取り込めるシェープファイルのデータ形式はポリゴンになります。</p>
+<p class="text_color_red">※同じ大字で複数のポリゴンが存在する場合、GISソフトの「ディゾルブ」機能を使って大字ごとに一つのレコードに集約してください。</p>
+<img src="../resources/environment/image36.png" style="width:5.90556in;height:3.20903in">
+<p>以下のように、取り込んだシェープファイルがレイヤに追加され、地図上に表示されます。</p>
+<img src="../resources/environment/image37.png" style="width:5.90556in;height:3.20069in">
+<ol>
+<li>③ ファイルを編集するため、別ファイルに保存します。</li>
+</ol>
+<p>レイヤメニューから右クリック &gt; 「エクスポート」 &gt; 「新規ファイルに地物を保存」を押下します。</p>
+<img src="../resources/environment/image38.png" style="width:4.13962in;height:3.16556in">
+<ol>
+<li>④ 以下のようなダイアログが開きます。</li>
+</ol>
+<p>形式は「ESRI Shapefile」を選択し、「ファイル名」横の3点リーダから保存先を選択します。</p>
+<img src="../resources/environment/image39.png" style="width:3.14472in;height:3.87506in">
+<ol>
+<li>⑤ ファイルの座標系を設定します。「座標参照系（CRS）」の右側の地球儀アイコンを押下します。</li>
+</ol>
+<p class="text_color_red">地番と判定レイヤで座標系を合わせておく必要があります。</p>
+<img src="../resources/environment/image39.png" style="width:2.69231in;height:3.31758in">
+<ol>
+<li>⑥ 使用する座標系を選択し、「OK」を押下します。</li>
+</ol>
+<p class="text_color_red">座標系は平面直角座標系から指定してください。</p>
+<p class="text_color_red">平面直角座標系以外の座標系を指定した場合、地番と判定レイヤの重なり判定が正しく動作しません。</p>
+<p class="text_color_red">SRID（下図 EPSG:xxxxのxxxxの部分）はアプリケーション設定で使用するので、控えておいてください。</p>
+<img src="../resources/environment/image40.png" style="width:4.59595in;height:5.21692in">
+<ol>
+<li>⑦ 文字コードは「Shift_JIS」を選択します。</li>
+</ol>
+<img src="../resources/environment/image41.png" style="width:3.16597in;height:3.90907in">
+<ol>
+<li>⑧ 「保存されたファイルを地図に追加する」にチェックを入れ、「OK」を押下します。</li>
+</ol>
+<img src="../resources/environment/image41.png" style="width:3.18368in;height:3.93093in">
+<ol>
+<li>⑨ 本システムで用いる大字データでは、以下の属性フィールドが必要になります。</li>
+</ol>
+<p>GISソフトの編集機能で追加してください。</p>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>フィールド名</th>
+<th>データ型</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>district_id</td>
+<td>character varying(100)</td>
+<td>大字ごとの一意のID</td>
+</tr>
+<tr class="even">
+<td>district_name</td>
+<td>character varying(256)</td>
+<td>大字名</td>
+</tr>
+<tr class="odd">
+<td>district_kana</td>
+<td>character varying(256)</td>
+<td>大字名（かな）</td>
+</tr>
+<tr class="even">
+<td>disp_order</td>
+<td>integer</td>
+<td>表示順</td>
+</tr>
+</tbody>
+</table>
+<p>以下属性フィールドの追加手順を説明します。</p>
+<p>レイヤを右クリックし、メニューから「属性テーブルを開く」をクリックします。</p>
+<img src="../resources/environment/image42.png" style="width:2.43795in;height:2.50996in">
+<ol>
+<li>⑩ 以下の通り属性テーブルが表示されますので、ヘッダ左端のボタンで編集モードへの切り替えを行ってください。</li>
+</ol>
+<img src="../resources/environment/image43.png" style="width:5.90556in;height:1.12847in">
+<ol>
+<li>⑪ 「フィールドを追加」をクリックします。</li>
+</ol>
+<img src="../resources/environment/image44.png" style="width:5.90556in;height:0.54514in">
+<p>※編集モードへの切り替えを行わないとボタンがクリックできません。</p>
+<p>以下の通り「名前」、「データ型」「長さ」を入力し、「OK」を押下します。</p>
+<p class="text_color_red">district_id, district_name, district_kanaはシェープファイルのフィールド名文字数の制約上登録できないため、districtid, disname, diskanaとしてそれぞれ一旦登録し、データベースに取り込んだ後でフィールド名を変更します。</p>
+<p><img src="../resources/environment/image45.png" style="width:2.78164in;height:2.39617in"><img src="../resources/environment/image46.png" style="width:2.78164in;height:2.36491in"></p>
+<p><img src="../resources/environment/image47.png" style="width:2.78164in;height:2.39617in"><img src="../resources/environment/image48.png" style="width:2.77122in;height:2.37533in"></p>
+<ol>
+<li>⑫ 追加したフィールドに値を設定します。</li>
+</ol>
+<p>編集モードであればセルにカーソルを合わせることで編集可能です。</p>
+<p>一括で変更したい場合、フィールド演算機能（【2】地番データの取込の手順㉒参照）が利用可能です。</p>
+<p class="text_color_red">※districtidには、地番テーブルと紐づけるための一意のIDを設定してください。</p>
+<p class="text_color_red">※diskanaには、拗音・濁音なしのふりがなを設定してください。</p>
+<img src="../resources/environment/image49.png" style="width:4.39645in;height:1.82317in">
+<ol>
+<li>⑬ 編集モードを終了し、編集内容を保存してから属性テーブルを閉じます。</li>
+</ol>
+<img src="../resources/environment/image50.png" style="width:5.90556in;height:1.06667in">
+<ol>
+<li>⑭ データベースにデータを取り込みます。</li>
+</ol>
+<p>まずはデータベースの接続情報をQGISに登録します。</p>
+<p>「ブラウザ」ウィンドウから「PostgreSQL」を右クリックし、「新規接続」を押下します。</p>
+<img src="../resources/environment/image51.png" style="width:5.90556in;height:2.59792in">
+<ol>
+<li>⑮ データベースへの接続情報を入力します。</li>
+</ol>
+<p>・名前：任意</p>
+<p>・ホスト：DBサーバのIPアドレス</p>
+<p>・ポート番号：DBのポート番号（デフォルト:5432）</p>
+<p>・データベース：データベース名</p>
+<img src="../resources/environment/image52.png" style="width:2.67235in;height:4.04756in">
+<ol>
+<li>⑯ 「接続テスト」を押下すると、以下のダイアログが開くので、DBに接続するユーザ名とパスワードを入力し、「OK」を押下します。</li>
+</ol>
+<p>元の画面に戻り、接続に成功すると「接続に成功しました」のダイアログが表示されるので、「OK」を押下して接続情報を登録します。</p>
+<img src="../resources/environment/image53.png" style="width:2.37913in;height:1.68543in">
+<ol>
+<li>⑰ ヘッダーメニューから「プラグイン」＞「プラグイン」の管理とインストールを押下します。</li>
+</ol>
+<img src="../resources/environment/image54.png" style="width:5.90556in;height:0.93611in">
+<ol>
+<li>⑱ 「DB」で検索し、DB Managerが未インストールの場合インストールして有効化します。</li>
+</ol>
+<img src="../resources/environment/image55.png" style="width:5.90556in;height:2.61597in">
+<ol>
+<li>⑲ 有効化されると、「データベース」&gt; 「DBマネージャ」を開くことができるので開きます。</li>
+</ol>
+<img src="../resources/environment/image56.png" style="width:5.90556in;height:0.67847in">
+<ol>
+<li>⑳ 以下の通りウィンドウが開くので、「PostGIS」を展開します。</li>
+</ol>
+<p>先ほど追加した接続が表示されるので、右クリックします。</p>
+<img src="../resources/environment/image57.png" style="width:5.15895in;height:4.03422in">
+<p>㉑ ユーザ名とパスワードを入力し、OKを押下します。</p>
+<img src="../resources/environment/image53.png" style="width:2.37913in;height:1.68543in">
+<p>㉒ DBマネージャーから「レイヤ/ファイルのインポート」を押下します。</p>
+<img src="../resources/environment/image58.png" style="width:4.20892in;height:0.90638in">
+<p>㉓ 以下のダイアログが表示されます。</p>
+<p>「入力」で編集後のレイヤを選択します。</p>
+<p>「スキーマ」は「public」を指定します。</p>
+<p>「テーブル」には「f_district」を入力します。</p>
+<p>主キーは「districtid」を指定します。</p>
+<p class="text_color_red">「空間インデックスを作成」にはチェックを外します。</p>
+<img src="../resources/environment/image59.png" style="width:3.41011in;height:4.18307in">
+<p>㉔ 「OK」を押下すると、インポートが開始します。</p>
+<p>インポートが完了すると、「インポートは成功しました」のダイアログが表示されます。</p>
+<img src="../resources/environment/image60.png" style="width:2.13741in;height:2.65499in">
+<p>㉕ SQLクライアントツールから、以下SQLを実行してカラム名を変更します。</p>
+<div class="box">
+<p>ALTER TABLE f_district RENAME COLUMN districtid to district_id;</p>
+<p>ALTER TABLE f_district RENAME COLUMN disname to district_name;</p>
+<p>ALTER TABLE f_district RENAME COLUMN diskana to district_kana;</p>
+</div>
+<p>㉖ 続いて以下SQLを実行してカラムを追加します。</p>
+<div class="box">
+<p>ALTER TABLE f_district</p>
+<p>ADD result_column1 VARCHAR(256),</p>
+<p>ADD result_column2 VARCHAR(256),</p>
+<p>ADD result_column3 VARCHAR(256),</p>
+<p>ADD result_column4 VARCHAR(256),</p>
+<p>ADD result_column5 VARCHAR(256)</p>
+</div>
+<p>㉗ 地番検索結果テーブルで表示するカラムに値をセットしてください。</p>
+<p>例）町丁目名をテーブルに表示したい場合</p>
+<p>UPDATE f_district SET result_column1=district_name;</p>
+<p>※7.マスタデータ取込【8】地番検索結果定義 と合わせてカラムの内容を設定してください。</p>
+<h2 id="地番データの取込">地番データの取込</h2>
+<p>サンプルデータを使用される際は、以下より取得してください。</p>
+<p>※サンプルデータを使用される場合は、以下手順の③～⑭は実施不要です。</p>
+<p><strong>サンプルデータ： development-permission/SampleData/f_lot_number 一式</strong></p>
+<ol>
+<li>① QGISを立ち上げ、「新規プロジェクト」を開きます。</li>
+</ol>
+<img src="../resources/environment/image35.png" style="width:4.38008in;height:2.37494in">
+<ol>
+<li>② 地番のシェープファイルをドラッグアンドドロップで取り込みます。</li>
+</ol>
+<p class="text_color_red">※取り込むファイル形式はGISソフトが対応しているベクタデータであれば構いません。</p>
+<p class="text_color_red">※取り込めるシェープファイルのデータ形式はポリゴンになります。</p>
+<p class="text_color_red">※同じ地番で複数のポリゴンが存在する場合、GISソフトの「ディゾルブ」機能を使って地番ごとに一つのレコードに集約してください。</p>
+<img src="../resources/environment/image36.png" style="width:5.90556in;height:3.20903in">
+<p>以下のように、取り込んだシェープファイルがレイヤに追加され、地図上に表示されます。</p>
+<img src="../resources/environment/image61.png" style="width:5.90556in;height:3.19861in">
+<ol>
+<li>③ ファイルを編集するため、別ファイルに保存します。</li>
+</ol>
+<p>レイヤメニューから右クリック &gt; 「エクスポート」 &gt; 「新規ファイルに地物を保存」を押下します。</p>
+<img src="../resources/environment/image62.png" style="width:5.90556in;height:4.49375in">
+<ol>
+<li>④ 以下のようなダイアログが開きます。</li>
+</ol>
+<p>形式は「ESRI Shapefile」を選択し、「ファイル名」横の3点リーダから保存先を選択します。</p>
+<img src="../resources/environment/image39.png" style="width:3.14472in;height:3.87506in">
+<ol>
+<li>⑤ ファイルの座標系を設定します。「座標参照系（CRS）」の右側の地球儀アイコンを押下します。</li>
+</ol>
+<p class="text_color_red">地番と判定レイヤで座標系を合わせておく必要があります。</p>
+<img src="../resources/environment/image39.png" style="width:2.69231in;height:3.31758in">
+<ol>
+<li>⑥ 使用する座標系を選択し、「OK」を押下します。</li>
+</ol>
+<p class="text_color_red">座標系は平面直角座標系から指定してください。</p>
+<p class="text_color_red">平面直角座標系以外の座標系を指定した場合、地番と判定レイヤの重なり判定が正しく動作しません。</p>
+<p class="text_color_red">SRID（下図 EPSG:xxxxのxxxxの部分）はアプリケーション設定で使用するので、控えておいてください。</p>
+<img src="../resources/environment/image40.png" style="width:4.59595in;height:5.21692in">
+<ol>
+<li>⑦ 文字コードは「Shift_JIS」を選択します。</li>
+</ol>
+<img src="../resources/environment/image41.png" style="width:3.7952in;height:4.68598in">
+<ol>
+<li>⑧ 「保存されたファイルを地図に追加する」にチェックを入れ、「OK」を押下します。</li>
+</ol>
+<img src="../resources/environment/image41.png" style="width:3.1631in;height:3.90553in">
+<ol>
+<li>⑨ 本システムで用いる地番データでは、以下の属性フィールドが必要になります。</li>
+</ol>
+<p>GISソフトの編集機能で追加してください。</p>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>フィールド名</th>
+<th>データ型</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>chiban_id</td>
+<td>integer</td>
+<td>地番ごとの一意のID</td>
+</tr>
+<tr class="even">
+<td>district_id</td>
+<td>character varying(100)</td>
+<td><p>大字ごとの一意のID</p>
+<p>大字データと連動しており、地番が所属する大字のIDを設定する</p></td>
+</tr>
+<tr class="odd">
+<td>chiban</td>
+<td>character varying(100)</td>
+<td>地番</td>
+</tr>
+</tbody>
+</table>
+<p>以下属性フィールドの追加手順を説明します。</p>
+<p>レイヤを右クリックし、メニューから「属性テーブルを開く」をクリックします。</p>
+<img src="../resources/environment/image63.png" style="width:2.23447in;height:2.95706in">
+<ol>
+<li>⑩ 以下の通り属性テーブルが表示されますので、ヘッダ左端のボタンで編集モードへの切り替えを行ってください。</li>
+</ol>
+<img src="../resources/environment/image64.png" style="width:5.90556in;height:3.34375in">
+<ol>
+<li>⑪ 「フィールドを追加」のアイコンをクリックします。</li>
+</ol>
+<img src="../resources/environment/image44.png" style="width:5.90556in;height:0.54514in">
+<p>※編集モードへの切り替えを行わないとボタンがクリックできません。</p>
+<p>以下の通り「名前」、「データ型」「長さ」を入力し、「OK」を押下します。</p>
+<img src="../resources/environment/image65.png" style="width:2.78164in;height:2.42742in">
+<p>同様に、以下の通り入力し、OKを押下します。</p>
+<p class="text_color_red">district_id はシェープファイルのフィールド名文字数の制約上登録できないため、districtidとして一旦登録し、データベースに取り込んだ後でフィールド名を変更します。</p>
+<img src="../resources/environment/image66.png" style="width:2.77122in;height:2.417in">
+<img src="../resources/environment/image67.png" style="width:2.73997in;height:2.37533in">
+<ol>
+<li>⑫ フィールド演算機能を利用して、追加したカラムにデータをセットします。</li>
+</ol>
+<img src="../resources/environment/image68.png" style="width:5.90556in;height:0.68264in">
+<p>編集対象のカラムを選択します。</p>
+<p>ここでは、chiban_idを選択します。</p>
+<img src="../resources/environment/image69.png" style="width:5.90556in;height:1.62708in">
+<p>「ε」ボタンを押下します。</p>
+<img src="../resources/environment/image70.png" style="width:5.90556in;height:0.32153in">
+<p>以下のようなダイアログが開きます。</p>
+<p>chiban_idに対しては一意のIDを設定します。</p>
+<p>「レコードと属性」から「$id」を選択し、「OK」を押下します。</p>
+<img src="../resources/environment/image71.png" style="width:5.90556in;height:3.84236in">
+<p>「すべて更新」を選択します。</p>
+<img src="../resources/environment/image72.png" style="width:5.90556in;height:0.36389in">
+<ol>
+<li>⑬ chibanとdistrictidについても、フィールド演算機能を使ってデータをセットします。</li>
+</ol>
+<p>実際に使用される元データから値をセットしてください。</p>
+<p class="text_color_red">※districtidに利用できるIDフィールドを予め元データに含めておくことを推奨します。</p>
+<p>⑭ 編集モードを終了し、編集内容を保存してから属性テーブルを閉じます。</p>
+<img src="../resources/environment/image73.png" style="width:5.90556in;height:3.36806in">
+<ol>
+<li>⑮ 続いてデータベースにデータを取り込みます。</li>
+</ol>
+<p>※データベースの接続手順は 前節【1】大字データの取込 を参照してください。</p>
+<p>DBマネージャーから「レイヤ/ファイルのインポート」を押下します。</p>
+<p>「入力」で編集後のレイヤを選択します。</p>
+<p>「スキーマ」は「public」を指定します。</p>
+<p>「テーブル」には「f_lot_number」を入力します。</p>
+<p>「空間インデックスを作成」にチェックを入れます。</p>
+<img src="../resources/environment/image74.png" style="width:3.70355in;height:4.59206in">
+<ol>
+<li>⑯ 「OK」を押下すると、データベースへの取込が開始されます。</li>
+</ol>
+<p>※データ件数が多い場合、取込に時間がかかることがあります。</p>
+<img src="../resources/environment/image74.png" style="width:2.84154in;height:3.52326in">
+<ol>
+<li>⑰ データ取込後、SQLクライアントツールから以下のSQLを実行してフィールド名を変更します。</li>
+</ol>
+<div class="box">
+  <p>ALTER TABLE f_lot_number rename column districtid to district_id;</p>
+</div>
+<p>⑱  続いて以下SQLを実行してカラムを追加します。</p>
+<div class="box">
+  <p>ALTER TABLE f_lot_number</p>
+  <p>ADD result_column1 VARCHAR(256),</p>
+  <p>ADD result_column2 VARCHAR(256),</p>
+  <p>ADD result_column3 VARCHAR(256),</p>
+  <p>ADD result_column4 VARCHAR(256),</p>
+  <p>ADD result_column5 VARCHAR(256)</p>  
+</div>
+<p>⑲ 地番検索結果テーブルで表示するカラムに値をセットしてください。</p>
+<p>例）地番をテーブルに表示したい場合</p>
+<div class="box">
+  <p>UPDATE f_lot_number SET result_column1=chiban</p>
+</div>
+<p>※7.マスタデータ取込【8】地番検索結果定義 と合わせてカラムの内容を設定してください。</p>
+<h1 id="判定レイヤ取込">9 判定レイヤ取込</h1>
+<p>判定レイヤは、地番との重なり判定で使用するレイヤになります。</p>
+<p>判定レイヤごとに、PostgreSQLにテーブルを作成します。</p>
+<p>判定レイヤを作成する際は以下に注意してください。</p>
+<ol>
+<li>① 座標系について</li>
+</ol>
+<p>レイヤの座標系は、地番テーブルと統一してください。</p>
+<p>また、座標系は平面直角座標系としてください。</p>
+<p>平面直角座標系以外だと、重なり判定が実施できません。</p>
+<ol>
+<li>② フィールド名について</li>
+</ol>
+<p>以下フィールドを含むようにしてください。</p>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>フィールド名</th>
+<th>データ型</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ogc_fid</td>
+<td>serial</td>
+<td>一意のID</td>
+</tr>
+<tr class="even">
+<td>wkb_geometry</td>
+<td>geometry</td>
+<td>ジオメトリ</td>
+</tr>
+</tbody>
+</table>
+<p>重なっている地点の属性を表示したい場合、表示用のフィールドを用意してください。</p>
+<p>フィールド名に指定はありません。</p>
+<ol>
+<li>③ 空間インデックス</li>
+</ol>
+<p>概況診断実行時のパフォーマンス向上のため、空間インデックスを設定してください。</p>
+<h2 id="1判定データ取込">【1】判定データ取込</h2>
+<p>以下、サンプルデータ（SHP形式）をQGISで判定レイヤとして取り込む手順を記載します。</p>
+<p><strong>必要リソース： development-permission/SampleData/judgement_layers/ 一式</strong></p>
+<p>用意しているサンプルデータは下表の通りです。</p>
+<table>
+<colgroup>
+<col style="width: 14%">
+<col style="width: 17%">
+<col style="width: 13%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>データ</th>
+<th>テーブル名</th>
+<th><p>座標系</p>
+<p>（EPSG）</p></th>
+<th>ディレクトリ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>用途地域</td>
+<td>use_districts</td>
+<td>2450</td>
+<td><p><strong>development-permission/SampleData/judgement_layers/use_districts/</strong></p></td>
+</tr>
+<tr class="even">
+<td>農用地地域</td>
+<td>agricultural_land</td>
+<td>2450</td>
+<td><strong>development-permission/SampleData/judgement_layers/agricultural_land/</strong></td>
+</tr>
+<tr class="odd">
+  <td>都市計画区域</td>
+  <td>city_planning</td>
+  <td>2450</td>
+  <td><strong>development-permission/SampleData/judgement_layers/city_planning/</strong></td>
+</tr>
+<tr class="even">
+<td>埋蔵文化財法蔵地域</td>
+<td>buried_cultural_property</td>
+<td>2450</td>
+<td><strong>development-permission/SampleData/judgement_layers/buried_cultural_property/</strong></td>
+</tr>
+<tr class="odd">
+  <td>浸水想定区域</td>
+  <td>flood_assumption</td>
+  <td>2450</td>
+  <td><strong>development-permission/SampleData/judgement_layers/ flood_assumption/</strong></td>
+</tr>
+</tbody>
+</table>
+<p>以下一例として、用途地域データの取込手順を記載します。</p>
+<p>他のデータについても同様の手順で取込を実施してください。</p>
+<ol>
+<li>①	development-permission/SampleData/judgement_layers/use_districts/　以下のファイル一式（下記）をダウンロードします。</li>
+</ol>
+<p>・use_districts.cpg</p>
+<p>・use_districts.dbf</p>
+<p>・use_districts.prj</p>
+<p>・use_districts.shp</p>
+<p>・use_districts.shx</p>
+<ol>
+<li>QGISを立ち上げ、「新規プロジェクト」を開きます。</li>
+</ol>
+<img src="../resources/environment/image75.png" style="width:5.08955in;height:2.75305in">
+<ol>
+<li>「use_districts.shp」をドラッグアンドドロップでQGISに取り込みます。</li>
+</ol>
+<img src="../resources/environment/image76.png" style="width:3.58021in;height:0.82011in">
+<p>以下のダイアログメッセージが表示される場合、「OK」を押下します。</p>
+<img src="../resources/environment/image77.png" style="width:2.83017in;height:2.06405in">
+<img src="../resources/environment/image78.png" style="width:4.19213in;height:2.26811in">
+<ol>
+<li>「データベース」&gt;「DBマネージャ」を開きます。</li>
+</ol>
+<img src="../resources/environment/image79.png" style="width:5.90556in;height:0.45556in">
+<ol>
+<li>「PostGIS」から第8章「地番データ取込」で追加した接続を開きます。</li>
+</ol>
+<img src="../resources/environment/image57.png" style="width:5.15895in;height:4.03422in">
+<ol>
+<li>「レイヤ/ファイルのインポート」を押下します。</li>
+</ol>
+<img src="../resources/environment/image80.png" style="width:4.32295in;height:1.58501in">
+<ol>
+<li>入力（Input）でドラッグアンドドロップしたレイヤを選択します。</li>
+</ol>
+<p>スキーマはpublic、テーブルは先述のサンプルデータ一覧に記載のテーブル名とします。</p>
+<p>オプションを設定します。</p>
+<p>「主キー」にチェックを入れ、「ogc_fid」とします。</p>
+<p>「ジオメトリのカラム」にチェックを入れ、「wkb_geometry」とします。</p>
+<p>SRIDが平面直角座標系でない場合、「変換後SRID」にチェックを入れ平面直角座標系の座標系を指定します。</p>
+<p>※サンプルデータの場合、SRIDの変換は不要です。</p>
+<p>「空間インデックスを作成」にチェックを入れます。</p>
+<img src="../resources/environment/image81.png" style="width:3.67281in;height:4.51788in">
+<ol>
+<li>「OK」を押下します。データベースへのインポートが行われます。</li>
+</ol>
+<p>完了すると、「インポートは成功しました」のダイアログメッセージが表示されます。</p>
+<img src="../resources/environment/image82.png" style="width:2.85522in;height:3.51996in">
+<br><br>
+<p>※参考</p>
+<p>一例としてCityGMLの判定データの取込について記載します。</p>
+<ol>
+<li>① FZKViewerをダウンロードし、PCへインストールします。</li>
+</ol>
+<p><a href="https://www.iai.kit.edu/english/1648.php">https://www.iai.kit.edu/english/1648.php</a></p>
+<ol>
+<li>② FZKViewerを起動し、GMLファイルをドラッグアンドドロップし、ファイルを読み込みます。</li>
+</ol>
+<img src="../resources/environment/image83.png" style="width:5.6079in;height:2.93122in">
+<ol>
+<li>③ 「File」-「Export」-「Google Earth」を選択し、読み込んだデータをKML形式で出力します。</li>
+</ol>
+<img src="../resources/environment/image84.png" style="width:5.89583in;height:3.11667in">
+<ol>
+<li><p>④ QGISを起動し、KMLファイルを読み込むためプラグイン「KML Tools」をインストールします。「プラグインの管理とインストール」画面を開き、「KML Tools」を検索し、インストールします。</p>
+</li>
+<img src="../resources/environment/image186.png">
+<li><p>⑤ 「KML Tools」をインストール後、「KML＋」ボタンをクリックします。</p>
+</li>
+</ol>
+<img src="../resources/environment/image85.png" style="width:5.90556in;height:3.32639in">
+<ol>
+<li>⑥ KMLファイルを指定して読み込みます。</li>
+</ol>
+<img src="../resources/environment/image86.png" style="width:5.90556in;height:4.80694in">
+<ol>
+<li>⑦ 読み込んだレイヤを選択し、右クリックメニュー「エクスポート」―「新規ファイルに地物を保存」選択します。</li>
+</ol>
+<img src="../resources/environment/image87.png" style="width:5.90278in;height:3.67361in">
+<ol>
+<li>⑧ 以下のダイアログが開きます。</li>
+</ol>
+<p>「形式」に「PostgreSQL SQL dump」を選択、「座標参照系」を平面直角座標系で設定し、「OK」ボタンで保存します。</p>
+<img src="../resources/environment/image88.png" style="width:3.35491in;height:3.75534in">
+<ol>
+<li><p>⑨ PostgreSQLへデータ登録するためのSQLファイルが保存されます。</p>
+</li>
+<li><p>⑩ 本書6.テーブル作成（PostgreSQL）と同様に、A5:SQL Mk-2を使用してテーブルを作成します。</p>
+</li>
+<li><p>⑪ 作成したテーブルに④で作成したSQLファイルに記載されているSQLを実行し、データを登録します。</p>
+</li>
+</ol>
+<h1 id="航空写真建物データ配置">10 航空写真・建物データ配置</h1>
+<p>本システムで使用する、航空写真や建物データの配置手順を記載します。</p>
+<p class="text_color_red">※航空写真はデフォルトでは国土地理院のタイル「全国最新写真（シームレス）」を使用しています。独自に用意した航空写真を設定されたい場合、本章の手順を実施してください。</p>
+<h2 id="1ファイルサーバ連携設定">【1】ファイルサーバ連携設定</h2>
+<p>航空写真や建物データは、ファイルサーバ上に配置し、webサーバとして配信する設定を行います。</p>
+<p class="text_color_red">※ファイルサーバの構築手順は本書の対象外とします。</p>
+<p class="text_color_red">※Webサーバでファイルサーバがマウントされている前提で以下は記載します。</p>
+<p class="text_color_red">※Webサーバは第5章「稼働環境構築（MW,SW）」で構築したApacheを使用します。左記のApacheがインストールされているサーバからファイルサーバをマウントできない場合、別途Webサーバを構築します。</p>
+<ol>
+<li>① 第5章「稼働環境構築（MW,SW）」で構築したWebサーバに接続し、Apacheのhttpd.confを開きます。</li>
+</ol>
+<p class="bg_black">vi /etc/httpd/conf/httpd.conf</p>
+<ol>
+<li>② ドキュメントルートを確認します。</li>
+</ol>
+<p>以下の「var/www/html」がドキュメントルートになります。</p>
+<p class="box">DocumentRoot “/var/www/html”</p>
+<ol>
+<li>③ ドキュメントルートからファイルサーバのマウントルートパスにシンボリックリンクを設定します。</li>
+</ol>
+<p class="bg_black">ln -s [②のドキュメントルート]/gis [ファイルサーバのマウントルートパス]</p>
+<ol>
+<li>④ ディレクトリの所有権およびパーミッションを変更してください。</li>
+</ol>
+<div class="bg_black">
+  cd [②のドキュメントルート]<br>
+  chown -hR apache:apache ./gis<br>
+  chmod -c -R 755 ./gis
+</div>
+<h2 id="2航空写真データの配置">【2】航空写真データの配置</h2>
+<p>航空写真はXYZタイル形式となっている必要があります。</p>
+<p>本システムでは以下の形式に対応しています。</p>
+<p>・{ズームレベル}/{タイル座標のx値 }/{タイル座標のy値 }.jpg</p>
+<p>・{ズームレベル}/{タイル座標のx値 }/{タイル座標のy値 }.png</p>
+<p>・{ズームレベル}/{タイル座標のy値 }/{タイル座標のx値 }.jpg</p>
+<p>・{ズームレベル}/{タイル座標のy値 }/{タイル座標のx値 }.png</p>
+<p>以下「{ズームレベル}/{タイル座標のx値 }/{タイル座標のy値 }.png　」形式の航空写真の配置手順を記載します。フォルダ構造が異なる場合、適宜読み替えてください。</p>
+<p>※タイルデータの作成手順は本書の対象外とします。</p>
+<ol>
+<li>① 以下のフォルダ構成となるように、航空写真データをファイルサーバにコピーします。</li>
+</ol>
+<p>※zip化されている場合、解凍して配置します。</p>
+<img src="../resources/environment/image89.png" style="width:5.20542in;height:3.40764in">
+<ol>
+<li>② ブラウザで以下URLにアクセスし、写真が表示できることを確認してください。</li>
+</ol>
+<p>※{ }部分は実際に格納したファイル名を入れてください。</p>
+<p class="box">http://[WebサーバのIPアドレス]/photo/{ズームレベル}/{タイル座標のx値}/{タイル座標のy値}.png</p>
+<p class="text_color_red">※表示できない場合、ファイルアクセス権の設定を見直してください。</p>
+<h2 id="建物データの配置">【3】建物データの配置</h2>
+<p> class="text_color_red"※建物データの配置は必須ではありません。</p>
+<ol>
+<li><p>① 3DTiles形式の建物データを入手します。</p>
+</li>
+<li><p>② データを解凍し、以下のフォルダ構成でファイルサーバに格納します。</p>
+</li>
+</ol>
+<p>※複数の建物データを用いる場合、構成は適宜変更してください。</p>
+<img src="../resources/environment/image90.png" style="width:3.80193in;height:2.2166in">
+<ol>
+<li>③ ブラウザで以下URLにアクセスし、以下のようなJSONファイルが表示できることを確認してください。</li>
+</ol>
+<p class="box">http://[WebサーバのIPアドレス]/building/tileset.json</p>
+<p class="text_color_red">※表示できない場合、ファイルアクセス権の設定を見直してください。</p>
+<img src="../resources/environment/image91.png" style="width:5.05925in;height:6.28301in">
+<h1 id="ランドマークデータ作成">11 ランドマークデータ作成</h1>
+<p>本システムでは、下図のようにランドマークを地図上に表示することで、地番の選択等の3Dビューワ画面での操作性を向上させることができます。</p>
+<p>本章では、ランドマーク表示に使用するCZMLファイルの作成・配置手順を説明します。</p>
+<img src="../resources/environment/image92.png" style="width:1.80357in;height:1.97399in">
+<h2 id="1ランドマークのポイントデータの準備">【1】ランドマークのポイントデータの準備</h2>
+<p>サンプルデータを使用される場合、<strong>development-permission/SampleData/landmark</strong> 以下のファイル一式を取得してください。</p>
+<p>※作業PC上にて行う</p>
+<p>① QGISを起動します。</p>
+<img src="../resources/environment/image93.png" style="width:4.48782in;height:2.42862in">
+<ol>
+<li>② ランドマークのポイントデータを作成し、QGISに取り込みます。</li>
+</ol>
+<p>サンプルデータを使用される場合：</p>
+<p><strong>development-permission/SampleData/landmark/landmark.shp</strong></p>
+<img src="../resources/environment/image94.png" style="width:5.02007in;height:2.71311in">
+<p>ポイントデータを作成する際、以下の2種類の属性フィールドを設定してください。</p>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>フィールド名</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>name</td>
+<td><p>ランドマークの名称.</p>
+<p>ラベルとして表示.</p></td>
+</tr>
+<tr class="even">
+<td>kind</td>
+<td><p>ランドマークのカテゴリ.</p>
+<p>ランドマークの色分け表示に使用.</p></td>
+</tr>
+</tbody>
+</table>
+<img src="../resources/environment/image95.png" style="width:2.49539in;height:1.1108in">
+<p>③ ポイントデータをGeoJSON形式にエクスポートします。</p>
+<p>レイヤを右クリックし、メニューから「エクスポート」&gt;「新規ファイルに地物を保存」を押下します。</p>
+<img src="../resources/environment/image96.png" style="width:3.18737in;height:2.39053in">
+<p>④ 形式で「GeoJSON」を選択します。</p>
+<img src="../resources/environment/image97.png" style="width:3.30603in;height:4.06723in">
+<p>⑤ 「ファイル名」右の「…」から保存先とファイル名を指定します。</p>
+<p>座標参照系で「EPSG:4326 –WGS84」を選択します。</p>
+<img src="../resources/environment/image98.png" style="width:5.90556in;height:1.31806in">
+<p>⑥ 「OK」を押下します。</p>
+<img src="../resources/environment/image99.png" style="width:3.04483in;height:3.75448in">
+<h2 id="2python3x-実行環境の準備">【2】Python3.x 実行環境の準備</h2>
+<p>※作業PC上にて行う</p>
+<p>Python3.xの実行環境を準備します。</p>
+<p>実行環境に指定はありませんが、本書では実行環境としてAnacondaを使用します。</p>
+<p>① 以下からAnacondaをインストールします。</p>
+<p><a href="https://www.anaconda.com/products/distribution">https://www.anaconda.com/products/distribution</a></p>
+<p>Anacondaインストール手順の参考サイト：</p>
+<p><a href="https://www.python.jp/install/anaconda/windows/install.html">https://www.python.jp/install/anaconda/windows/install.html</a></p>
+<p>② インストールが完了するとスタートメニューに「Anaconda3(64-bit)」が追加されます。</p>
+<p>「Anaconda3(64-bit)」&gt; 「Anaconda Prompt(anaconda3)」を立ち上げます。</p>
+<img src="../resources/environment/image100.png" style="width:4.35673in;height:2.47858in">
+<p>③ Anaconda Promptが開きます。</p>
+<img src="../resources/environment/image101.png" style="width:5.90556in;height:3.09583in">
+<p>④ 以下コマンドを入力し仮想環境を作成します。</p>
+<p class="bg_black">conda create -n landmark-env python=3.9</p>
+<p>※ landmark-envの箇所は任意の環境名</p>
+<p>作成中に以下の通り確認されるので、「y」を入力します。</p>
+<img src="../resources/environment/image102.png" style="width:1.50193in;height:0.46071in">
+<p>⑤ 以下コマンドを入力し仮想環境を有効化します。</p>
+<p class="bg_black">conda activate landmark-env</p>
+<p>環境が以下のように(base)から(landmark-env)に切り替わっていることを確認します。</p>
+<img src="../resources/environment/image103.png" style="width:3.3835in;height:0.62816in">
+<p>⑥ 以下コマンドを入力し、外部ライブラリをインストールします。</p>
+<p class="bg_black">pip install Pillow</p>
+<h2 id="3generate_landmark_billboardpyの設定変更">【3】generate_landmark_billboard.pyの設定変更</h2>
+<p>※作業PC上にて行う</p>
+<p>① 以下からgenerate_landmark_billboard.pyを取得します。</p>
+<p><strong>取得元:</strong></p>
+<p><strong>development-permission/Settings/environment_settings/generate_landmark_billboard.py</strong></p>
+<p>② 作業ディレクトリを作成し、「generate_landmark_billboard.py」と、【1】で作成したGeoJSONファイルを格納します。</p>
+<ol>
+<li>③ generate_landmark_billboard.pyをエディタで開きます。</li>
+</ol>
+<p>④ generate_landmark_billboard.pyの12行目から20行目を編集します。</p>
+<p>【1】で作成した属性フィールド「kind」の属性フィールド値の種類ごとに色分けを設定します。</p>
+<p>色は0-255のRGB値で設定してください。</p>
+<p>参考ページ：</p>
+<p><a href="https://www.lab-nemoto.jp/www/leaflet_edu/else/ColorMaker.html">https://www.lab-nemoto.jp/www/leaflet_edu/else/ColorMaker.html</a></p>
+<p>カテゴリを増やす場合、color_define = [　] の中に要素を追加・削除します。</p>
+<img src="../resources/environment/image184.png">
+<p>※color_defineを設定しなかった場合、デフォルトで以下の色に設定されます。</p>
+<img src="../resources/environment/image104.png" style="width:0.69801in;height:0.26045in">
+<p>⑤ generate_landmark_billboard.pyの189行目から204行目を編集します。</p>
+<img class="no_border" src="../resources/environment/image185.png">
+<h2 id="4generate_landmark_billboardpyの実行">【4】generate_landmark_billboard.pyの実行</h2>
+<p>※作業PC上にて行う</p>
+<p>① 作業ディレクトリ上に「billboard_image」フォルダを作成します。</p>
+<p>② 作業ディレクトリ上に「landmark.czml」が存在する場合、ほかの場所に退避させます。</p>
+<p>③ 作業ディレクトリが以下の構成になっていることを確認してください。</p>
+<p>・「billboard_image」フォルダ</p>
+<p>・landmark.geojson</p>
+<p>・generate_landmark_billbboard.py</p>
+<img src="../resources/environment/image105.png" style="width:5.90556in;height:1.24444in">
+<p>④ Anaconda promptを開き、作業ディレクトリに移動します。</p>
+<p class="bg_black">cd 作業ディレクトリ</p>
+<p>⑤ 以下コマンドでpythonファイルを実行します。</p>
+<p class="bg_black">python generate_landmark_billboard.py</p>
+<p>⑥ エラーが表示されることなく、以下の通り終了しているかどうか確認します。</p>
+<img src="../resources/environment/image106.png" style="width:2.26982in;height:3.20977in">
+<p>⑦ 作業ディレクトリにlandmark.czmlが生成されていることを確認します。</p>
+<img src="../resources/environment/image107.png" style="width:5.90556in;height:1.41319in">
+<p>⑧ landmark.czmlをテキストエディタやメモ帳で開き、中身が生成されていることを確認します。</p>
+<img src="../resources/environment/image108.png" style="width:3.5674in;height:3.46756in">
+<p>⑨ billboard_imageフォルダの下に画像が作成されていることを確認します。</p>
+<img src="../resources/environment/image109.png" style="width:4.13199in;height:2.41033in">
+<p>⑩ 画像を開いた時に以下のようにランドマーク名が表示できていればOKです。</p>
+<img src="../resources/environment/image110.png" style="width:1.34911in;height:1.27651in">
+<h2 id="5生成ファイル一式の配置">【5】生成ファイル一式の配置</h2>
+<p>①ファイルサーバに「landmark」ディレクトリを作成します。</p>
+<p>②「landmark」ディレクトリに【4】で生成したlandmark.czmlとbillboard_imageフォルダを配置します。</p>
+<p>③以下でアクセスできることを確認します。</p>
+<p class="box">http://[WebサーバのIPアドレス]/landmark/landmark.czml</p>
+<h1 id="アタッチメントデータ配置">12 アタッチメントデータ配置</h1>
+<p>本システムでは、判定レイヤの各地物にアタッチメントデータを紐づけることで、画面上で判定レイヤ上の地物をクリックした際に表示される属性情報欄にファイルやファイルへのリンクを表示することができます。</p>
+<p>本章では、アタッチメントデータの配置方法を説明します。</p>
+<p>以下の手順でデータを配置した後で、次章「GeoServerレイヤ作成」の手順でレイヤを公開してください。</p>
+<h2 id="1アタッチメントデータアタッチメントレイヤの用意">【1】アタッチメントデータ、アタッチメントレイヤの用意</h2>
+<p>レイヤとアタッチメントデータの対応関係は下図の通り、レイヤの属性情報からアタッチメントとの対応関係が照合できるようにします。</p>
+<img src="../resources/environment/image111.png" style="width:5.90556in;height:2.90625in">
+<h2 id="2アタッチメントレイヤの登録">【2】アタッチメントレイヤの登録</h2>
+<p>第9章の「判定レイヤ取込手順」と同様の手順で、アタッチメントレイヤを登録します。</p>
+<p>詳細な手順は第9章を参照してください。</p>
+<h2 id="3アタッチメントデータの格納">【3】アタッチメントデータの格納</h2>
+<p>アタッチメントデータの格納先はWeb/DBサーバになります。</p>
+<ol>
+<li>① Web/DBサーバにssh接続します。</p>
+</li>
+<li><p>② Spring Boot のapplication.propertiesで設定している場所</p>
+</li>
+</ol>
+<p>（app.file.service.rootpath）にアタッチメントデータを配置します。</p>
+<p>※仮に、「attachement」フォルダの中にアタッチメントデータを格納した状態で配置する場合の手順を記載します。</p>
+<div class="bg_black">
+  <p>mkdir /mnt/s3/application/</p>
+  <p>mv attachment /mnt/s3/application/</p>
+  <p class="text_color_red">※「/mnt/s3/application/」 はapp.file.service.rootpathで設定している場所</p>
+</div>
+<p>※Spring Boot のapplication.propertiesの設定手順は第15章「アプリケーションデプロイ」を参照してください。</p>
+<p>③ パーミッションの確認及び変更を行います。</p>
+<p class="bg_black">cd /mnt/s3</p>
+<p>ディレクトリの所有権及びパーミッションを変更してください。</p>
+<p class="bg_black">chown -hR tomcat:tomcat ./application</p>
+<p>chmod -c -R 755 ./application</p>
+<h1 id="geoserverレイヤ作成">13 GeoServerレイヤ作成</h1>
+<p>本システムの3Dビューワ画面上に表示する地番レイヤや判定対象レイヤを設定します。</p>
+<h2 id="1ワークスペースとストアを登録する">【1】ワークスペースとストアを登録する</h2>
+<ol>
+<li>① 以下URLから、GeoServerにログインします。</li>
+</ol>
+<p>初期IDとパスワードは admin/geoserver になります。</p>
+<p class="text_color_red">※セキュリティの観点から、初期パスワードは初回ログイン後に変更してください。</p>
+<div class="box">
+  <p>http://[webサーバのIPアドレス]:8080/geoserver</p>
+</div>
+<img src="../resources/environment/image112.png" style="width:5.94796in;height:1.94792in">
+<ol>
+<li>② メニューバーから「ワークスペース」を選択します。</li>
+</ol>
+<img src="../resources/environment/image113.png" style="width:5.45035in;height:3.11806in">
+<ol>
+<li>③ 登録済みのワークスペース一覧が開きます。「新規ワークスペース追加」を選択します。</li>
+</ol>
+<img src="../resources/environment/image114.png" style="width:5.47441in;height:3.26958in">
+<ol>
+<li>④ Name. ネームスペースURIに任意の名前を入力し、「保存」を押します。</li>
+</ol>
+<p class="text_color_red">※サンプルデータを使用される際はワークスペース名を「devps」としてください。</p>
+<img src="../resources/environment/image115.png" style="width:3.67394in;height:2.77817in">
+<p class="text_color_red">※登録したワークスペース名は以降のレイヤ設定や、第18章「アプリケーション設定ファイル更新」の設定ファイル更新でも使用します。</p>
+<ol>
+<li>⑤ メニューバーから「ストア」を選択します。</li>
+</ol>
+<img src="../resources/environment/image113.png" style="width:5.5625in;height:3.18222in">
+<ol>
+<li>⑥ 登録済みのストア一覧が開きます。「ストア新規追加」を押下します。</li>
+</ol>
+<img src="../resources/environment/image116.png" style="width:5.43834in;height:1.99013in">
+<ol>
+<li>⑦ 新規データソースから、「PostGIS」を選択します。</li>
+</ol>
+<img src="../resources/environment/image117.png" style="width:4.97847in;height:2.68535in">
+<ol>
+<li>⑧ ワークスペースで、④で作成したワークスペースを選択し、任意のデータソース名を入力します。</li>
+</ol>
+<p>パラメータ接続の部分には、第5章「稼働環境構築（MW,SW）」で作成したデータベースへの接続情報を入力します。入力が終わったら「保存」を押下します。</p>
+<img src="../resources/environment/image118.png" style="width:3.42908in;height:7.78419in">
+<h2 id="2地番レイヤを作成する">【2】地番レイヤを作成する</h2>
+<p>地番レイヤは以下のレイヤを作成する必要があります。</p>
+<p>レイヤ作成の際はそれぞれ下表のスタイルファイルとSQLファイルを使用します。</p>
+<p>ファイルは <strong>development-permission/Settings/</strong> より下表に記載のファイルを取得してください。</p>
+<table>
+<colgroup>
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 18%">
+<col style="width: 26%">
+<col style="width: 20%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>レイヤ名</th>
+<th>使用箇所</th>
+<th>説明</th>
+<th>スタイルファイル</th>
+<th>SQLファイル</th>
+<th>凡例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>全地番</td>
+<td>申請地選択</td>
+<td>すべての地番を表示.</td>
+<td>layer_style_lotnumber_all_view.sld</td>
+<td>layer_sql_lotnumber_all_view.txt</td>
+<td><img class="no_border" src="../resources/environment/image119.png"></td>
+</tr>
+<tr class="even">
+<td>申請中地番</td>
+<td>行政トップ画面</td>
+<td>申請中の地番を表示.</td>
+<td>layer_style_lotnumber_application_target.sld</td>
+<td>layer_sql_lotnumber_applying.txt</td>
+<td><img class="no_border" src="../resources/environment/image120.png"</td>
+</tr>
+<tr class="odd">
+<td>申請対象地番</td>
+<td>概況診断結果表示</td>
+<td>申請対象の地番を表示.</td>
+<td>layer_style_lotnumber_application_target.sld</td>
+<td>layer_sql_lotnumber_disignate.txt</td>
+<td><img class="no_border" src="../resources/environment/image120.png"</td>
+</tr>
+<tr class="even">
+<td>選択中地番</td>
+<td>申請地選択</td>
+<td>選択中の地番を表示.</td>
+<td>layer_style_lotnumber_selected.sld</td>
+<td>layer_sql_lotnumber_disignate.txt</td>
+<td><img class="no_border" src="../resources/environment/image121.png"</td>
+</tr>
+<tr class="odd">
+<td>地番検索結果（事業者）</td>
+<td>地番検索</td>
+<td>地番検索の結果に該当する地番を表示.</td>
+<td>layer_style_lotnumber_result.sld</td>
+<td>layer_sql_lotnumber_search_establishment.txt</td>
+<td><img class="no_border" src="../resources/environment/image122.png"</td>
+</tr>
+<tr class="even">
+<td>地番検索結果（行政）</td>
+<td>地番検索（行政）</td>
+<td><p>地番検索の結果に該当する地番を表示.</p>
+<p>申請中地番を着色表示.</p></td>
+<td>layer_style_lotnumber_result_government.sld</td>
+<td>llayer_sql_lotnumber_search_government.txt</td>
+<td><img class="no_border" src="../resources/environment/image123.png"</td>
+</tr>
+<tr class="odd">
+<td>申請情報表示地番</td>
+<td>申請情報表示地番</td>
+<td>行政側の申請情報検索結果の行クリック時にクリック業の申請地番を着色表示.</td>
+<td>layer_style_lotnumber_application_info.sld</td>
+<td>layer_sql_lotnumber_disignate.txt</td>
+<td><img class="no_border" src="../resources/environment/image124.png"</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>① 一覧表のスタイルファイルの種類ごとにスタイルを計5種類登録します。メニューバーから「スタイル」を選択します。</li>
+</ol>
+<img src="../resources/environment/image125.png" style="width:5.47075in;height:3.19792in">
+<ol>
+<li>② 登録済みのスタイル一覧が開きます。「新規スタイル追加」を押下します。</li>
+</ol>
+<img src="../resources/environment/image126.png" style="width:5.90556in;height:3.49097in">
+<ol>
+<li>③ ユーザ名を入力します。名前は任意ですが、判別しやすいようにスタイルファイルファイルの名前としておきます。</li>
+</ol>
+<p>ワークスペースは、【1】で作成したワークスペースを選択します。</p>
+<img src="../resources/environment/image127.png" style="width:5.90556in;height:3.96111in">
+<ol>
+<li>④「ファイルを選択」を押下し、スタイル（.sld）ファイルを選択します。</li>
+</ol>
+<img src="../resources/environment/image127.png" style="width:5.90556in;height:3.96111in">
+<img src="../resources/environment/image128.png" style="width:4.32496in;height:3.48479in">
+<ol>
+<li>⑤「アップロード」をクリックします。</li>
+</ol>
+<img src="../resources/environment/image129.png" style="width:5.90556in;height:3.92361in">
+<ol>
+<li>⑥ アップロードされるsldファイルの中身が表示されるので、「検証」を押下して、「保存」を押下します。</li>
+</ol>
+<img src="../resources/environment/image130.png" style="width:5.57918in;height:3.72776in">
+<ol>
+<li><p>⑦ スタイルが登録されます。残りのスタイルファイルについても、同様に登録を実施します。</p>
+</li>
+<li><p>⑧ 続いてレイヤを登録します。</p>
+</li>
+</ol>
+<p class="text_color_red">※レイヤについては、本節冒頭のレイヤ一覧表に記載のすべてのレイヤを登録する必要があります。</p>
+<p class="text_color_red">※範囲矩形の情報を全地番レイヤで取得し他レイヤに適用する必要があるため、まずは「全地番」のレイヤを登録してから残りのレイヤを登録してください。</p>
+<p>⑨ メニューバーから「レイヤ」を選択します。</p>
+<img src="../resources/environment/image131.png" style="width:5.27612in;height:3.16667in">
+<ol>
+<li>⑩ 登録済みのレイヤ一覧が表示されます。「リソース新規追加」を押下します。</li>
+</ol>
+<img src="../resources/environment/image132.png" style="width:5.08213in;height:3.45303in">
+<ol>
+<li>⑪ レイヤ追加元で、【1】で作成したストアを選択します。</li>
+</ol>
+<img src="../resources/environment/image133.png" style="width:1.89593in;height:2.27511in">
+<ol>
+<li>⑩ にデータベースに登録済みのテーブルが一覧表示されます。</li>
+</ol>
+<p>「SQLビューを新規作成」を選択します。</p>
+<img src="../resources/environment/image134.png" style="width:5.36458in;height:2.35678in">
+<ol>
+<li>⑬「名称を表示」にレイヤ名を入力します。</li>
+</ol>
+<p>「SQLステートメント」にSQLファイルの中身を貼り付けます。</p>
+<img src="../resources/environment/image135.png" style="width:5.4205in;height:2.79247in">
+<ol>
+<li>⑭「SQLからパラメータを推測」を押下し、「ジオメトリタイプとSRIDを推測」にチェックを入れた状態で「属性」の「再読み込み」を押下します。</li>
+</ol>
+<p>読み込むと、属性が一覧表示されます。</p>
+<img src="../resources/environment/image136.png" style="width:5.2367in;height:2.84496in">
+<ol>
+<li>⑮「保存」を押下します。</li>
+</ol>
+<img src="../resources/environment/image136.png" style="width:5.30246in;height:2.88069in">
+<ol>
+<li>⑯「レイヤ編集」に遷移します。</li>
+</ol>
+<p>下の方に遷移して、「範囲矩形」の欄を確認します。</p>
+<img src="../resources/environment/image137.png" style="width:4.84831in;height:3.28162in">
+<img src="../resources/environment/image138.png" style="width:3.72969in;height:1.92735in">
+<ol>
+<li>⑰「ネイティブの範囲矩形」で「データを元に算出」を押下し、「緯度経度範囲矩形」で「ネイティブの範囲をもとに算出」を押下します。</li>
+</ol>
+<img src="../resources/environment/image138.png" style="width:3.72969in;height:1.92735in">
+<ol>
+<li>⑱ 以下の通り値が出力されます。</li>
+</ol>
+<p>出力された値は、レイヤの描画範囲になります。</p>
+<p>「ネイティブの範囲矩形」の値は以降のレイヤでも使用するため、控えておきます。</p>
+<img src="../resources/environment/image139.png" style="width:4.63606in;height:2.46909in">
+<ol>
+<li>⑲ 一度上にスクロールし、タブから「公開」を選択します。</li>
+</ol>
+<img src="../resources/environment/image137.png" style="width:4.84831in;height:3.28162in">
+<ol>
+<li>⑳ タブが切り替わります。「WMS設定」で、「デフォルトスタイル」を選択します。スタイル一覧から、手順⑦までに作成したスタイルを選択します。</li>
+</ol>
+<img src="../resources/environment/image140.png" style="width:5.60974in;height:3.72576in">
+<p>㉑ タブを再び切り替えて、「タイルキャッシング」を開きます。</p>
+<img src="../resources/environment/image140.png" style="width:5.90556in;height:3.92222in">
+<p>㉒ 「このレイヤーのキャッシュ済みレイヤーを作成」と「このレイヤのタイルキャッシングを有効化」のチェックを外します。</p>
+<img src="../resources/environment/image141.png" style="width:4.22405in;height:4.71661in">
+<p>㉓ 「保存」を押下します。レイヤが登録されます。</p>
+<img src="../resources/environment/image141.png" style="width:3.56376in;height:3.97932in">
+<p>㉔ 登録結果を確認します。メニューバーから「レイヤプレビュー」を選択します。</p>
+<img src="../resources/environment/image131.png" style="width:5.27612in;height:3.16667in">
+<p>㉕ 作成済みのレイヤ一覧が表示されます。作成したレイヤの行の「OpenLayers」を選択します。</p>
+<img src="../resources/environment/image142.png" style="width:5.18933in;height:3.29337in">
+<p>㉖ 別タブが開き、レイヤーのプレビューが確認できます。</p>
+<img src="../resources/environment/image143.png" style="width:4.45293in;height:3.90574in">
+<p>㉗ 残りの地番レイヤについても、同様にレイヤの作成を進めます。</p>
+<p>スタイルとSQLビューについては、本節冒頭の表に対応するファイルを使用してください。</p>
+<p>残りのレイヤでは「SQLビューパラメータを推測」を押下した際に、SQLビューパラメータ一覧が表示されます。デフォルト値を設定しないと、次の属性の再読み込みに失敗するので注意してください。</p>
+<p>レイヤ毎に以下の通りデフォルト値を設定してください。</p>
+<p>※「デフォルト値」に実際に存在する地番の地番IDを「_」（アンダーバー）区切りで設定すると、指定した地番をレイヤプレビューで表示することができます。</p>
+<p>・申請中地番</p>
+<img src="../resources/environment/image144.png" style="width:5.63582in;height:0.4871in">
+<p>・申請対象地番</p>
+<img src="../resources/environment/image145.png" style="width:5.76354in;height:0.61065in">
+<p>・選択中地番</p>
+<img src="../resources/environment/image146.png" style="width:5.77311in;height:0.58858in">
+<p>・地番検索結果（事業者）</p>
+<img src="../resources/environment/image147.png" style="width:5.77155in;height:0.63254in">
+<p>・地番検索結果（行政）</p>
+<img src="../resources/environment/image148.png" style="width:5.82147in;height:0.625in">
+<p class="text_color_red">範囲矩形の「ネイティブの範囲矩形」については、手順⑱で控えておいた値を入力してください。</p>
+<p>範囲矩形入力後に、「緯度経度範囲矩形」の「ネイティブの範囲を元に算出」を押下します。</p>
+<img src="../resources/environment/image139.png" style="width:4.63606in;height:2.46909in">
+<h2 id="3判定対象レイヤを作成する">【3】判定対象レイヤを作成する</h2>
+<p>判定対象ごとに、レイヤを作成します。</p>
+<ol>
+<li>① まず、レイヤのスタイル（.sldファイル）を作成します。QGISを開きます。</li>
+</ol>
+<img src="../resources/environment/image149.png" style="width:5.90556in;height:3.19514in">
+<ol>
+<li>② PostgreSQLから、DBサーバに接続します。</li>
+</ol>
+<p>※接続の作成手順は第8章「地番データ取込」を参照してください。</p>
+<img src="../resources/environment/image150.png" style="width:5.90556in;height:3.25278in">
+<ol>
+<li>③ レイヤを作成する判定レイヤのテーブルを選択し、ドラッグアンドドロップで地図上に表示します。</li>
+</ol>
+<img src="../resources/environment/image151.png" style="width:5.90556in;height:3.23681in">
+<ol>
+<li>④ 追加したレイヤを右クリックし、メニューからプロパティを開きます。</li>
+</ol>
+<img src="../resources/environment/image152.png" style="width:2.15711in;height:2.39886in">
+<ol>
+<li>⑤ スタイルを設定します。</li>
+</ol>
+<p>⑥ スタイルの設定方法は以下を参考にしてください。</p>
+<p><a href="https://docs.qgis.org/3.16/ja/docs/user_manual/style_library/style_manager.html">https://docs.qgis.org/3.16/ja/docs/user_manual/style_library/style_manager.html</a></p>
+<img src="../resources/environment/image153.png" style="width:3.03485in;height:3.13084in">
+<ol>
+<li>⑦ スタイル設定後、レイヤを右クリックし、「エクスポート」&gt;「QGISレイヤスタイルファイルとして保存」を選択します。</li>
+</ol>
+<img src="../resources/environment/image154.png" style="width:4.2071in;height:3.0356in">
+<ol>
+<li>「SLDスタイルファイル」を選択し、ファイルを保存する場所を選択します。</li>
+</ol>
+<p>選択後、「OK」でファイルを出力します。</p>
+<img src="../resources/environment/image155.png" style="width:2.76043in;height:2.42462in">
+<img src="../resources/environment/image156.png" style="width:2.71076in;height:2.34933in">
+<ol>
+<li>⑧ 出力したSLDファイルを、スタイルとしてGeoServerに登録します。</li>
+</ol>
+<p>スタイルの登録手順は【2】の手順①～⑦を参照してください。</p>
+<ol>
+<li>⑨ 続いてレイヤを登録します。</li>
+</ol>
+<p>メニューバーから「レイヤ」を選択し、続いて「リソース新規追加」を押下します。</p>
+<img src="../resources/environment/image157.png" style="width:5.90556in;height:3.27153in">
+<img src="../resources/environment/image158.png" style="width:5.34816in;height:3.59164in">
+<ol>
+<li>⑩ レイヤ追加元で、【1】で追加したデータソースを選択します。</li>
+</ol>
+<img src="../resources/environment/image159.png" style="width:1.8908in;height:2.63511in">
+<ol>
+<li>⑪ データベースに登録済みのテーブル一覧が表示されます。</li>
+</ol>
+<p>レイヤを作成する判定レイヤのテーブルの行の「再公開」を押下します。</p>
+<img src="../resources/environment/image160.png" style="width:5.90556in;height:2.60556in">
+<ol>
+<li>⑫ レイヤ編集画面が開きます。</li>
+</ol>
+<img src="../resources/environment/image161.png" style="width:3.51874in;height:2.38665in">
+<ol>
+<li>⑬ 「データ」タブで範囲矩形を編集します。</li>
+</ol>
+<p>「ネイティブの範囲矩形」で、「データを元に算出」を押下し、続いて「緯度経度範囲矩形」の「ネイティブの範囲を元に算出」を押下します。</p>
+<img src="../resources/environment/image162.png" style="width:4.99028in;height:2.5316in">
+<ol>
+<li>⑭ 「公開」タブに切り替えて、「WMS設定」のデフォルトスタイルで手順⑧で登録したスタイルを選択します。</li>
+</ol>
+<img src="../resources/environment/image163.png" style="width:5.90556in;height:3.15903in">
+<ol>
+<li>⑮ 「タイルキャッシング」タブに切り替えて、「このレイヤーのキャッシュ済みレイヤーを作成」と「このレイヤのタイルキャッシングを有効化」のチェックを外します。</li>
+</ol>
+<img src="../resources/environment/image140.png" style="width:5.90556in;height:3.92222in">
+<ol>
+<li><p>⑯ 「保存」を押下します。</p>
+</li>
+<li><p>⑰ 残りの判定レイヤについても、同様の手順で登録を実施してください。</p>
+</li>
+</ol>
+<!-- -->
+<ol>
+<li>アタッチメント付きレイヤを作成する</li>
+</ol>
+<p>第12「アタッチメントデータ配置」で作成したアタッチメントデータについても、同様の手順でレイヤの作成を行います。</p>
+<p>アタッチメントデータは、以下のURLで取得することができます。</p>
+<div class="box">
+  <p>http://[WebサーバのIPアドレス]/api/file/view/&lt;ファイルパス&gt;</p>
+</div>
+<p>【2】と同様の手順でSQLビューを作成してください。</p>
+<p>下記サンプルのように、SQL文の属性として、上記URLを表示するように設定することでアタッチメントデータを3Dビューワ画面の属性表示部分から開くことができるようになります。</p>
+<p class="text_color_red">※サンプルでは、3Dビューワ画面の属性表示部分にaタグでリンク表示するように設定を行っております。</p>
+<p class="text_color_red">※ジオメトリ属性フィールドを含めないと地図上に表示できないのでご注意ください。</p>
+<div class="box">
+  <p>SELECT wkb_geometry AS geom,</p>
+  <p>CONCAT('&lt;a href=&quot;/api/file/view/road_image/', file_name, '&quot;&gt;確認&lt;/a&gt;') AS 道路台帳図</p>
+  <p>FROM &quot;道路台帳図郭&quot;</p>  
+</div>
+<img src="../resources/environment/image164.png" style="width:5.90556in;height:3.25486in">
+<p>そのほかの設定手順については【2】【3】を参照してください。</p>
+<h1 id="geoserverのapache設定">14 GeoServerのapache設定</h1>
+<h2 id="1apacheの設定">【1】Apacheの設定</h2>
+<ol>
+<li>① httpd.conf を編集します。</li>
+</ol>
+<p class="bg_black">vi /etc/httpd/conf/httpd.conf</p>
+<p>② 最終行に以下の内容を追記して保存します。</p>
+<div class="box">
+  <p>LimitRequestLine 2097152</p>
+  <p>&lt;Location /geoserver&gt;</p>
+  <p># For CSRF</p>
+  <p>RequestHeader set Origin &quot;http://localhost:8080&quot;</p>
+  <p># For 502</p>
+  <p>SetEnv proxy-initial-not-pooled 1</p>
+  <p># SetEnv force-proxy-request-1.0 1</p>
+  <p># SetEnv proxy-nokeepalive 1</p>
+  <p># For proxies</p>
+  <p>ProxyPreserveHost On</p>
+  <p>ProxyPass http://localhost:8080/geoserver</p>
+  <p>ProxyPassReverse http://localhost:8080/geoserver</p>
+  <p>&lt;/Location&gt;</p>
+</div>
+<p>③ 設定を反映する為、apacheの再起動を行います。</p>
+<p class="bg_black">systemctl restart httpd.service</p>
+<p>④ 再起動後、「http://&lt;サーバマシンのIPアドレス&gt;/geoserver/」でログイン画面が表示されることを確認してください。</p>
+<p>※ログインを行って操作する場合は8080ポートを使用してください。セキュリティ上80ポートからのログイン操作は弾かれてしまいます。</p>
+<h1 id="アプリケーションデプロイspring-boot">15 アプリケーションデプロイ（Spring Boot）</h1>
+<p>確認済みサーバ環境：CentOS 8 Stream</p>
+<p>確認済み作業PC環境 ：Windows 10 Pro</p>
+<h2 id="1必要ツールのインストール">【1】必要ツールのインストール</h2>
+<p>※作業PC上にて行う</p>
+<ol>
+<li>① Spring Tool Suite 4のインストールを行ってください。</li>
+</ol>
+<p><a href="https://spring.io/tools">https://spring.io/tools</a></p>
+<p>※インストール方法の参考サイト：</p>
+<p><a href="https://qiita.com/t-shin0hara/items/d60116ab299a4dc8a9d0">https://qiita.com/t-shin0hara/items/d60116ab299a4dc8a9d0</a></p>
+<ol>
+<li>② lombokのインストールを行ってください。</li>
+</ol>
+<p><a href="https://projectlombok.org/download">https://projectlombok.org/download</a></p>
+<p>※インストール方法の参考サイト：</p>
+<p><a href="https://qiita.com/r_saiki/items/82231ded1450f5ed5671">https://qiita.com/r_saiki/items/82231ded1450f5ed5671</a></p>
+<h2 id="2warの作成準備">【2】warの作成準備</h2>
+<p>※作業PC上にて行う</p>
+<p>① <strong>/development-permission/SRC/api</strong>からソースコードを入手し、適当な場所にworkspaceを作成してプロジェクトを配置してください。</p>
+<img src="../resources/environment/image165.png" style="width:5.90556in;height:2.88056in">
+<p>② Spring Tool Suite 4を起動して、①で作成したworkspaceをlaunchしてください。</p>
+<img src="../resources/environment/image166.png" style="width:4.73378in;height:2.37468in">
+<p>③ プロジェクトのインポートを行います。</p>
+<p>Import projects .. &gt; Maven &gt; Existing Maven Projectsを選択してください。</p>
+<img src="../resources/environment/image167.png" style="width:5.90556in;height:4.54722in">
+<p>Root Directoryにworkspace内に配置したproject folderを指定します。</p>
+<img src="../resources/environment/image168.png" style="width:3.59984in;height:2.77396in">
+<p>④ Mavenの更新を行います。</p>
+<p>プロジェクト右クリック&gt; Maven &gt; Update Projectを選択してください。</p>
+<img src="../resources/environment/image169.png" style="width:4.17708in;height:4.76258in">
+<p>更新画面でOKを選択すると、Mavenの更新が始まります。</p>
+<img src="../resources/environment/image170.png" style="width:3.86389in;height:4.34188in">
+<p>⑤ src/main/../resources/application.propertiesの編集を行ってください。</p>
+<p>プロパティ一覧と、編集を行う箇所は次章「アプリケーション設定ファイル更新」を参照してください。</p>
+<p>変更が必要な設定箇所は以下になります。</p>
+<p>・データベースとの接続情報</p>
+<p>・メールサーバとの接続情報</p>
+<p>・データの座標系</p>
+<p>・自治体名</p>
+<img src="../resources/environment/image171.png" style="width:5.90556in;height:3.13264in">
+<p class="text_color_red">※application.propertiesが文字化けする場合は、application.propertiesを右クリック&gt;properties&gt;Resource&gt;Text file encodingをUTF-8へ変更してください。</p>
+<img src="../resources/environment/image172.png" style="width:5.12795in;height:3.68393in">
+<h2 id="3warの作成">【3】warの作成</h2>
+<p>※作業PC上にて行う</p>
+<p>① プロジェクト右クリック&gt; Run As &gt; Maven buildを選択してください。</p>
+<img src="../resources/environment/image173.png" style="width:3.625in;height:4.29808in">
+<p>② Goalsに「package」を入力し、Runボタンを押下します。</p>
+<img src="../resources/environment/image174.png" style="width:3.52895in;height:3.83603in">
+<p>③ targetフォルダにdevelopmentpermissionapi-0.0.1-SNAPSHOT.warが作られていることを確認してください。</p>
+<h2 id="4warのデプロイ">【4】warのデプロイ</h2>
+<p>① Webサーバの適当な場所にdevelopmentpermissionapi-0.0.1-SNAPSHOT.warをアップロードしてください。ここでは /home/upload/ に転送する事としています。</p>
+<p>② tomcatに配備します。</p>
+<p>※配備の際、developmentpermissionapi-0.0.1-SNAPSHOT.warから</p>
+<p class="text_color_red">developmentpermissionapi.warに名前を変更してください。</p>
+<div class="bg_black">
+  <p>cd /home/upload/</p>
+  <p>mv developmentpermissionapi-0.0.1-SNAPSHOT.war /opt/apache-tomcat/webapps/developmentpermissionapi.war</p>  
+</div>
+<p>※配備後にapplication.propertiesを編集する場合は下記のように行います。編集後、保存して再起動を行ってください。</p>
+<div class="bg_black">
+  <p>vi /opt/apache-tomcat/webapps/developmentpermissionapi/</p>
+  <p>WEB-INF/classes/application.properties</p>
+  <p>systemctl restart tomcat</p>  
+</div>
+<h2 id="5メール設定ファイル帳票テンプレートの配置">【5】メール設定ファイル、帳票テンプレートの配置</h2>
+<p>① 適当な場所にプロジェクトフォルダ内にあるtemplateフォルダの</p>
+<p>「mail.properties」と、「judgeResult.xlsx」をアップロードしてください。</p>
+<p>ここでは /home/upload/ に転送する事としています。</p>
+<p class="text_color_red">② application.propertiesで設定している場所（app.mail.properties.path、app.judge.report.path）に配置します。</p>
+<p>必要に応じてフォルダの作成を行ってください。</p>
+<p>下記はデフォルトでの設定場所での手順になります。Pathを変更している場合は必要に応じて置き換えてください。</p>
+<div class="bg_black">
+  <p>cd /home/upload/</p>
+  <p>mkdir -p /opt/apache-tomcat/properties/</p>
+  <p class="text_color_red">※「/opt/apache-tomcat/properties/」 はapp.mail.properties.pathで設定している場所</p>
+  <p>mv mail.properties /opt/apache-tomcat/properties/</p>
+  <p>mkdir -p /mnt/s3/application/report/</p>
+  <p class="text_color_red">※「/mnt/s3/application/report/」 はapp.judge.report.pathで設定している場所</p>
+  <p>mv judgeResult.xlsx /mnt/s3/application/report/</p>
+</div>
+<ol>
+<li>③ パーミッションの確認及び変更を行います。</li>
+</ol>
+<p class="bg_black">cd /mnt/s3/</p>
+<p>ディレクトリの所有権及びパーミッションを変更してください。</p>
+<div class="bg_black">
+  <p>chown -hR tomcat:tomcat ./application</p>
+  <p>chmod -c -R 755 ./application</p>
+</div>
+<p>④ 設定を反映する為、tomcatの再起動を行います。</p>
+<p class="bg_black">systemctl restart tomcat</p>
+<h2 id="6apacheの設定">【6】Apacheの設定</h2>
+<p>① httpd.conf を編集します。</p>
+<p class="bg_black">vi /etc/httpd/conf/httpd.conf</p>
+<p>最終行に以下の内容を追記して保存します。</p>
+<div class="box">
+  <p>ProxyPass /api http://localhost:8080/developmentpermissionapi</p>
+  <p>ProxyPassReverse /api http://localhost:8080/developmentpermissionapi</p>  
+</div>
+<p>② 設定を反映する為、apacheの再起動を行います。</p>
+<p class="bg_black">systemctl restart httpd.service</p>
+<h2 id="7デプロイ後の確認">【7】デプロイ後の確認</h2>
+<p>① http://&lt;サーバマシンのIPアドレス&gt;/api/auth/checkAuth?jigyousya=true にアクセスします。</p>
+<p>※画面上には何も表示されません。</p>
+<p>② http://&lt;サーバマシンのIPアドレス&gt;/api/category/viewsにアクセス</p>
+<p>下記のように表示されていれば、デプロイが正常に行われています。</p>
+<img src="../resources/environment/image175.png" style="width:5.90556in;height:2.47292in">
+<h1 id="アプリケーション設定ファイル更新spring-boot">16 アプリケーション設定ファイル更新(Spring Boot)</h1>
+<p>以下にアプリケーション設定ファイルの設定一覧を記載します。</p>
+<p>環境やアプリケーションの用途に応じて設定を変更してください。</p>
+<p class="text_color_red">※「環境」列に○がついている項目は、環境に応じた設定が必須です。</p>
+<h2 id="1applicationproperties">【1】application.properties</h2>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th rowspan="2"><strong>プロパティ名</strong></th>
+<th colspan="2"><strong>環境設定</strong></th>
+<th rowspan="2"><strong>内容</strong></th>
+<th rowspan="2"><strong>設定値</strong></th>
+</tr>
+<tr class="odd">
+<th><strong>必須</strong></th>
+<th><strong>任意</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>spring.jpa.database</td>
+<td>　</td>
+<td>　</td>
+<td>データベース種類</td>
+<td>POSTGRESQL</td>
+</tr>
+<tr class="even">
+<td>spring.datasource.url</td>
+<td>○</td>
+<td>　</td>
+<td>データベース接続情報</td>
+<td>jdbc:postgresql://[DBサーバのIPアドレス]:[DBサーバのポート番号]/[データベース名]</td>
+</tr>
+<tr class="odd">
+<td>spring.datasource.username</td>
+<td>○</td>
+<td>　</td>
+<td>データベースアクセスに使用するユーザ名</td>
+<td>devps</td>
+</tr>
+<tr class="even">
+<td>spring.datasource.password</td>
+<td>○</td>
+<td>　</td>
+<td>データベースアクセスに使用するパスワード</td>
+<td>（省略）</td>
+</tr>
+<tr class="odd">
+<td>app.mail.host</td>
+<td>　○</td>
+<td>　</td>
+<td>メール送信設定（ホスト名）</td>
+<td>[SMTPサーバのホスト名]</td>
+</tr>
+<tr class="even">
+<td>app.mail.port</td>
+<td>○</td>
+<td>　</td>
+<td>メール送信設定（ポート番号）</td>
+<td>[SMTPサーバのポート番号]</td>
+</tr>
+<tr class="odd">
+<td>app.mail.username</td>
+<td>○</td>
+<td>　</td>
+<td>メール送信設定（ユーザ名）</td>
+<td>[SMTPサーバのユーザ名]</td>
+</tr>
+<tr class="even">
+<td>app.mail.password</td>
+<td>○</td>
+<td>　</td>
+<td>メール送信設定（パスワード）</td>
+<td>[SMTPサーバのパスワード]</td>
+</tr>
+<tr class="odd">
+<td>app.mail.sendfrom</td>
+<td>○</td>
+<td>　</td>
+<td><p>メール送信設定</p>
+<p>（送信元アドレス）</p></td>
+<td>送信元のメールアドレス</td>
+</tr>
+<tr class="even">
+<td>app.mail.accept.timestamp.format</td>
+<td>　</td>
+<td>　</td>
+<td>メールの申請登録日時フォーマット</td>
+<td>yyyy/MM/dd HH:mm</td>
+</tr>
+<tr class="odd">
+<td>app.mail.validsendmail</td>
+<td>○</td>
+<td>　</td>
+<td>メール通知機能有効・無効<br>
+※TRUE = 有効/FALSE=無効</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td>app.mail.send.answer.update</td>
+<td>　</td>
+<td>　</td>
+<td>回答更新通知（行政向け）を送信するかどうか (0:送信しない、1:送信する)</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>app.applicant.name.item.number</td>
+<td>　</td>
+<td>　</td>
+<td>O_申請者情報の氏名を格納したアイテム番号(メール通知で使用)</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>app.cors.allowed.origins</td>
+<td>○</td>
+<td></td>
+<td>CORS許可オリジン</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>app.filter.ignore</td>
+<td>　</td>
+<td>　</td>
+<td>フィルタの例外パス</td>
+<td><p>（省略）</p>
+<p>※ ログイン画面でも使用する為、「/label」の例外path設定は必須</p></td>
+</tr>
+<tr class="even">
+<td>app.filter.goverment</td>
+<td>　</td>
+<td>　</td>
+<td>フィルタの行政のみ許可するパス</td>
+<td>（省略）</td>
+</tr>
+<tr class="odd">
+<td>app.filter.unable</td>
+<td>　</td>
+<td>　</td>
+<td>アクセス不能パス</td>
+<td>（省略）</td>
+</tr>
+<tr class="even">
+<td>app.custom.log.flag</td>
+<td></td>
+<td>○</td>
+<td><p>カスタムログを使用するかどうか</p>
+<p class="text_color_red">
+※カスタムログは利用者のアクセス履歴を記録するために使用するログになります。目的に応じて設定を変更してください。</p></td>
+<td>true</td>
+</tr>
+<tr class="odd">
+<td>logging.level.org.springframework.web</td>
+<td>　</td>
+<td>○</td>
+<td>アプリケーションログ出力レベル設定</td>
+<td>INFO</td>
+</tr>
+<tr class="even">
+<td>logging.level.developmentpermission</td>
+<td>　</td>
+<td>○</td>
+<td>アプリケーションログ出力レベル設定</td>
+<td>DEBUG</td>
+</tr>
+<tr class="odd">
+<td>spring.servlet.multipart.max-file-size</td>
+<td>　</td>
+<td>　</td>
+<td>ファイル1つの最大サイズ</td>
+<td>50MB</td>
+</tr>
+<tr class="even">
+<td>spring.servlet.multipart.max-request-size</td>
+<td>　</td>
+<td>　</td>
+<td>複数ファイル全体の最大サイズ</td>
+<td>100MB</td>
+</tr>
+<tr class="odd">
+<td>app.filter.cookie.expire</td>
+<td>　</td>
+<td>　</td>
+<td>Cookieの有効時間(秒)</td>
+<td>2592000</td>
+</tr>
+<tr class="even">
+<td>app.epsg</td>
+<td>○</td>
+<td>　</td>
+<td>システムテーブル内GeometryのEPSG<br>
+※地番、判定レイヤの座標系に合わせて変更してください。</td>
+<td>[平面直角座標系のEPSG]<br>
+例)2450</td>
+</tr>
+<tr class="odd">
+<td>app.lonlat.epsg</td>
+<td>　</td>
+<td>　</td>
+<td>画面表示応答で使用する座標系（EPSG）</td>
+<td>4326</td>
+</tr>
+<tr class="even">
+<td>app.city.name</td>
+<td>○</td>
+<td>　</td>
+<td>市町村名</td>
+<td>[市町村名]</td>
+</tr>
+<tr class="odd">
+<td>app.jwt.token.secretkey</td>
+<td>○</td>
+<td></td>
+<td><p>JWTの秘密鍵</p>
+<p>※tokenの検証や署名で使用</p></td>
+<td>[自治体固有のsecretKey]</td>
+</tr>
+<tr class="even">
+<td>logging.file.name</td>
+<td>　</td>
+<td>○</td>
+<td>ログ出力ファイル名</td>
+<td>/opt/apache-tomcat/logs/developmentpermission/developmentPermission.log</td>
+</tr>
+<tr class="odd">
+<td>app.mail.properties.path</td>
+<td>　</td>
+<td>　</td>
+<td>メール通知系定義プロパティパス</td>
+<td>/opt/apache-tomcat/properties/mail.properties</td>
+</tr>
+<tr class="even">
+<td>app.judge.report.path</td>
+<td>　</td>
+<td>　</td>
+<td>テンプレートパス</td>
+<td>/mnt/s3/application/report/judgeResult.xlsx</td>
+</tr>
+<tr class="odd">
+<td>app.file.rootpath</td>
+<td>　</td>
+<td>　</td>
+<td>ファイル管理rootパス</td>
+<td>/mnt/s3/application</td>
+</tr>
+<tr class="even">
+<td>app.file.application.folder</td>
+<td>　</td>
+<td>　</td>
+<td>申請ファイル管理フォルダパス</td>
+<td>/application</td>
+</tr>
+<tr class="odd">
+<td>app.file.answer.folder</td>
+<td>　</td>
+<td>　</td>
+<td>回答ファイル管理フォルダパス</td>
+<td>/answer</td>
+</tr>
+<tr class="even">
+<td>app.file.service.rootpath</td>
+<td>　</td>
+<td>　</td>
+<td>レイヤ関連ファイル取得サービスルートパス</td>
+<td>/mnt/s3/application/layer</td>
+</tr>
+<tr class="odd">
+<td>app.file.judgement.folder</td>
+<td>　</td>
+<td>　</td>
+<td>概況診断画像管理フォルダパス</td>
+<td>/opt/apache-tomcat/img_tmp</td>
+</tr>
+<tr class="even">
+<td>app.json.log.rootPath.judgeresult</td>
+<td>　</td>
+<td>○</td>
+<td>概況診断結果ログのpath</td>
+<td>/mnt/s3/application/customlogs/judgeresult/</td>
+</tr>
+<tr class="odd">
+<td>app.csv.log.path.business.login</td>
+<td>　</td>
+<td>○</td>
+<td>事業者ログイン（アクセス）ログのpath</td>
+<td>/mnt/s3/application/customlogs/business_login_log.csv</td>
+</tr>
+<tr class="even">
+<td>app.csv.log.path.judge.report</td>
+<td>　</td>
+<td>○</td>
+<td>概況診断結果レポート（出力件数）ログのpath</td>
+<td>/mnt/s3/application/customlogs/judge_report_log.csv</td>
+</tr>
+<tr class="odd">
+<td>app.csv.log.path.application.register</td>
+<td>　</td>
+<td>○</td>
+<td>申請登録ログのpath</td>
+<td>/mnt/s3/application/customlogs/application_register_log.csv</td>
+</tr>
+<tr class="even">
+<td>app.csv.log.path.administration.login</td>
+<td>　</td>
+<td>○</td>
+<td>行政ログインログのpath</td>
+<td>/mnt/s3/application/customlogs/administration_login_log.csv</td>
+</tr>
+<tr class="odd">
+<td>app.csv.log.path.answer.register</td>
+<td>　</td>
+<td>○</td>
+<td>回答登録ログのpath</td>
+<td>/mnt/s3/application/customlogs/answer_register_log.csv</td>
+</tr>
+<tr class="even">
+<td>app.csv.log.path.answer.notification</td>
+<td>　</td>
+<td>○</td>
+<td>回答通知ログのpath</td>
+<td>/mnt/s3/application/customlogs/answer_notification_log.csv</td>
+</tr>
+<tr class="odd">
+<td>app.role.business</td>
+<td>　</td>
+<td>　</td>
+<td>事業者のロール</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>app.department.business</td>
+<td>　</td>
+<td>　</td>
+<td>事業者の部署コード</td>
+<td>0000000000</td>
+</tr>
+<tr class="odd">
+<td>app.file.answer.foldername.format</td>
+<td>　</td>
+<td>　</td>
+<td>回答ファイル用フォルダのtimestampフォーマット</td>
+<td>yyyyMMddHHmmssSSS</td>
+</tr>
+<tr class="even">
+<td>app.def.status</td>
+<td>　</td>
+<td>　</td>
+<td>申請ステータス定義</td>
+<td>　</td>
+</tr>
+<tr class="odd">
+<td>app.category.judgement.attribute.joint</td>
+<td>　</td>
+<td>　</td>
+<td>概況診断 重なり属性表示フラグが1の場合の属性区切り文字</td>
+<td>\u30FB</td>
+</tr>
+<tr class="even">
+<td>app.category.judgement.attribute.distance.replaceText</td>
+<td></td>
+<td></td>
+<td>概況診断 距離表示置き換え文字</td>
+<td>{distance}</td>
+</tr>
+<tr class="odd">
+<td>app.category.judgement.attribute.distance.replacedText</td>
+<td></td>
+<td></td>
+<td>概況診断 距離表示置き換え後文字</td>
+<td>\u8ddd\u96e2\uff1a</td>
+</tr>
+<tr class="even">
+<td>app.category.judgement.attribute.distance.applicationAreaText</td>
+<td></td>
+<td></td>
+<td>概況診断 距離表示置き換え後文字（申請地範囲内の場合の表示文言）</td>
+<td>\u7533\u8acb\u5730\u7bc4\u56f2\u5185</td>
+</tr>
+<tr class="odd">
+<td>app.category.judgement.distance.epsg</td>
+<td></td>
+<td></td>
+<td>概況診断 距離判定時に使用するepsg</td>
+<td>4612</td>
+</tr>
+<tr class="even">
+<td>app.applicant.id.length</td>
+<td>　</td>
+<td>　</td>
+<td>照合IDの文字数</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>app.password.length</td>
+<td>　</td>
+<td>　</td>
+<td>パスワード発行時の文字数</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>app.password.character</td>
+<td>　</td>
+<td>　</td>
+<td>パスワードに使用する文字種</td>
+<td>0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz</td>
+</tr>
+<tr class="odd">
+<td>app.application.report.filename.header</td>
+<td>　</td>
+<td>　</td>
+<td>申請登録時の概況診断レポート接頭句</td>
+<td>\u6982\u6CC1\u8A3A\u65AD\u7D50\u679C_</td>
+</tr>
+<tr class="even">
+<td>app.application.report.filename.footer</td>
+<td>　</td>
+<td>　</td>
+<td>申請登録時の概況診断レポート接尾句(日付フォーマット)</td>
+<td>_yyyy_MM_dd</td>
+</tr>
+<tr class="odd">
+<td>app.application.report.fileid</td>
+<td>　</td>
+<td>　</td>
+<td>申請登録時の概況診断レポートのファイルID</td>
+<td>9999</td>
+</tr>
+<tr class="even">
+<td>app.lotnumber.getfigure.limit</td>
+<td>　</td>
+<td>　</td>
+<td>範囲選択時地番取得上限</td>
+<td>500</td>
+</tr>
+<tr class="odd">
+<td>app.lotnumber.result.type.lotnumber</td>
+<td>　</td>
+<td>　</td>
+<td>テーブル種別: 地番</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>app.lotnumber.result.type.district</td>
+<td>　</td>
+<td>　</td>
+<td>テーブル種別: 大字</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>app.application.result.type.category</td>
+<td>　</td>
+<td>　</td>
+<td>参照タイプ: 申請区分</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>app.application.result.type.applicant</td>
+<td>　</td>
+<td>　</td>
+<td>参照タイプ: 申請者情報</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>app.application.result.type.other</td>
+<td>　</td>
+<td>　</td>
+<td>参照タイプ: その他</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>app.application.table.application.category</td>
+<td>　</td>
+<td>　</td>
+<td>テーブル名: O_申請区分</td>
+<td>o_application_category</td>
+</tr>
+<tr class="odd">
+<td>app.application.table.application.category.master</td>
+<td>　</td>
+<td>　</td>
+<td>テーブル名: M_申請区分</td>
+<td>m_application_category</td>
+</tr>
+<tr class="even">
+<td>app.application.table.applicant.information</td>
+<td>　</td>
+<td>　</td>
+<td>テーブル名: O_申請者情報</td>
+<td>o_applicant_information</td>
+</tr>
+<tr class="odd">
+<td>app.application.table.answer</td>
+<td>　</td>
+<td>　</td>
+<td>テーブル名: O_回答</td>
+<td>o_answer</td>
+</tr>
+<tr class="even">
+<td>app.application.table.category.judgement</td>
+<td>　</td>
+<td>　</td>
+<td>テーブル名: M_区分設定</td>
+<td>m_category_judgement</td>
+</tr>
+<tr class="odd">
+<td>app.application.table.department</td>
+<td>　</td>
+<td>　</td>
+<td>テーブル名: M_部署</td>
+<td>m_department</td>
+</tr>
+<tr class="even">
+<td>app.application.table.application</td>
+<td>　</td>
+<td>　</td>
+<td>テーブル名： O_申請</td>
+<td>o_application</td>
+</tr>
+<tr class="odd">
+<td>app.application.column.status</td>
+<td>　</td>
+<td>　</td>
+<td>カラム名：O_申請.ステータス</td>
+<td>status</td>
+</tr>
+<tr class="even">
+<td>app.application.category.column.applicationid</td>
+<td>　</td>
+<td>　</td>
+<td>O_申請区分 申請ID</td>
+<td>application_id</td>
+</tr>
+<tr class="odd">
+<td>app.application.category.column.viewid</td>
+<td>　</td>
+<td>　</td>
+<td>O_申請区分 画面ID</td>
+<td>view_id</td>
+</tr>
+<tr class="even">
+<td>app.application.category.column.categoryid</td>
+<td>　</td>
+<td>　</td>
+<td>O_申請区分 申請区分ID</td>
+<td>category_id</td>
+</tr>
+<tr class="odd">
+<td>app.application.category.master.column.categoryid</td>
+<td>　</td>
+<td>　</td>
+<td>M_申請区分 申請区分ID</td>
+<td>category_id</td>
+</tr>
+<tr class="even">
+<td>app.application.category.master.column.viewid</td>
+<td>　</td>
+<td>　</td>
+<td>M_申請区分 画面ID</td>
+<td>view_id</td>
+</tr>
+<tr class="odd">
+<td>app.application.category.master.column.order</td>
+<td>　</td>
+<td>　</td>
+<td>M_申請区分 昇順</td>
+<td>order</td>
+</tr>
+<tr class="even">
+<td>app.application.category.master.column.labelname</td>
+<td>　</td>
+<td>　</td>
+<td>M_申請区分 選択肢名</td>
+<td>label_name</td>
+</tr>
+<tr class="odd">
+<td>app.applicant.information.column.applicationid</td>
+<td>　</td>
+<td>　</td>
+<td>O_申請者情報 申請ID</td>
+<td>application_id</td>
+</tr>
+<tr class="even">
+<td>app.applicant.information.column.applicantid</td>
+<td>　</td>
+<td>　</td>
+<td>O_申請者情報 申請者情報ID</td>
+<td>applicant_id</td>
+</tr>
+<tr class="odd">
+<td>app.applicant.information.column.item1</td>
+<td>　</td>
+<td>　</td>
+<td>O_申請者情報　項目1</td>
+<td>item_1</td>
+</tr>
+<tr class="even">
+<td>app.applicant.information.column.item2</td>
+<td>　</td>
+<td>　</td>
+<td>O_申請者情報　項目2</td>
+<td>item_2</td>
+</tr>
+<tr class="odd">
+<td>app.applicant.information.column.item3</td>
+<td>　</td>
+<td>　</td>
+<td>O_申請者情報　項目3</td>
+<td>item_3</td>
+</tr>
+<tr class="even">
+<td>app.applicant.information.column.item4</td>
+<td>　</td>
+<td>　</td>
+<td>O_申請者情報　項目4</td>
+<td>item_4</td>
+</tr>
+<tr class="odd">
+<td>app.applicant.information.column.item5</td>
+<td>　</td>
+<td>　</td>
+<td>O_申請者情報　項目5</td>
+<td>item_5</td>
+</tr>
+<tr class="even">
+<td>app.applicant.information.column.item6</td>
+<td>　</td>
+<td>　</td>
+<td>O_申請者情報　項目6</td>
+<td>item_6</td>
+</tr>
+<tr class="odd">
+<td>app.applicant.information.column.item7</td>
+<td>　</td>
+<td>　</td>
+<td>O_申請者情報　項目7</td>
+<td>item_7</td>
+</tr>
+<tr class="even">
+<td>app.applicant.information.column.item8</td>
+<td>　</td>
+<td>　</td>
+<td>O_申請者情報　項目8</td>
+<td>item_8</td>
+</tr>
+<tr class="odd">
+<td>app.applicant.information.column.item9</td>
+<td>　</td>
+<td>　</td>
+<td>O_申請者情報　項目9</td>
+<td>item_9</td>
+</tr>
+<tr class="even">
+<td>app.applicant.information.column.item10</td>
+<td>　</td>
+<td>　</td>
+<td>O_申請者情報　項目10</td>
+<td>item_10</td>
+</tr>
+<tr class="odd">
+<td>app.applicant.information.column.mailaddress</td>
+<td>　</td>
+<td>　</td>
+<td>O_申請者情報　メールアドレス</td>
+<td>mail_address</td>
+</tr>
+<tr class="even">
+<td>app.applicant.information.column.collationid</td>
+<td>　</td>
+<td>　</td>
+<td>O_申請者情報　照合ID</td>
+<td>collation_id</td>
+</tr>
+<tr class="odd">
+<td>app.applicant.information.column.password</td>
+<td>　</td>
+<td>　</td>
+<td>O_申請者情報　パスワード</td>
+<td>password</td>
+</tr>
+<tr class="even">
+<td>app.answer.column.answerid</td>
+<td>　</td>
+<td>　</td>
+<td>O_回答 回答ID</td>
+<td>answer_id</td>
+</tr>
+<tr class="odd">
+<td>app.answer.column.applicationid</td>
+<td>　</td>
+<td>　</td>
+<td>O_回答 申請ID</td>
+<td>application_id</td>
+</tr>
+<tr class="even">
+<td>app.answer.column.judgementid</td>
+<td>　</td>
+<td>　</td>
+<td>O_回答 判定項目ID</td>
+<td>judgement_id</td>
+</tr>
+<tr class="odd">
+<td>app.answer.column.judgementresult</td>
+<td>　</td>
+<td>　</td>
+<td>O_回答 判定結果</td>
+<td>judgement_result</td>
+</tr>
+<tr class="even">
+<td>app.answer.column.answercontent</td>
+<td>　</td>
+<td>　</td>
+<td>O_回答 回答内容</td>
+<td>answer_content</td>
+</tr>
+<tr class="odd">
+<td>app.answer.column.notifiedtext</td>
+<td>　</td>
+<td>　</td>
+<td>O_回答 通知テキスト</td>
+<td>notified_text</td>
+</tr>
+<tr class="even">
+<td>app.answer.column.registerdatetime</td>
+<td>　</td>
+<td>　</td>
+<td>O_回答 登録日時</td>
+<td>register_datetime</td>
+</tr>
+<tr class="odd">
+<td>app.answer.column.updatedatetime</td>
+<td>　</td>
+<td>　</td>
+<td>O_回答 更新日時</td>
+<td>update_datetime</td>
+</tr>
+<tr class="even">
+<td>app.answer.column.completeflag</td>
+<td>　</td>
+<td>　</td>
+<td>O_回答 完了フラグ</td>
+<td>complete_flag</td>
+</tr>
+<tr class="odd">
+<td>app.answer.column.notifiedflag</td>
+<td>　</td>
+<td>　</td>
+<td>O_回答 完了フラグ</td>
+<td>notified_flag</td>
+</tr>
+<tr class="even">
+<td>app.category.judgement.column.judgementitemid</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 判定項目ID</td>
+<td>judgement_item_id</td>
+</tr>
+<tr class="odd">
+<td>app.category.judgement.column.departmentid</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 担当部署ID</td>
+<td>department_id</td>
+</tr>
+<tr class="even">
+<td>app.category.judgement.column.category1</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 区分1</td>
+<td>category_1</td>
+</tr>
+<tr class="odd">
+<td>app.category.judgement.column.category2</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 区分2</td>
+<td>category_2</td>
+</tr>
+<tr class="even">
+<td>app.category.judgement.column.category3</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 区分3</td>
+<td>category_3</td>
+</tr>
+<tr class="odd">
+<td>app.category.judgement.column.category4</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 区分4</td>
+<td>category_4</td>
+</tr>
+<tr class="even">
+<td>app.category.judgement.column.category5</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 区分5</td>
+<td>category_5</td>
+</tr>
+<tr class="odd">
+<td>app.category.judgement.column.category6</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 区分6</td>
+<td>category_6</td>
+</tr>
+<tr class="even">
+<td>app.category.judgement.column.category7</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 区分7</td>
+<td>category_7</td>
+</tr>
+<tr class="odd">
+<td>app.category.judgement.column.category8</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 区分8</td>
+<td>category_8</td>
+</tr>
+<tr class="even">
+<td>app.category.judgement.column.category9</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 区分9</td>
+<td>category_9</td>
+</tr>
+<tr class="odd">
+<td>app.category.judgement.column.category10</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 区分10</td>
+<td>category_10</td>
+</tr>
+<tr class="even">
+<td>app.category.judgement.column.gisjudgement</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 GIS判定</td>
+<td>gis_judgement</td>
+</tr>
+<tr class="odd">
+<td>app.category.judgement.column.buffer</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 バッファ</td>
+<td>buffer</td>
+</tr>
+<tr class="even">
+<td>app.category.judgement.column.judgementlayer</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 判定対象レイヤ</td>
+<td>judgement_layer</td>
+</tr>
+<tr class="odd">
+<td>app.category.judgement.column.title</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 タイトル</td>
+<td>title</td>
+</tr>
+<tr class="even">
+<td>app.category.judgement.column.applicablesummary</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 該当表示概要</td>
+<td>applicable_summary</td>
+</tr>
+<tr class="odd">
+<td>app.category.judgement.column.applicabledescription</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 該当表示文言</td>
+<td>applicable_description</td>
+</tr>
+<tr class="even">
+<td>app.category.judgement.column.nonapplicabledisplayflag</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 非該当表示有無</td>
+<td>non_applicable_display_flag</td>
+</tr>
+<tr class="odd">
+<td>app.category.judgement.column.nonapplicablesummary</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 非該当表示概要</td>
+<td>non_applicable_summary</td>
+</tr>
+<tr class="even">
+<td>app.category.judgement.column.nonapplicabledescription</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 非該当表示文言</td>
+<td>non_applicable_description</td>
+</tr>
+<tr class="odd">
+<td>app.category.judgement.column.tablename</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 テーブル名</td>
+<td>table_name</td>
+</tr>
+<tr class="even">
+<td>app.category.judgement.column.fieldname</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 フィールド名</td>
+<td>field_name</td>
+</tr>
+<tr class="odd">
+<td>app.category.judgement.column.nonapplicablelayerdisplayflag</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 判定レイヤ非該当時表示有無</td>
+<td>non_applicable_layer_display_flag</td>
+</tr>
+<tr class="even">
+<td>app.category.judgement.column.simultaneousdisplaylayer</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 同時表示レイヤ</td>
+<td>simultaneous_display_layer</td>
+</tr>
+<tr class="odd">
+<td>app.category.judgement.column.simultaneousdisplaylayerflag</td>
+<td>　</td>
+<td>　</td>
+<td>M_区分判定 同時表示レイヤ表示有無</td>
+<td>simultaneous_display_layer_flag</td>
+</tr>
+<tr class="even">
+<td>app.department.column.departmentid</td>
+<td>　</td>
+<td>　</td>
+<td>M_部署 部署ID</td>
+<td>department_id</td>
+</tr>
+<tr class="odd">
+<td>app.department.column.departmentname</td>
+<td>　</td>
+<td>　</td>
+<td>M_部署 部署名</td>
+<td>department_name</td>
+</tr>
+<tr class="even">
+<td>app.department.column.answerauthorityflag</td>
+<td>　</td>
+<td>　</td>
+<td>M_部署 回答権限フラグ</td>
+<td>answer_authority_flag</td>
+</tr>
+<tr class="odd">
+<td>app.department.column.mailaddress</td>
+<td>　</td>
+<td>　</td>
+<td>M_部署 メールアドレス</td>
+<td>mail_address</td>
+</tr>
+<tr class="even">
+<td>app.judge.report.name</td>
+<td>　</td>
+<td>　</td>
+<td>ダウンロード時のファイル名</td>
+<td>judgeReport.xlsx</td>
+</tr>
+<tr class="odd">
+<td>app.judge.report.page.maxrow</td>
+<td>　</td>
+<td>　</td>
+<td>ページ当たりの最大行数</td>
+<td>47</td>
+</tr>
+<tr class="even">
+<td>app.judge.report.font.name</td>
+<td>　</td>
+<td>　</td>
+<td>帳票フォント名</td>
+<td>\u6E38\u30B4\u30B7\u30C3\u30AF</td>
+</tr>
+<tr class="odd">
+<td>app.judge.report.separator</td>
+<td>　</td>
+<td>　</td>
+<td>複数項目の区切り文字</td>
+<td>　</td>
+</tr>
+<tr class="even">
+<td>app.judge.report.date.row</td>
+<td>　</td>
+<td>　</td>
+<td>出力日 出力行</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>app.judge.report.date.col</td>
+<td>　</td>
+<td>　</td>
+<td>出力日 出力列</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>app.judge.report.date.format</td>
+<td>　</td>
+<td>　</td>
+<td>出力日 フォーマット</td>
+<td>yyyy/MM/dd</td>
+</tr>
+<tr class="odd">
+<td>app.judge.report.overview.startrow</td>
+<td>　</td>
+<td>　</td>
+<td>概況図 開始行</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>app.judge.report.overview.endrow</td>
+<td>　</td>
+<td>　</td>
+<td>概況図 終了行</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>app.judge.report.overview.startcol</td>
+<td>　</td>
+<td>　</td>
+<td>概況図 開始列</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>app.judge.report.overview.endcol</td>
+<td>　</td>
+<td>　</td>
+<td>概況図 終了列</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>app.judge.report.category.startrow</td>
+<td>　</td>
+<td>　</td>
+<td>区分 開始行</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>app.judge.report.category.endrow</td>
+<td>　</td>
+<td>　</td>
+<td>区分 終了行</td>
+<td>16</td>
+</tr>
+<tr class="odd">
+<td>app.judge.report.title.col</td>
+<td>　</td>
+<td>　</td>
+<td>区分名 出力列</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>app.judge.report.description.col</td>
+<td>　</td>
+<td>　</td>
+<td>区分説明 出力列</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>app.judge.report.address.row</td>
+<td>　</td>
+<td>　</td>
+<td>開発予定地　出力行</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>app.judge.report.address.col</td>
+<td>　</td>
+<td>　</td>
+<td>開発予定地　出力列</td>
+<td>21</td>
+</tr>
+<tr class="odd">
+<td>app.judge.report.lotnumber.separators</td>
+<td>　</td>
+<td>　</td>
+<td>開発予定地 番地区切り文字群(正規表現)</td>
+<td>　</td>
+</tr>
+<tr class="even">
+<td>app.judge.report.judgeresult.startrow</td>
+<td>　</td>
+<td>　</td>
+<td>判定結果出力開始行</td>
+<td>18</td>
+</tr>
+<tr class="odd">
+<td>app.judge.report.judgeresult.mergerow</td>
+<td>　</td>
+<td>　</td>
+<td>判定結果 結合行数</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>app.judge.report.judgeresult.title.col</td>
+<td>　</td>
+<td>　</td>
+<td>判定結果タイトル 出力列</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>app.judge.report.judgeresult.title.mergecol</td>
+<td>　</td>
+<td>　</td>
+<td>判定結果タイトル 結合列数</td>
+<td>12</td>
+</tr>
+<tr class="even">
+<td>app.judge.report.judgeresult.title.font.size</td>
+<td>　</td>
+<td>　</td>
+<td>判定結果タイトル 文字サイズ</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>app.judge.report.judgeresult.summary.col</td>
+<td>　</td>
+<td>　</td>
+<td>判定結果要約 出力列</td>
+<td>12</td>
+</tr>
+<tr class="even">
+<td>app.judge.report.judgeresult.summary.mergecol</td>
+<td>　</td>
+<td>　</td>
+<td>判定結果要約 結合列数</td>
+<td>17</td>
+</tr>
+<tr class="odd">
+<td>app.judge.report.judgeresult.summary.font.size</td>
+<td>　</td>
+<td>　</td>
+<td>判定結果要約 文字サイズ</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>app.judge.report.judgeresult.description.mergerow</td>
+<td>　</td>
+<td>　</td>
+<td>判定結果詳細 行結合数</td>
+<td>11</td>
+</tr>
+<tr class="odd">
+<td>app.judge.report.judgeresult.description.title.col</td>
+<td>　</td>
+<td>　</td>
+<td>判定結果詳細 タイトル出力列</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>app.judge.report.judgeresult.description.title.font.size</td>
+<td>　</td>
+<td>　</td>
+<td>判定結果詳細 タイトル　文字サイズ</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>app.judge.report.judgeresult.description.title.mergecol</td>
+<td>　</td>
+<td>　</td>
+<td>判定結果詳細 タイトル 結合列数</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>app.judge.report.judgeresult.description.col</td>
+<td>　</td>
+<td>　</td>
+<td>判定結果詳細　詳細列</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>app.judge.report.judgeresult.description.mergecol</td>
+<td>　</td>
+<td>　</td>
+<td>判定結果詳細 詳細結合列数</td>
+<td>13</td>
+</tr>
+<tr class="even">
+<td>app.judge.report.judgeresult.description.font.size</td>
+<td>　</td>
+<td>　</td>
+<td>判定結果詳細 詳細　文字サイズ</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>app.judge.report.judgeresult.description.image.col</td>
+<td>　</td>
+<td>　</td>
+<td>判定結果詳細 画像列</td>
+<td>19</td>
+</tr>
+<tr class="even">
+<td>app.judge.report.judgeresult.description.image.mergecol</td>
+<td>　</td>
+<td>　</td>
+<td>判定結果詳細 画像結合列数</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>app.judge.report.judgeresult.description.nogis.label</td>
+<td>　</td>
+<td>　</td>
+<td>「画像なし 区分判定」ラベル</td>
+<td>\u753B\u50CF\u306A\u3057\r\n\u533A\u5206\u5224\u5B9A</td>
+</tr>
+<tr class="even">
+<td>app.judge.report.judgeresult.description.nogis.label.size</td>
+<td>　</td>
+<td>　</td>
+<td>「画像なし 区分判定」ラベル文字サイズ</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>app.csv.log.header.business.login</td>
+<td>　</td>
+<td>○</td>
+<td>事業者ログイン（アクセス）ログのheader カンマ区切り</td>
+<td>\u30ed\u30b0\u30a4\u30f3\u65e5\u6642</td>
+</tr>
+<tr class="even">
+<td>app.csv.log.header.judge.report</td>
+<td>　</td>
+<td>○</td>
+<td>概況診断結果レポート（出力件数）ログのheader カンマ区切り</td>
+<td>\u30a2\u30af\u30bb\u30b9\u65e5\u6642</td>
+</tr>
+<tr class="odd">
+<td>app.csv.log.header.application.register</td>
+<td>　</td>
+<td>○</td>
+<td>申請登録ログのheader カンマ区切り</td>
+<td>\u30a2\u30af\u30bb\u30b9\u65e5\u6642</td>
+</tr>
+<tr class="even">
+<td>app.csv.log.header.administration.login</td>
+<td>　</td>
+<td>○</td>
+<td>行政ログインログのheader カンマ区切り</td>
+<td>\u30ed\u30b0\u30a4\u30f3\u65e5\u6642</td>
+</tr>
+<tr class="odd">
+<td>app.csv.log.header.answer.register</td>
+<td>　</td>
+<td>○</td>
+<td>回答登録ログのheader カンマ区切り</td>
+<td>\u767b\u9332\u65e5\u6642</td>
+</tr>
+<tr class="even">
+<td>app.csv.log.header.answer.notification</td>
+<td>　</td>
+<td>○</td>
+<td>回答通知ログのheader カンマ区切り</td>
+<td>\u901a\u77e5\u65e5\u6642</td>
+</tr>
+<tr class="odd">
+<td>app.csv.log.header.answer.confirm</td>
+<td>　</td>
+<td>○</td>
+<td>回答確認ログのheader カンマ区切り</td>
+<td>\u30a2\u30af\u30bb\u30b9\u65e5\u6642</td>
+</tr>
+<tr class="even">
+<td>tomcat.util.scan.StandardJarScanFilter.jarsToSkip</td>
+<td>　</td>
+<td>　</td>
+<td>　</td>
+<td>*-*.jar</td>
+</tr>
+<tr class="odd">
+<td>spring.mvc.hiddenmethod.filter.enabled</td>
+<td>　</td>
+<td>　</td>
+<td>　</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td>spring.webflux.hiddenmethod.filter.enabled</td>
+<td>　</td>
+<td>　</td>
+<td>　</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td>spring.mvc.pathmatch.matching-strategy</td>
+<td>　</td>
+<td>　</td>
+<td>　</td>
+<td>ANT_PATH_MATCHER</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2mailproperties">【2】mail.properties</h2>
+<p>各通知メールの件名や本文はこのファイルで設定します。</p>
+<p>テキストエディタ等で編集を行ってください。</p>
+<table>
+<colgroup>
+<col style="width: 53%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>プロパティ名</strong></th>
+<th><strong>内容</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>mail.bussiness.application.accept.subject</td>
+<td>回答確認ID/パスワード通知(事業者向け)　 件名</td>
+</tr>
+<tr class="even">
+<td>mail.bussiness.application.accept.body</td>
+<td>回答確認ID/パスワード通知(事業者向け)　 本文</td>
+</tr>
+<tr class="odd">
+<td>mail.application.accept.subject</td>
+<td>申請受付通知(行政向け)　件名</td>
+</tr>
+<tr class="even">
+<td>mail.application.accept.body</td>
+<td>申請受付通知(行政向け)　本文</td>
+</tr>
+<tr class="odd">
+<td>mail.bussiness.answer.finish.subject</td>
+<td>回答完了通知(事業者向け)　件名</td>
+</tr>
+<tr class="even">
+<td>mail.bussiness.answer.finish.body</td>
+<td>回答完了通知(事業者向け)　本文</td>
+</tr>
+<tr class="odd">
+<td>mail.answer.update.subject</td>
+<td>回答更新通知(行政向け)　件名</td>
+</tr>
+<tr class="even">
+<td>mail.answer.update.body</td>
+<td>回答更新通知(行政向け)　本文</td>
+</tr>
+<tr class="odd">
+<td>mail.answer.finish.subject</td>
+<td>全部署回答完了通知(行政向け)　件名</td>
+</tr>
+<tr class="even">
+<td>mail.answer.finish.body</td>
+<td>全部署回答完了通知(行政向け)　本文</td>
+</tr>
+</tbody>
+</table>
+<p>以下項目について、メール本文に通知対象の内容を表示するように設定することが可能です。</p>
+<table>
+<colgroup>
+<col style="width: 52%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>キー</strong></th>
+<th><strong>内容</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>${照合ID}</td>
+<td>事業者が申請・回答確認に使用する照合ID</td>
+</tr>
+<tr class="even">
+<td>${パスワード}</td>
+<td>事業者が申請・回答確認に使用するパスワード</td>
+</tr>
+<tr class="odd">
+<td>${申請者氏名}</td>
+<td>申請者氏名</td>
+</tr>
+<tr class="even">
+<td>${申請者メールアドレス}</td>
+<td>申請者メールアドレス</td>
+</tr>
+<tr class="odd">
+<td>${申請地番}</td>
+<td>申請地番一覧（カンマ区切り）</td>
+</tr>
+<tr class="even">
+<td>${対象}</td>
+<td>判定項目のタイトル（条項）</td>
+</tr>
+<tr class="odd">
+<td>${判定結果}</td>
+<td>判定結果のサマリ</td>
+</tr>
+<tr class="even">
+<td>${申請登録日時}</td>
+<td>申請登録日時</td>
+</tr>
+</tbody>
+</table>
+<p>$rep[ から ]$rep までの内容を繰り返し表示させることができます。</p>
+<p>$rep内で置き換え可能なのは${対象}と${判定結果}のみです。</p>
+<p>※設定例</p>
+<div class="box">
+<p>### 申請受付通知(行政向け)</p>
+<p># 件名</p>
+<p>mail.application.accept.subject=【開発許可申請受付の通知】</p>
+<p># 本文</p>
+<p>mail.application.accept.body=\</p>
+<p>○○市　開発許可申請の受付\r\n\</p>
+<p>\r\n\</p>
+<p>担当の開発許可申請を新たに受け付けました。\r\n\</p>
+<p>受付情報は以下になります。\r\n\</p>
+<p>\r\n\</p>
+<p>申請者氏名：${申請者氏名}\r\n\</p>
+<p>申請者メールアドレス：${申請者メールアドレス}\r\n\</p>
+<p>申請地番：${申請地番}\r\n\</p>
+<p>\r\n\</p>
+<p>以下について回答お願いいたします。\r\n\</p>
+<p>$rep[\</p>
+<p>\r\n\</p>
+<p>対象：${対象}\r\n\</p>
+<p>判定結果：${判定結果}\r\n\</p>
+<p>]$rep\</p>
+</div>
+<h1 id="アプリケーションデプロイ3dviewer">17 アプリケーションデプロイ（3DViewer）</h1>
+<p>確認済みサーバ環境：CentOS 8 Stream</p>
+<p>確認済み作業PC環境 ：Windows 10 Pro</p>
+<h2 id="1必要ツールのインストール作業pc上にて行う">【1】必要ツールのインストール　※作業PC上にて行う</h2>
+<p>① Node.js v10.0 以降、npm v6.0 以降のインストールを行ってください。</p>
+<p><a href="https://nodejs.org/ja/download/">https://nodejs.org/ja/download/</a></p>
+<p>※インストール方法の参考サイト：</p>
+<p><a href="https://qiita.com/echolimitless/items/83f8658cf855de04b9ce">https://qiita.com/echolimitless/items/83f8658cf855de04b9ce</a></p>
+<p>② コマンドでyarn v1.19.0 以降のインストールを行ってください。</p>
+<p class="bg_black">npm install -g yarn</p>
+<p>※インストール方法の参考サイト：</p>
+<p><a href="https://qiita.com/kurararara/items/21c70c4adfd3bb323412">https://qiita.com/kurararara/items/21c70c4adfd3bb323412</a></p>
+<p>③ Git Bashのインストール</p>
+<p><a href="https://gitforwindows.org/">https://gitforwindows.org/</a></p>
+<p>※インストール方法の参考サイト：</p>
+<p><a href="https://qiita.com/suke_masa/items/404f06309bb32ca6c9c5">https://qiita.com/suke_masa/items/404f06309bb32ca6c9c5</a></p>
+<h2 id="2nodejs依存モジュールのインストール">【2】nodejs依存モジュールのインストール</h2>
+<p>※作業PC上にて行う</p>
+<p>① <strong>/development-permission/SRC/3dview</strong> からソースコードを入手し、Git Bashからプロジェクトフォルダ直下に移動してください。</p>
+<p class="bg_black">cd developpermision-3dview</p>
+<p>② Git Bashからnodejs依存モジュールのインストールを行ってください。</p>
+<p class="bg_black">export NODE_OPTIONS=--max_old_space_size=4096</p>
+<p>yarn</p>
+<h2 id="3設定ファイルの更新">【3】設定ファイルの更新</h2>
+<p>※作業PC上にて行う</p>
+<p>第18章「アプリケーション設定ファイル更新」の手順で設定ファイルを更新します。</p>
+<p>※第18章【１】、【２】はビルド後も変更が可能です。</p>
+<h2 id="4plateauviewのビルド">【4】PLATEAU VIEWのビルド</h2>
+<p>※作業PC上にて行う</p>
+<p>① プロジェクトフォルダ直下に移動して、ビルドを行います。</p>
+<p class="bg_black">cd developpermision-3dview</p>
+<p>yarn gulp release</p>
+<p>② プロジェクトフォルダ直下にある</p>
+<p>devserverconfig.jsonをproductionserverconfig.jsonに名前を変更してください。変更済みの場合は不要です。</p>
+<h2 id="5plateauviewのデプロイ">【5】PLATEAU VIEWのデプロイ</h2>
+<ol>
+<li>① デプロイ先の作成を行います。フォルダ名の指定は自由です。</li>
+</ol>
+<p class="bg_black">mkdir /opt/DEVELOPMENT_PERMISSION_PLATEAU_VIEW</p>
+<p>② 適当な場所にプロジェクト直下の</p>
+<p>wwwroot,node_modules,ecosystem.config.js,ecosystem-production.config.js,productionserverconfig.jsonをアップロードしてください。</p>
+<p>③ wwwroot,node_modules,ecosystem.config.js,ecosystem-production.config.js,</p>
+<p>productionserverconfig.jsonをデプロイ先直下へ配置してください。</p>
+<div class="bg_black">
+  <p>cd /home/upload/</p>
+  <p>mv wwwroot /opt/DEVELOPMENT_PERMISSION_PLATEAU_VIEW/</p>
+  <p>mv node_modules /opt/DEVELOPMENT_PERMISSION_PLATEAU_VIEW/</p>
+  <p>mv ecosystem.config.js /opt/DEVELOPMENT_PERMISSION_PLATEAU_VIEW/</p>
+  <p>mv ecosystem-production.config.js /opt/DEVELOPMENT_PERMISSION_PLATEAU_VIEW/</p>
+  <p>mv productionserverconfig.json /opt/DEVELOPMENT_PERMISSION_PLATEAU_VIEW/</p>  
+</div>
+<p>④ デプロイ先に移動し、PLATEAU VIEWを起動します。</p>
+<p>cd /opt/DEVELOPMENT_PERMISSION_PLATEAU_VIEW</p>
+<p>./node_modules/.bin/pm2 start ecosystem-production.config.js --update-env --env production</p>
+<h2 id="6apacheの設定-1">【6】Apacheの設定</h2>
+<p>① httpd.conf を編集します。</p>
+<p class="bg_black">vi /etc/httpd/conf/httpd.conf</p>
+<p>最終行に以下の内容を追記して保存します。</p>
+<p>ProxyPass /plateau http://localhost:3001/</p>
+<p>ProxyPassReverse /plateau http://localhost:3001/</p>
+<p>② 設定を反映する為、apacheの再起動を行います。</p>
+<p class="bg_black">systemctl restart httpd.service</p>
+<h2 id="7デプロイ後の確認-1">【7】デプロイ後の確認</h2>
+<p>① http://&lt;サーバマシンのIPアドレス&gt;/plateau/ にアクセス</p>
+<p>下記のように表示されていればデプロイが正常に行われています。</p>
+<img src="../resources/environment/image176.png" style="width:4.43105in;height:2.77045in">
+<h1 id="アプリケーション設定ファイル更新3dviewer">18 アプリケーション設定ファイル更新(3DViewer)</h1>
+<p>3DViewerでは、以下3種類の設定ファイルを使用します。</p>
+<p>搭載するデータに合わせて適切に設定を行ってください。</p>
+<table>
+<colgroup>
+<col style="width: 41%">
+<col style="width: 24%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>ファイル名</strong></th>
+<th><strong>パス</strong></th>
+<th><strong>内容</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>config.json</td>
+<td>/wwwroot</td>
+<td><p>・初期ファイルとして参照するファイルの設定</p>
+<p>・アプリケーション名</p>
+<p>・ヘルプメニュー内容</p></td>
+</tr>
+<tr class="even">
+<td><p>development_permission_init.json</p>
+<p>（Initファイル）</p></td>
+<td>/wwwroot/init</td>
+<td><p>・初期表示位置</p>
+<p>・搭載レイヤ</p></td>
+</tr>
+<tr class="odd">
+<td>customconfig.json</td>
+<td>/packages/terriajs</td>
+<td><p>・GeoServerのURL</p>
+<p>・地番レイヤ設定</p>
+<p>・ランドマーク、建物データ設定</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="1configjson">【1】config.json</h2>
+<p>本書ではカスタマイズが必要な箇所のみ記載します。</p>
+<p>詳細なカスタマイズ手順はTerria公式サイトの以下ページを参照してください。</p>
+<p><a href="https://docs.terria.io/guide/customizing/client-side-config/">https://docs.terria.io/guide/customizing/client-side-config/</a></p>
+<table>
+<colgroup>
+<col style="width: 36%">
+<col style="width: 35%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>プロパティ名</strong></th>
+<th><strong>初期値</strong></th>
+<th><strong>内容</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>initializationUrls</td>
+<td>development_permission_init</td>
+<td><p>・初期ファイルとして参照するInitファイル名。</p>
+<p>Initファイルを変える場合、記載を変更。</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="2development_permission_initjson">【2】development_permission_init.json</h2>
+<p>本書ではカスタマイズが必要な箇所のみ記載します。</p>
+<p>詳細なカスタマイズ手順はTerria公式サイトの以下ページを参照してください。</p>
+<p><a href="https://docs.terria.io/guide/customizing/initialization-files/">https://docs.terria.io/guide/customizing/initialization-files/</a></p>
+<p><a href="https://docs.terria.io/guide/connecting-to-data/catalog-items/">https://docs.terria.io/guide/connecting-to-data/catalog-items/</a></p>
+<p>主なプロパティ一覧は下記になります。</p>
+<table>
+<colgroup>
+<col style="width: 36%">
+<col style="width: 63%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>プロパティ名</strong></th>
+<th><strong>内容</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>homeCamera</td>
+<td>ホームボタン押下時に表示する範囲</td>
+</tr>
+<tr class="even">
+<td>initialCamera</td>
+<td>初期表示範囲とカメラ位置</td>
+</tr>
+<tr class="odd">
+<td>baseMaps</td>
+<td><p>ベースマップ（航空写真等の背景図）</p>
+<p>Items：選択セット一覧を定義</p>
+<p>enabledBaseMaps：利用可能背景図一覧</p></td>
+</tr>
+<tr class="even">
+<td>catalog</td>
+<td><p>レイヤ一覧</p>
+<p>※建物モデル、ランドマーク、判定レイヤ等</p></td>
+</tr>
+<tr class="odd">
+<td>workbench</td>
+<td>初期表示するレイヤ一覧</td>
+</tr>
+</tbody>
+</table>
+<p>以下に、各カスタマイズ箇所の設定手順を記載します。</p>
+<p>① カメラ位置</p>
+<p>homeCameraと inititalCameraを修正し、表示させたい位置に合わせます。</p>
+<img class="no_border" src="../resources/environment/image177.png" style="width:5.83248in;height:6.57411in">
+<ol>
+<li>② 航空写真</li>
+</ol>
+<p>独自に航空写真と地形データを用意している場合、baseMapsのitemsを編集します。</p>
+<p>デフォルト設定を利用する場合、変更不要です。</p>
+<img class="no_border" src="../resources/environment/image178.png" style="width:5.92678in;height:8.58149in">
+<p>背景地図を追加した場合、</p>
+<p>baseMapsのenabledBaseMapsを編集します。</p>
+<img class="no_border" src="../resources/environment/image179.png" style="width:5.92472in;height:2.10232in">
+<p>③ 建物モデル</p>
+<p>catalogのmembersの中の「//データセット/建物モデル」を編集します。</p>
+<img class="no_border" src="../resources/environment/image180.png" style="width:5.71928in;height:3.24675in">
+<p>workbenchを編集します。</p>
+<img class="no_border" src="../resources/environment/image181.png" style="width:5.96829in;height:0.57634in">
+<p>④ ランドマーク</p>
+<p>Catalogのmembersの中の「//データセット/ランドマーク」を編集します。</p>
+<img class="no_border" src="../resources/environment/image182.png" style="width:5.95768in;height:2.90246in">
+<p>⑤ 判定レイヤ</p>
+<p>「//データセット/判定レイヤ」の下に各判定レイヤの設定を追加してください。</p>
+<img class="no_border" src="../resources/environment/image183.png" style="width:5.7994in;height:5.91165in">
+<p>※GeoServerのURLは以下のフォーマットとなります。</p>
+<p>http://[WebサーバのIPアドレス]/[ワークスペース名]/wms</p>
+<p>※GeoServerのレイヤ名は以下のフォーマットとなります。</p>
+<p>[ワークスペース名]:[レイヤタイトル]</p>
+<p>GeoServerサイトの「レイヤプレビュー」の「ユーザ名」に表示される内容になります。</p>
+<h2 id="3customconfigjson">【3】customconfig.json</h2>
+<p>以下プロパティ一覧です。</p>
+<p>環境に合わせて変更してください。</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 30%">
+<col style="width: 35%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>プロパティ①</strong></th>
+<th><strong>プロパティ②</strong></th>
+<th><strong>内容</strong></th>
+<th><strong>初期値</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="3">config</td>
+<td>apiUrl</td>
+<td>APIのルートパス</td>
+<td>/api</td>
+</tr>
+<tr class="even">
+<td>geoserverUrl</td>
+<td>GeoServerのURL</td>
+<td>/geoserver/devps/wms</td>
+</tr>
+<tr class="odd">
+<td>landmarkUrl</td>
+<td>ランドマークデータのURL</td>
+<td>/gis/landmark/landmark.czml</td>
+</tr>
+<tr class="even">
+<td rowspan="19">layer</td>
+<td>lotnumberSearchLayerNameForGoverment</td>
+<td>地番検索結果（行政）のGeoServer上のレイヤ名</td>
+<td>devps:地番検索結果（行政）</td>
+</tr>
+<tr class="odd">
+<td>lotnumberSearchLayerDisplayNameForGoverment</td>
+<td>地番検索結果（行政）レイヤの表示名称</td>
+<td>地番検索結果（行政）</td>
+</tr>
+<tr class="even">
+<td>lotnumberSearchViewParamNameForGoverment</td>
+<td>地番検索結果（行政）のGeoServer問い合わせクエリパラメータ</td>
+<td>lot_numbers:</td>
+</tr>
+<tr class="odd">
+<td>lotnumberSearchLayerNameForBusiness</td>
+<td>地番検索結果（事業者）のGeoServer上のレイヤ名</td>
+<td>devps:地番検索結果（事業者）</td>
+</tr>
+<tr class="even">
+<td>lotnumberSearchLayerDisplayNameForBusiness</td>
+<td>地番検索結果（事業者）レイヤの表示名称</td>
+<td>地番検索結果（事業者）</td>
+</tr>
+<tr class="odd">
+<td>lotnumberSearchViewParamNameForBusiness</td>
+<td>地番検索結果（事業者）のGeoServer問い合わせクエリパラメータ</td>
+<td>lot_numbers:</td>
+</tr>
+<tr class="even">
+<td>lotnumberSearchLayerNameForSelected</td>
+<td>選択中地番のGeoServer上のレイヤ名</td>
+<td>devps:選択中地番</td>
+</tr>
+<tr class="odd">
+<td>lotnumberSearchLayerDisplayNameForSelected</td>
+<td>選択中地番レイヤの表示名称</td>
+<td>選択中地番</td>
+</tr>
+<tr class="even">
+<td>lotnumberSearchViewParamNameForSelected</td>
+<td>選択中地番のGeoServer問い合わせクエリパラメータ</td>
+<td>lot_numbers:</td>
+</tr>
+<tr class="odd">
+<td>lotnumberSearchLayerNameForApplicationTarget</td>
+<td>申請対象地番のGeoServer上のレイヤ名</td>
+<td>devps:申請対象地番</td>
+</tr>
+<tr class="even">
+<td>lotnumberSearchLayerDisplayNameForApplicationTarget</td>
+<td>申請対象地番レイヤの表示名称</td>
+<td>申請対象地番</td>
+</tr>
+<tr class="odd">
+<td>lotnumberSearchViewParamNameForApplicationTarget</td>
+<td>申請対象地番のGeoServer問い合わせクエリパラメータ</td>
+<td>lot_numbers:</td>
+</tr>
+<tr class="even">
+<td>lotnumberSearchLayerNameForApplying</td>
+<td>申請中地番のGeoServer上のレイヤ名</td>
+<td>devps:申請中地番</td>
+</tr>
+<tr class="odd">
+<td>lotnumberSearchLayerDisplayNameForApplying</td>
+<td>申請中地番レイヤの表示名称</td>
+<td>申請中地番</td>
+</tr>
+<tr class="even">
+<td>lotnumberSearchLayerNameForAll</td>
+<td>申請中地番のGeoServer問い合わせクエリパラメータ</td>
+<td>devps:全地番</td>
+</tr>
+<tr class="odd">
+<td>lotnumberSearchLayerDisplayNameForAll</td>
+<td>全地番レイヤの表示名称</td>
+<td>筆界</td>
+</tr>
+<tr class="even">
+<td>lotnumberSearchLayerNameForApplicationSearchTarget</td>
+<td>申請情報表示地番のGeoServer問い合わせクエリパラメータ</td>
+<td>devps:申請情報表示地番</td>
+</tr>
+<tr class="odd">
+<td>lotnumberSearchLayerDisplayNameForApplicationSearchTarget</td>
+<td>申請情報表示地番レイヤの表示名称</td>
+<td>申請情報表示地番</td>
+</tr>
+<tr class="even">
+<td>lotnumberSearchViewParamNameForApplicationSearchTarget</td>
+<td>申請情報表示地番のGeoServer問い合わせクエリパラメータ</td>
+<td>lot_numbers:</td>
+</tr>
+<tr class="odd">
+<td rowspan="2">landMark</td>
+<td>id</td>
+<td><p>ランドマークレイヤのID</p>
+<p>※【2】の④で設定したIDになります。</p></td>
+<td>//データセット/ランドマーク</td>
+</tr>
+<tr class="even">
+<td>displayName</td>
+<td>申請地選択画面でのランドマークレイヤの表示名称</td>
+<td>ランドマーク</td>
+</tr>
+<tr class="odd">
+<td>buildingModel</td>
+<td>id</td>
+<td><p>建物モデルのID</p>
+<p>※【2】の③で設定したIDになります。</p>
+<p>建物モデルを搭載しない場合、空文字としてください。</p></td>
+<td>//データセット/建物モデル</td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      development permission
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

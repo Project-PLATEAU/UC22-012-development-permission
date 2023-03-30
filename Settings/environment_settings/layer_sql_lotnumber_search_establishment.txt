@@ -1,6 +1,0 @@
---地番検索結果（事業者）表示SQL
---GeoServerのSQLビューに以下を貼り付けてください。
-
-SELECT t1.geom, t2.district_name AS 大字, t1.chiban AS 地番 FROM f_lot_number AS t1
-LEFT OUTER JOIN f_district AS t2 ON t1.district_id = t2.district_id
-WHERE t1.chiban_id = any (CAST(regexp_split_to_array('%lot_numbers%', '_') AS integer[]))

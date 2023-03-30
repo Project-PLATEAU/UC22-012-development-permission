@@ -13,8 +13,8 @@ GISを三次元表示可能なCesiumJS及びTerriaJSをフロントエンドで�
 
 本ドキュメントは、本システムの利用手順を記載した資料となります。  
 詳細につきましては、以下を参照ください。  
-[環境構築手順書](https://aas-basicsystemsdevelopmentdept.github.io/PLATEAU-UC22-012-development-permission-Manual/manual/environment.html)  
-[開発許可申請管理システム　操作マニュアル](https://aas-basicsystemsdevelopmentdept.github.io/PLATEAU-UC22-012-development-permission-Manual/manual/user_manual.html)  
+[環境構築手順書](https://project-plateau.github.io/UC22-012-development-permission/manual/environment.html)  
+[開発許可申請管理システム　操作マニュアル](https://project-plateau.github.io/UC22-012-development-permission/manual/user_manual.html)  
 [技術実証レポート](https://www.mlit.go.jp/plateau/file/libraries/doc/plateau_tech_doc_0024_ver01.pdf)    
 
 
@@ -34,7 +34,7 @@ GeoServer（空間情報を共有するOSSのGISサーバ）を組み合わせ�
 ### **インストール**
 
 * 本システムで必要となるソフトウェアを下表に示します。
-[環境構築手順書](https://aas-basicsystemsdevelopmentdept.github.io/PLATEAU-UC22-012-development-permission-Manual/manual/environment.html)を参照の上、ソフトウェアのインストール及びセットアップを完了させてください。
+[環境構築手順書](https://project-plateau.github.io/UC22-012-development-permission/manual/environment.html)を参照の上、ソフトウェアのインストール及びセットアップを完了させてください。
 
     |ソフトウェア|プロジェクトフォルダ|
     | - | - |
@@ -47,7 +47,7 @@ GeoServer（空間情報を共有するOSSのGISサーバ）を組み合わせ�
 
     |ファイル|プロジェクトフォルダ|備考|
     | - | - | - |
-    |1.環境設定ファイル一式|[/Settings/environmant_settings](Settings/environment_settings/)|各ファイルについては[環境構築手順書](https://aas-basicsystemsdevelopmentdept.github.io/PLATEAU-UC22-012-development-permission-Manual/manual/environment.html)を参照してください。
+    |1.環境設定ファイル一式|[/Settings/environmant_settings](Settings/environment_settings/)|各ファイルについては[環境構築手順書](https://project-plateau.github.io/UC22-012-development-permission/manual/environment.html)を参照してください。
 
 
 
@@ -61,7 +61,7 @@ GeoServer（空間情報を共有するOSSのGISサーバ）を組み合わせ�
 #### **操作マニュアル**
 
 本システムの使い方は下記の操作マニュアルを参照ください。<br>
-[開発許可申請管理システム　操作マニュアル](https://aas-basicsystemsdevelopmentdept.github.io/PLATEAU-UC22-012-development-permission-Manual/manual/user_manual.html)
+[開発許可申請管理システム　操作マニュアル](https://project-plateau.github.io/UC22-012-development-permission/manual/user_manual.html)
 
 #### 本システムの全体像を下記に示します。
 

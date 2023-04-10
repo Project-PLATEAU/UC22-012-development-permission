@@ -1,4 +1,5 @@
 # FY2022 Project PLATEAU UC22-012「開発許可のDX」の成果物
+### development-permission
 ![uc22-012_achievements_4](https://user-images.githubusercontent.com/79615787/227769779-e9fa0174-a507-4fb1-add9-d79e549ae304.png)
 
 
@@ -78,7 +79,7 @@ GeoServer（空間情報を共有するOSSのGISサーバ）を組み合わせ�
 * 本レポジトリの利用により生じた損失及び損害等について、国土交通省はいかなる責任も負わないものとします。
 
 ## **参考資料**　 <!-- 各リンクは納品時に更新 -->
-* （近日公開）開発許可のDX 技術検証レポート: https://www.mlit.go.jp/plateau/file/libraries/doc/plateau_tech_doc_0024_ver01.pdf
+* 開発許可のDX 技術検証レポート: https://www.mlit.go.jp/plateau/file/libraries/doc/plateau_tech_doc_0024_ver01.pdf
 * PLATEAU Webサイト Use caseページ「開発許可のDX」: https://www.mlit.go.jp/plateau/use-case/uc22-012/
 * Project-PLATEAU PLATEAU-VIEW:https://github.com/Project-PLATEAU/PLATEAU-VIEW
 * Project-PLATEAU terriajs:https://github.com/Project-PLATEAU/terriajs

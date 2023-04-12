@@ -81,6 +81,6 @@ GeoServer（空間情報を共有するOSSのGISサーバ）を組み合わせ�
 ## **参考資料**　 <!-- 各リンクは納品時に更新 -->
 * 開発許可のDX 技術検証レポート: https://www.mlit.go.jp/plateau/file/libraries/doc/plateau_tech_doc_0024_ver01.pdf
 * PLATEAU Webサイト Use caseページ「開発許可のDX」: https://www.mlit.go.jp/plateau/use-case/uc22-012/
-* Project-PLATEAU PLATEAU-VIEW:https://github.com/Project-PLATEAU/PLATEAU-VIEW
+* Project-PLATEAU PLATEAU-VIEW:https://github.com/Project-PLATEAU/PLATEAU-VIEW-1.1
 * Project-PLATEAU terriajs:https://github.com/Project-PLATEAU/terriajs
 * GeoServer:https://geoserver.org/
